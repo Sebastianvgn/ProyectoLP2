@@ -46,3 +46,8 @@ C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
 C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
 C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
 C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.pdb

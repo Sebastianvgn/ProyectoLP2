@@ -2,7 +2,7 @@ public class AdministradorDeSistema : Usuario{
     //Constructor
     public AdministradorDeSistema()
     {
-
+        //asdfghjk
     }
 
     public AdministradorDeSistema(long id_usuario, string nombre, string apellidos, string correo, string codigo,
