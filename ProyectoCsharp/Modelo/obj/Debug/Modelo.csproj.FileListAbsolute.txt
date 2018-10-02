@@ -1,0 +1,48 @@
+C:\Users\HANS\Documents\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\HANS\Documents\ProyectoLP2\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\HANS\Documents\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+C:\Users\HANS\Documents\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+C:\Users\HANS\Documents\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+C:\Users\HANS\Documents\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+C:\Users\USUARIO\Desktop\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+C:\Users\USUARIO\Desktop\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+C:\Users\USUARIO\Desktop\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Desktop\ProyectoLP2\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+C:\Users\USUARIO\Desktop\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+T:\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+T:\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+T:\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+T:\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+T:\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+T:\LP2\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+T:\LP2\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+T:\LP2\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+T:\LP2\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+T:\LP2\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+E:\lp2\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+E:\lp2\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+E:\lp2\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+E:\lp2\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+E:\lp2\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+C:\temp\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\temp\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+C:\temp\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+C:\temp\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+C:\temp\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+C:\Users\alulab14.INF.003\Downloads\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+C:\Users\alulab14.INF.003\Downloads\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+C:\Users\alulab14.INF.003\Downloads\ProyectoLP2\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\alulab14.INF.003\Downloads\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+C:\Users\alulab14.INF.003\Downloads\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb
+C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\bin\Debug\Modelo.dll
+C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\bin\Debug\Modelo.pdb
+C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\obj\Debug\Modelo.dll
+C:\Users\USUARIO\Desktop\LP2\PROYECTO\ProyectoLP2\Modelo\obj\Debug\Modelo.pdb

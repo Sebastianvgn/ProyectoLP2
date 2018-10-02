@@ -1,0 +1,24 @@
+1000001
+Snack Tangente
+1000002
+Comida al peso Tangente
+1000003
+Snack Arte
+1000004
+Snack Letras
+1000005
+Snack Central
+1000006
+Snack Tangentito
+1000007
+Snack El Puesto
+1000008
+Snack Ceprepuc
+1000009
+Snack Electronica
+1000010
+Snack Centro Cultural
+1000011
+Snack Uno
+1000012
+Snack Sangucheria

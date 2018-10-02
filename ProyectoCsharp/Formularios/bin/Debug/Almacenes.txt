@@ -1,0 +1,15 @@
+1000001
+Tangete
+Se encuentra cerca a la huaca
+1000002
+Letras
+Se encuentra en el comedor de Letras
+1000003
+Arte
+Se encuentra en el comedor de Arte
+1000004
+Tangentito
+Se encuentra por el polideportivo
+1000005
+Central
+Se encuentra en el comedor de Central
