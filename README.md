@@ -1,1 +1,1 @@
-# ProyectoLP2
+# Todos ustedes son unas cagadas y me dan cancer/sida/ebola/zyka/peste
