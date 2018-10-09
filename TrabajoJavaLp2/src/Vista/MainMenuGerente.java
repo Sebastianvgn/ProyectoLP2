@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Reportes;
+package Vista;
 
 import javax.swing.JFrame;
 
@@ -38,7 +38,7 @@ public class MainMenuGerente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnReporteStock.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnReporteStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/txtStock.png"))); // NOI18N
+        btnReporteStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/txtStock.png"))); // NOI18N
         btnReporteStock.setText("Reporte de Stock");
         btnReporteStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,7 +47,7 @@ public class MainMenuGerente extends javax.swing.JFrame {
         });
 
         btnReporteTransf.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnReporteTransf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/transfer1.png"))); // NOI18N
+        btnReporteTransf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/transfer1.png"))); // NOI18N
         btnReporteTransf.setText("Reporte de Transferencias");
         btnReporteTransf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class MainMenuGerente extends javax.swing.JFrame {
         );
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/btnSalir.png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/btnSalir.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -10,10 +10,10 @@ public class Operario extends Usuario{
 	}
 	
 	public Operario(long id_usuario, String nombre, String apellidos, String correo, String codigo,
-                    String contrasena, String descripcion_permisos)
+                    String username, String contrasena, String descripcion_permisos)
     {
 		super(id_usuario, nombre,
-                    apellidos, correo, codigo, contrasena, descripcion_permisos);
+                    apellidos, correo, codigo, username, contrasena, descripcion_permisos);
 		almacenes = new ArrayList<Almacen>();
 		pedidos = new ArrayList<Pedido>();
     }

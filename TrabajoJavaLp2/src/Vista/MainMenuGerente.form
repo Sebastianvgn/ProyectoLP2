@@ -61,7 +61,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/txtStock.png"/>
+          <Image iconType="3" name="/Vista/txtStock.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Reporte de Stock"/>
       </Properties>
@@ -75,7 +75,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/transfer1.png"/>
+          <Image iconType="3" name="/Vista/transfer1.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Reporte de Transferencias"/>
       </Properties>
@@ -130,7 +130,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/btnSalir.png"/>
+          <Image iconType="3" name="/Vista/btnSalir.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>

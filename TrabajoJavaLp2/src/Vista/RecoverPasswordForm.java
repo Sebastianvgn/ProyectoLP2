@@ -1,4 +1,4 @@
-package Reportes;
+package Vista;
 
 
 import javax.swing.JFrame;
@@ -69,11 +69,11 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
         pnlRecBottom.setBackground(new java.awt.Color(255, 255, 255));
 
         lblRecMail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblRecMail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/email.png"))); // NOI18N
+        lblRecMail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/email.png"))); // NOI18N
         lblRecMail.setText("Email Address:");
 
         lblRecUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblRecUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/user.png"))); // NOI18N
+        lblRecUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/user.png"))); // NOI18N
         lblRecUser.setText("Username:");
 
         txtRecUsername.setBackground(new java.awt.Color(108, 122, 137));

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Reportes;
+package Vista;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -86,7 +86,7 @@ public class frmReporteTransferencias extends javax.swing.JFrame {
         dspAlmacen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione Almacen", "Almacen Principal", "Almacen 1", "Almacen 2", "Almacen 3" }));
 
         btnExportar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnExportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/btnExportar.png"))); // NOI18N
+        btnExportar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/btnExportar.png"))); // NOI18N
         btnExportar.setText("Exportar");
         btnExportar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +118,7 @@ public class frmReporteTransferencias extends javax.swing.JFrame {
         tblReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(tblReporte);
 
-        btnBuscarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/btnBuscar.png"))); // NOI18N
+        btnBuscarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/btnBuscar.png"))); // NOI18N
         btnBuscarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarProductoActionPerformed(evt);
@@ -126,7 +126,7 @@ public class frmReporteTransferencias extends javax.swing.JFrame {
         });
 
         btnMostrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/btnmostrar.png"))); // NOI18N
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/btnmostrar.png"))); // NOI18N
         btnMostrar.setText("Mostrar");
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,7 +135,7 @@ public class frmReporteTransferencias extends javax.swing.JFrame {
         });
 
         btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/Btncancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Btncancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +147,7 @@ public class frmReporteTransferencias extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/transfer1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/transfer1.png"))); // NOI18N
         jLabel1.setText("REPORTE DE TRANSFERENCIAS");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

@@ -1,3 +1,4 @@
+package modelo;
 public class Proveedor{
 	private String ruc;
 	private String razon_social;
