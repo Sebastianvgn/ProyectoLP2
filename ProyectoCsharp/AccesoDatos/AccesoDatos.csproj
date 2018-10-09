@@ -59,9 +59,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticuloDA.cs" />
+    <Compile Include="CategoriaDA.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDA.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{BEE20F2B-D9E3-4601-80C1-E401142A7CF1}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
