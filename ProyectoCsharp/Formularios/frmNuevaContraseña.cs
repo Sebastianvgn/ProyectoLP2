@@ -13,9 +13,18 @@ namespace Formularios
 {
     public partial class frmNuevaContraseña : Form
     {
+        private int idUsuario;
+        private string codigo;
         public frmNuevaContraseña()
         {
             InitializeComponent();
+        }
+
+        public frmNuevaContraseña(int idUsuario, string codigo)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.codigo = codigo;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -32,6 +41,20 @@ namespace Formularios
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnVerificar_Click(object sender, EventArgs e)
+        {
+            if (codigo == txtCodigo.Text)
+            {
+                btnVerificar.Enabled = false;
+                txtCodigo.Enabled = false;
+                txtConfirmarContraseña.Enabled = true;
+                txtNuevaContraseña.Enabled = true;
+                MessageBox.Show("Verificado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+                MessageBox.Show("ERROR: Código incorrecto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

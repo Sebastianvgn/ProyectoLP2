@@ -2,3 +2,10 @@ C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\LogicaNegocio.dll
 C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
 C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\Modelo.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\MySql.Data.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\Google.Protobuf.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\Modelo.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
