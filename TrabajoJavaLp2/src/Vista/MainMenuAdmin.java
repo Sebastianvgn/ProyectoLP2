@@ -1,4 +1,4 @@
-package Reportes;
+package Vista;
 
 import java.awt.Component;
 import javax.swing.JFrame;
@@ -46,7 +46,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnCrCuenta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCrCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/crearCuenta.png"))); // NOI18N
+        btnCrCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/crearCuenta.png"))); // NOI18N
         btnCrCuenta.setText("Crear Cuenta");
         btnCrCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +55,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnCrProd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCrProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/crearProd.png"))); // NOI18N
+        btnCrProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/crearProd.png"))); // NOI18N
         btnCrProd.setText("Crear Producto");
         btnCrProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +64,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnCrAlm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCrAlm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/almacen.png"))); // NOI18N
+        btnCrAlm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/almacen.png"))); // NOI18N
         btnCrAlm.setText("Crear Almacen");
         btnCrAlm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +73,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnCrProv.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCrProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/proveedor.png"))); // NOI18N
+        btnCrProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/proveedor.png"))); // NOI18N
         btnCrProv.setText("Crear Proveedor");
         btnCrProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +82,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnModCuenta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/modificarUser.png"))); // NOI18N
+        btnModCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/modificarUser.png"))); // NOI18N
         btnModCuenta.setText("Modificar Cuenta");
         btnModCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +91,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnModProd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/modificar.png"))); // NOI18N
+        btnModProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/modificar.png"))); // NOI18N
         btnModProd.setText("Modificar Producto");
         btnModProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +100,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnModAlm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModAlm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/modificar.png"))); // NOI18N
+        btnModAlm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/modificar.png"))); // NOI18N
         btnModAlm.setText("Modificar Almacen");
         btnModAlm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +109,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         });
 
         btnModProv.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnModProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/modificar.png"))); // NOI18N
+        btnModProv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/modificar.png"))); // NOI18N
         btnModProv.setText("Modificar Proveedor");
         btnModProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +141,7 @@ public class MainMenuAdmin extends javax.swing.JFrame {
         );
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/btnSalir.png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/btnSalir.png"))); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

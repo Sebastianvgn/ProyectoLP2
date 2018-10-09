@@ -1,3 +1,4 @@
+package modelo;
 public class DetallePedido{
 	private long id_detalle_pedido;
 	private	Articulo articulo;

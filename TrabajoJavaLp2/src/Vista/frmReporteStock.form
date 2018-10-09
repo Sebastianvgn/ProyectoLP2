@@ -111,7 +111,7 @@
     <Component class="javax.swing.JButton" name="btnBuscarProd">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/btnBuscar.png"/>
+          <Image iconType="3" name="/Vista/btnBuscar.png"/>
         </Property>
       </Properties>
       <Events>
@@ -219,7 +219,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/btnmostrar.png"/>
+          <Image iconType="3" name="/Vista/btnmostrar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Mostrar"/>
       </Properties>
@@ -264,7 +264,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Reportes/txtStock2.png"/>
+              <Image iconType="3" name="/Vista/txtStock2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="REPORTE DE STOCK"/>
           </Properties>
@@ -277,7 +277,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Reportes/Btncancelar.png"/>
+          <Image iconType="3" name="/Vista/Btncancelar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>

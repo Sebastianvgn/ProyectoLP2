@@ -1,8 +1,9 @@
-package Reportes;
+package Vista;
 
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import AccesoDatos.UsuarioDA;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -71,11 +72,11 @@ public class LoginForm extends javax.swing.JFrame {
         pnlBottom.setBackground(new java.awt.Color(255, 255, 255));
 
         lblPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/password.png"))); // NOI18N
+        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/password.png"))); // NOI18N
         lblPassword.setText("Contraseña:");
 
         lblUsername.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/user.png"))); // NOI18N
+        lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/user.png"))); // NOI18N
         lblUsername.setText("Usuario:");
 
         txtUsername.setBackground(new java.awt.Color(108, 122, 137));
@@ -123,7 +124,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         lblRecover.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblRecover.setForeground(new java.awt.Color(0, 51, 255));
-        lblRecover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/help.png"))); // NOI18N
+        lblRecover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/help.png"))); // NOI18N
         lblRecover.setText("Recuperar Contraseña");
         lblRecover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblRecover.addMouseListener(new java.awt.event.MouseAdapter() {

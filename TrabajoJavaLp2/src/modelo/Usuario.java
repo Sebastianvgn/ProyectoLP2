@@ -4,21 +4,21 @@ public abstract class Usuario{
 	private String nombre;
 	private String apellidos;
 	private String correo;
-	private String codigo;
+	private String dni;
 	private String contrasena;
 	private String descripcion_permisos;
 
 	public Usuario(){
 		id_usuario = 0;
-		nombre = apellidos = correo = codigo = contrasena = descripcion_permisos = null;
+		nombre = apellidos = correo = dni = contrasena = descripcion_permisos = null;
 	}
 
-	public Usuario(long id_usuario, String nombre, String apellidos, String correo, String codigo, String contrasena, String descripcion_permisos) {
+	public Usuario(long id_usuario, String nombre, String apellidos, String correo, String dni, String contrasena, String descripcion_permisos) {
             this.id_usuario = id_usuario;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.correo = correo;
-            this.codigo = codigo;
+            this.dni = dni;
             this.contrasena = contrasena;
             this.descripcion_permisos = descripcion_permisos;
         }
@@ -55,12 +55,12 @@ public abstract class Usuario{
 		return correo;
 	}
 
-	public void setCodigo(String codigo){
-		this.codigo = codigo;
+	public void setDni(String dni){
+		this.dni = dni;
 	}
 
-	public String getCodigo(){
-		return codigo;
+	public String getDni(){
+		return dni;
 	}
 
 	public void setContrasena(String contrasena){

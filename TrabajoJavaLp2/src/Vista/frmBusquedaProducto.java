@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Reportes;
+package Vista;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -99,7 +99,7 @@ public class frmBusquedaProducto extends javax.swing.JDialog {
         });
 
         btnSeleccionarProd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnSeleccionarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/select.png"))); // NOI18N
+        btnSeleccionarProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/select.png"))); // NOI18N
         btnSeleccionarProd.setText("Seleccionar");
         btnSeleccionarProd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class frmBusquedaProducto extends javax.swing.JDialog {
         jScrollPane1.setViewportView(tblProductos);
 
         btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/Btncancelar.png"))); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/Btncancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
