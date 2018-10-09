@@ -42,4 +42,8 @@ public class UsuarioBL {
         }
         return tipo;
     }
+    
+    public void crearUsuario(Usuario user){
+        usuariosDA.crearUsuario(user);
+    }
 }

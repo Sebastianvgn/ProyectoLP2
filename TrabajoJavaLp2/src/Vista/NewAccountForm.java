@@ -6,6 +6,11 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import modelo.Usuario;
+import modelo.Gerente;
+import modelo.JefeDeAlmacen;
+import modelo.Operario;
+import LogicaNegocio.UsuarioBL;
 
 /**
  *
@@ -30,54 +35,41 @@ public class NewAccountForm extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblUser = new javax.swing.JLabel();
         lblPass = new javax.swing.JLabel();
-        lblPerm = new javax.swing.JLabel();
-        lblAccount = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         txtMail = new javax.swing.JTextField();
-        txtAccount = new javax.swing.JTextField();
-        txtPass = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TblPermisos = new javax.swing.JTable();
+        txtUser = new javax.swing.JTextField();
         lblName = new javax.swing.JLabel();
         btnCrear = new javax.swing.JButton();
         lblMail = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         pnlTop = new javax.swing.JPanel();
         lblTextLogin = new javax.swing.JLabel();
+        txtPass = new javax.swing.JTextField();
+        lblPass1 = new javax.swing.JLabel();
+        cmbTipo = new javax.swing.JComboBox<>();
+        lblApellido = new javax.swing.JLabel();
+        txtApellido = new javax.swing.JTextField();
+        lblDni = new javax.swing.JLabel();
+        txtDni = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        lblUser.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblUser.setText("Usuario:");
+
         lblPass.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblPass.setText("Contraseña:");
-
-        lblPerm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblPerm.setText("Permisos:");
-
-        lblAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblAccount.setText("Cuenta:");
 
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         txtMail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        txtAccount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        txtPass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        TblPermisos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código Submenú", "Opción de Menú", "Permiso"
-            }
-        ));
-        TblPermisos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(TblPermisos);
+        txtUser.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         lblName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblName.setText("Nombre:");
+        lblName.setText("Nombres:");
 
         btnCrear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCrear.setText("Crear");
@@ -121,43 +113,69 @@ public class NewAccountForm extends javax.swing.JDialog {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
+        txtPass.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        lblPass1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblPass1.setText("Tipo de Usuario:");
+
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Operario", "Jefe de Almacén" }));
+
+        lblApellido.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblApellido.setText("Apellidos:");
+
+        txtApellido.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
+        lblDni.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblDni.setText("DNI:");
+
+        txtDni.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(329, 329, 329)
-                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblPerm)
-                                .addGap(491, 491, 491)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblName)
-                                    .addComponent(lblMail)
-                                    .addComponent(lblAccount)
-                                    .addComponent(lblPass))
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                                    .addComponent(txtMail)
-                                    .addComponent(txtAccount)
-                                    .addComponent(txtPass))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(pnlTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                                    .addComponent(lblMail))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblDni, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblUser, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPass1, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblPass))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblApellido)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(329, 329, 329)
+                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 25, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,27 +185,35 @@ public class NewAccountForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellido)
+                    .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMail))
+                    .addComponent(lblMail)
+                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAccount))
-                .addGap(12, 12, 12)
+                    .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDni))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUser))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPass))
-                .addGap(18, 18, 18)
-                .addComponent(lblPerm)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPass1)
+                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCrear, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,6 +225,29 @@ public class NewAccountForm extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        Usuario usuario = null;
+        String name = txtName.getText();
+        String ap = txtApellido.getText();
+        String mail = txtMail.getText();
+        String dni = txtDni.getText();
+        String user = txtUser.getText();
+        String pass = txtPass.getText(); 
+        int espInd = cmbTipo.getSelectedIndex();
+        String tipo = "";
+        if(espInd == 0){
+            tipo = "GERENTE";
+            usuario = new Gerente(0,name,ap,mail,dni,user,pass,tipo);
+        }else if(espInd == 1){
+            tipo = "OPERARIO";
+            usuario = new Operario(0,name,ap,mail,dni,user,pass,tipo);
+        }else if (espInd == 2){
+            tipo = "JEFE DE ALMACEN";
+            usuario = new JefeDeAlmacen(0,name,ap,mail,dni,user,pass,tipo);
+        }
+        UsuarioBL usuarioBL = new UsuarioBL();
+        
+        usuarioBL.crearUsuario(usuario);
+        
         JOptionPane.showMessageDialog(this,"Cuenta creada.", "Confirmación",
                                       JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
@@ -247,20 +296,23 @@ public class NewAccountForm extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TblPermisos;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblAccount;
+    private javax.swing.JComboBox<String> cmbTipo;
+    private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblDni;
     private javax.swing.JLabel lblMail;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPass;
-    private javax.swing.JLabel lblPerm;
+    private javax.swing.JLabel lblPass1;
     private javax.swing.JLabel lblTextLogin;
+    private javax.swing.JLabel lblUser;
     private javax.swing.JPanel pnlTop;
-    private javax.swing.JTextField txtAccount;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtDni;
     private javax.swing.JTextField txtMail;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPass;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

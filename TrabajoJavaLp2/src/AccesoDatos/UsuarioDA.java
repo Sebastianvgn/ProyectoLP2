@@ -6,6 +6,7 @@
 package AccesoDatos;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -69,6 +70,40 @@ public class UsuarioDA {
             System.out.println(ex.getMessage());
         }
         return usuarios;
+    }
+    
+    public void crearUsuario(Usuario user){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            
+            PreparedStatement ps = con.prepareStatement("INSERT INTO USUARIO(ID_PERFIL"
+                    + ",NOMBRES,APELLIDOS,CORREO,DNI,USERNAME,PASSWORD,"
+                    + "FECHA_REGISTRO,REGISTRO_ACTIVO) VALUES"
+                    + "(?,?,?,?,?,?,?,NOW(),?);");
+            if(user.getDescripcion_permisos().equals("GERENTE")){
+                ps.setInt(1, 1);
+            }else if(user.getDescripcion_permisos().equals("JEFE DE ALMACEN")){
+                ps.setInt(1, 3);
+            }else if(user.getDescripcion_permisos().equals("OPERARIO")){
+                ps.setInt(1, 4);
+            }
+            
+            ps.setString(2, user.getNombre());
+            ps.setString(3, user.getApellidos());
+            ps.setString(4, user.getCorreo());
+            ps.setString(5, user.getDni());
+            ps.setString(6, user.getUsername());
+            ps.setString(7, user.getContrasena());
+            ps.setInt(8, 1);
+            
+            ps.executeUpdate();
+            
+            con.close();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
 }
