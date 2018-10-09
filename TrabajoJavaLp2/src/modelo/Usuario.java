@@ -5,20 +5,22 @@ public abstract class Usuario{
 	private String apellidos;
 	private String correo;
 	private String dni;
+        private String username;
 	private String contrasena;
 	private String descripcion_permisos;
 
 	public Usuario(){
 		id_usuario = 0;
-		nombre = apellidos = correo = dni = contrasena = descripcion_permisos = null;
+		nombre = apellidos = correo = dni = username= contrasena = descripcion_permisos = null;
 	}
 
-	public Usuario(long id_usuario, String nombre, String apellidos, String correo, String dni, String contrasena, String descripcion_permisos) {
+	public Usuario(long id_usuario, String nombre, String apellidos, String correo, String dni, String username, String contrasena, String descripcion_permisos) {
             this.id_usuario = id_usuario;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.correo = correo;
             this.dni = dni;
+            this.username = username;
             this.contrasena = contrasena;
             this.descripcion_permisos = descripcion_permisos;
         }
@@ -63,6 +65,14 @@ public abstract class Usuario{
 		return dni;
 	}
 
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+        
 	public void setContrasena(String contrasena){
 		this.contrasena = contrasena;
 	}
