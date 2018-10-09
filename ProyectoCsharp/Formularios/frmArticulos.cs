@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using LogicaNegocio;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,18 @@ namespace Formularios
     public partial class frmArticulos : Form
     {
         private BindingList<Articulo> articulos;
+        private DataTable dtArticulos;
+        private ArticuloBL articuloBL;
+
         public frmArticulos()
         {
             InitializeComponent();
-            articulos = new BindingList<Articulo>();
-            LeerArticulos();
+            //articulos = new BindingList<Articulo>();
+            articuloBL = new ArticuloBL();
+            dtArticulos = articuloBL.ListarArticulos();
+            //LeerArticulos();
             
-            dgvArticulos.DataSource = articulos;
+            dgvArticulos.DataSource = dtArticulos;
             lblCantRegistros.Text = dgvArticulos.Rows.Count.ToString();
         }
 
@@ -135,6 +141,11 @@ namespace Formularios
                 rbCategoria.Enabled = true;
                 cbCategoria.Enabled = true;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

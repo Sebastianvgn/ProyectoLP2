@@ -14,9 +14,9 @@ namespace Modelo
             pedidos = new List<Pedido>();
         }
 
-        public Operario(long id_usuario, string nombre, string apellidos, string correo, string codigo,
+        public Operario(long id_usuario, string nombre, string apellidos, string correo string dni, string username, string codigo,
                         string contraseña, string descripcion_permisos) : base(id_usuario, nombre,
-                        apellidos, correo, codigo, contraseña, descripcion_permisos)
+                        apellidos, correo, dni, username, contraseña, descripcion_permisos)
         {
             almacenes = new List<Almacen>();
             pedidos = new List<Pedido>();

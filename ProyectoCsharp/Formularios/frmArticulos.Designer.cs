@@ -32,25 +32,18 @@ namespace Formularios
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRegistros = new System.Windows.Forms.Label();
             this.lblCantRegistros = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechacaducidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVerMovimientos = new System.Windows.Forms.DataGridViewButtonColumn();
             this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.rbTodos = new System.Windows.Forms.RadioButton();
@@ -64,6 +57,12 @@ namespace Formularios
             this.rbDescripcion = new System.Windows.Forms.RadioButton();
             this.rbCodigo = new System.Windows.Forms.RadioButton();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechacaducidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
             this.gbBuscar.SuspendLayout();
@@ -143,14 +142,14 @@ namespace Formularios
             this.dgvArticulos.BackgroundColor = System.Drawing.Color.White;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArticulos.ColumnHeadersHeight = 40;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -159,21 +158,20 @@ namespace Formularios
             this.unidadDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
             this.fechacaducidadDataGridViewTextBoxColumn,
-            this.categoriaDataGridViewTextBoxColumn,
-            this.btnVerMovimientos});
+            this.categoriaDataGridViewTextBoxColumn});
             this.dgvArticulos.DataSource = this.articuloBindingSource;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvArticulos.EnableHeadersVisualStyles = false;
             this.dgvArticulos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvArticulos.Location = new System.Drawing.Point(78, 255);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
@@ -183,72 +181,9 @@ namespace Formularios
             this.dgvArticulos.Size = new System.Drawing.Size(927, 315);
             this.dgvArticulos.TabIndex = 8;
             // 
-            // codigoDataGridViewTextBoxColumn
-            // 
-            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
-            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
-            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unidadDataGridViewTextBoxColumn
-            // 
-            this.unidadDataGridViewTextBoxColumn.DataPropertyName = "Unidad";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.unidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.unidadDataGridViewTextBoxColumn.HeaderText = "Unidad";
-            this.unidadDataGridViewTextBoxColumn.Name = "unidadDataGridViewTextBoxColumn";
-            this.unidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechacaducidadDataGridViewTextBoxColumn
-            // 
-            this.fechacaducidadDataGridViewTextBoxColumn.DataPropertyName = "Fecha_caducidad";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fechacaducidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.fechacaducidadDataGridViewTextBoxColumn.HeaderText = "Fecha de Caducidad";
-            this.fechacaducidadDataGridViewTextBoxColumn.Name = "fechacaducidadDataGridViewTextBoxColumn";
-            this.fechacaducidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoriaDataGridViewTextBoxColumn
-            // 
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.categoriaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // btnVerMovimientos
-            // 
-            this.btnVerMovimientos.HeaderText = "Ver Movimientos";
-            this.btnVerMovimientos.Name = "btnVerMovimientos";
-            this.btnVerMovimientos.ReadOnly = true;
-            this.btnVerMovimientos.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnVerMovimientos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnVerMovimientos.Text = "Ver Movimientos";
-            this.btnVerMovimientos.ToolTipText = "Ver Movimientos";
-            this.btnVerMovimientos.UseColumnTextForButtonValue = true;
-            // 
             // articuloBindingSource
             // 
-            this.articuloBindingSource.DataSource = typeof(Articulo);
+            this.articuloBindingSource.DataSource = typeof(Modelo.Articulo);
             // 
             // gbBuscar
             // 
@@ -259,9 +194,9 @@ namespace Formularios
             this.gbBuscar.Controls.Add(this.rbInsumo);
             this.gbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBuscar.Location = new System.Drawing.Point(86, 9);
-            this.gbBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscar.Padding = new System.Windows.Forms.Padding(2);
             this.gbBuscar.Size = new System.Drawing.Size(310, 61);
             this.gbBuscar.TabIndex = 2;
             this.gbBuscar.TabStop = false;
@@ -272,7 +207,7 @@ namespace Formularios
             this.rbTodos.AutoSize = true;
             this.rbTodos.Checked = true;
             this.rbTodos.Location = new System.Drawing.Point(235, 30);
-            this.rbTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbTodos.Margin = new System.Windows.Forms.Padding(2);
             this.rbTodos.Name = "rbTodos";
             this.rbTodos.Size = new System.Drawing.Size(71, 24);
             this.rbTodos.TabIndex = 2;
@@ -285,7 +220,7 @@ namespace Formularios
             // 
             this.rbMercaderia.AutoSize = true;
             this.rbMercaderia.Location = new System.Drawing.Point(115, 30);
-            this.rbMercaderia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMercaderia.Margin = new System.Windows.Forms.Padding(2);
             this.rbMercaderia.Name = "rbMercaderia";
             this.rbMercaderia.Size = new System.Drawing.Size(106, 24);
             this.rbMercaderia.TabIndex = 1;
@@ -297,7 +232,7 @@ namespace Formularios
             // 
             this.rbInsumo.AutoSize = true;
             this.rbInsumo.Location = new System.Drawing.Point(15, 30);
-            this.rbInsumo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbInsumo.Margin = new System.Windows.Forms.Padding(2);
             this.rbInsumo.Name = "rbInsumo";
             this.rbInsumo.Size = new System.Drawing.Size(88, 24);
             this.rbInsumo.TabIndex = 0;
@@ -315,7 +250,7 @@ namespace Formularios
             "Carnes",
             "Lácteos"});
             this.cbCategoria.Location = new System.Drawing.Point(138, 89);
-            this.cbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(371, 25);
             this.cbCategoria.TabIndex = 9;
@@ -327,7 +262,7 @@ namespace Formularios
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(138, 59);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(371, 23);
             this.txtDescripcion.TabIndex = 9;
@@ -342,9 +277,9 @@ namespace Formularios
             this.gbBuscarPor.Controls.Add(this.rbCodigo);
             this.gbBuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBuscarPor.Location = new System.Drawing.Point(86, 86);
-            this.gbBuscarPor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscarPor.Margin = new System.Windows.Forms.Padding(2);
             this.gbBuscarPor.Name = "gbBuscarPor";
-            this.gbBuscarPor.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscarPor.Padding = new System.Windows.Forms.Padding(2);
             this.gbBuscarPor.Size = new System.Drawing.Size(524, 130);
             this.gbBuscarPor.TabIndex = 10;
             this.gbBuscarPor.TabStop = false;
@@ -355,7 +290,7 @@ namespace Formularios
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(138, 32);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(371, 23);
             this.txtCodigo.TabIndex = 10;
@@ -365,7 +300,7 @@ namespace Formularios
             this.rbCategoria.AutoSize = true;
             this.rbCategoria.Checked = true;
             this.rbCategoria.Location = new System.Drawing.Point(15, 88);
-            this.rbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.rbCategoria.Name = "rbCategoria";
             this.rbCategoria.Size = new System.Drawing.Size(96, 24);
             this.rbCategoria.TabIndex = 3;
@@ -378,7 +313,7 @@ namespace Formularios
             // 
             this.rbDescripcion.AutoSize = true;
             this.rbDescripcion.Location = new System.Drawing.Point(15, 59);
-            this.rbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.rbDescripcion.Name = "rbDescripcion";
             this.rbDescripcion.Size = new System.Drawing.Size(110, 24);
             this.rbDescripcion.TabIndex = 2;
@@ -390,7 +325,7 @@ namespace Formularios
             // 
             this.rbCodigo.AutoSize = true;
             this.rbCodigo.Location = new System.Drawing.Point(15, 32);
-            this.rbCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.rbCodigo.Name = "rbCodigo";
             this.rbCodigo.Size = new System.Drawing.Size(77, 24);
             this.rbCodigo.TabIndex = 1;
@@ -407,12 +342,65 @@ namespace Formularios
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(626, 134);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(86, 44);
             this.btnBuscar.TabIndex = 11;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unidadDataGridViewTextBoxColumn
+            // 
+            this.unidadDataGridViewTextBoxColumn.DataPropertyName = "Unidad";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.unidadDataGridViewTextBoxColumn.HeaderText = "Unidad";
+            this.unidadDataGridViewTextBoxColumn.Name = "unidadDataGridViewTextBoxColumn";
+            this.unidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechacaducidadDataGridViewTextBoxColumn
+            // 
+            this.fechacaducidadDataGridViewTextBoxColumn.DataPropertyName = "Fecha_registro";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fechacaducidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.fechacaducidadDataGridViewTextBoxColumn.HeaderText = "Fecha de Registro";
+            this.fechacaducidadDataGridViewTextBoxColumn.Name = "fechacaducidadDataGridViewTextBoxColumn";
+            this.fechacaducidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.categoriaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmArticulos
             // 
@@ -430,7 +418,7 @@ namespace Formularios
             this.Controls.Add(this.gbBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmArticulos";
             this.Text = "frmArticulos";
             this.Load += new System.EventHandler(this.frmArticulos_Load);
@@ -452,13 +440,6 @@ namespace Formularios
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechacaducidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn btnVerMovimientos;
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.RadioButton rbMercaderia;
         private System.Windows.Forms.RadioButton rbInsumo;
@@ -471,5 +452,11 @@ namespace Formularios
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.RadioButton rbCategoria;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechacaducidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
     }
 }
