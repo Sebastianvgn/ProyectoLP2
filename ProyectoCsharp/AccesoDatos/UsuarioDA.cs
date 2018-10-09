@@ -15,8 +15,12 @@ namespace AccesoDatos
         public UsuarioDA()
         {
             parametrosEntrada = new MySqlParameter[6];
+<<<<<<< HEAD
 
             //a loli le encanta el pene x2
+=======
+            //a loli le encanta el pene
+>>>>>>> 057b409104269afbf272af9dbd5149688b7af68e
         }
     }
 }
