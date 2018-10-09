@@ -252,3 +252,4 @@ C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.Propert
 C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csproj.GenerateResource.Cache
 C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.exe
 C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmNuevaContraseña.resources

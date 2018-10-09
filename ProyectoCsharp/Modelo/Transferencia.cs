@@ -1,14 +1,18 @@
-﻿class Transferencia : Pedido
+﻿namespace Modelo
 {
-    //Construtores
-    public Transferencia() {
-
-    }
-
-    public Transferencia(long id_pedido, TEstado estado)
+    class Transferencia : Pedido
     {
-		Id_pedido = id_pedido;
-		Estado = estado;
-    }
-}
+        //Construtores
+        public Transferencia()
+        {
 
+        }
+
+        public Transferencia(long id_pedido, TEstado estado)
+        {
+            Id_pedido = id_pedido;
+            Estado = estado;
+        }
+    }
+
+}

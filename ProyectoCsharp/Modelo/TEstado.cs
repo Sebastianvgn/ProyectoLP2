@@ -1,3 +1,7 @@
-public enum TEstado{
-	Pendiente, Atendido, Despachado, Anulado
-};
+namespace Modelo
+{
+    public enum TEstado
+    {
+        Pendiente, Atendido, Despachado, Anulado
+    };
+}

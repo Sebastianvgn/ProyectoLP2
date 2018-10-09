@@ -1,4 +1,6 @@
-﻿namespace Formularios
+﻿using Modelo;
+
+namespace Formularios
 {
     partial class frmPedidosPorPendientes
     {

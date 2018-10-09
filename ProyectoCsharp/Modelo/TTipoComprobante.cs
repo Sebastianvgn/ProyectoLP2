@@ -1,3 +1,7 @@
-public enum TTipoComprobante{
-	Facura, Boleta, GuiaRemision, GuiaInterna
-};
+namespace Modelo
+{
+    public enum TTipoComprobante
+    {
+        Facura, Boleta, GuiaRemision, GuiaInterna
+    };
+}

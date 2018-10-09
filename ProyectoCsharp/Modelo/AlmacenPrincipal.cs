@@ -1,16 +1,23 @@
-﻿public class AlmacenPrincipal : Almacen
-
+﻿
+namespace Modelo
 {
-    //Constructores
-    public AlmacenPrincipal() {
+    public class AlmacenPrincipal : Almacen
 
+    {
+        //Constructores
+        public AlmacenPrincipal()
+        {
+
+        }
+
+        public AlmacenPrincipal(long id, string nom, string descripcion) : base(id, nom, descripcion)
+        {
+        }
+
+        public void ModificarStock()
+        {
+
+        }
     }
 
-    public AlmacenPrincipal(long id, string nom, string descripcion) : base(id, nom, descripcion) {
-    }
-
-    public void ModificarStock(){
-    	
-    }
 }
-

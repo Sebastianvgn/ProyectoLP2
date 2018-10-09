@@ -1,0 +1,4 @@
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

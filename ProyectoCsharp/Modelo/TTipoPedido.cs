@@ -1,3 +1,7 @@
-public enum TTipoPedido{
-	Diario, Semanal
-};
+namespace Modelo
+{
+    public enum TTipoPedido
+    {
+        Diario, Semanal
+    };
+}
