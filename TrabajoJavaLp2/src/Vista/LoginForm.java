@@ -3,7 +3,7 @@ package Vista;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import AccesoDatos.UsuarioDA;
+import LogicaNegocio.UsuarioBL;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -212,19 +212,23 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_lblRecoverMouseClicked
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-       if(txtUsername.getText().compareTo("")==0){
+        if(txtUsername.getText().compareTo("")==0){
           JOptionPane.showMessageDialog(this, 
                   "Falta ingresar el Usuario","Advertencia", JOptionPane.WARNING_MESSAGE);
           return;
         }
-        if(txtUsername.getText().compareTo("admin")==0){
+        UsuarioBL usuariobl = new UsuarioBL();
+        String user = txtUsername.getText();
+        String pass = new String(txtPass.getPassword());
+        String tipo = usuariobl.buscarUsuario(user, pass);
+        if(tipo.equals("ADMINISTRADOR DE SISTEMAS")){
             MainMenuAdmin mmf = new MainMenuAdmin();
             mmf.setVisible(true);
             mmf.pack();
             mmf.setLocationRelativeTo(null);
             mmf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.dispose();
-        }else if(txtUsername.getText().compareTo("gerente")==0){
+        }else if(tipo.equals("GERENTE")){
             MainMenuGerente mm2 = new MainMenuGerente();
             mm2.setVisible(true);
             mm2.pack();
@@ -253,17 +257,21 @@ public class LoginForm extends javax.swing.JFrame {
         if(evt.getKeyCode()== java.awt.event.KeyEvent.VK_ENTER){
             if(txtUsername.getText().compareTo("")==0){
                 JOptionPane.showMessageDialog(this, 
-                  "Falta ingresar el Usuario","Advertencia", JOptionPane.WARNING_MESSAGE);
+                        "Falta ingresar el Usuario","Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            if(txtUsername.getText().compareTo("admin")==0){
+            UsuarioBL usuariobl = new UsuarioBL();
+            String user = txtUsername.getText();
+            String pass = new String(txtPass.getPassword());
+            String tipo = usuariobl.buscarUsuario(user, pass);
+            if(tipo.equals("ADMINISTRADOR DE SISTEMAS")){
                 MainMenuAdmin mmf = new MainMenuAdmin();
                 mmf.setVisible(true);
                 mmf.pack();
                 mmf.setLocationRelativeTo(null);
                 mmf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                this.dispose(); 
-            }else if(txtUsername.getText().compareTo("gerente")==0){
+                this.dispose();
+            }else if(tipo.equals("GERENTE")){
                 MainMenuGerente mm2 = new MainMenuGerente();
                 mm2.setVisible(true);
                 mm2.pack();
@@ -274,7 +282,7 @@ public class LoginForm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, 
                     "Nombre de usuario incorrecto.","Advertencia", JOptionPane.WARNING_MESSAGE);
                 return;
-        }
+            }
         }
     }//GEN-LAST:event_txtPassKeyPressed
 

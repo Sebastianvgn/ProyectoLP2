@@ -14,6 +14,7 @@ import modelo.Usuario;
 import modelo.Gerente;
 import modelo.Operario;
 import modelo.JefeDeAlmacen;
+import modelo.AdministradorDeSistema;
 
 /**
  *
@@ -33,21 +34,36 @@ public class UsuarioDA {
             
             while(rs.next()){
                 long idUser = rs.getInt("ID_USUARIO");
-                long idPerf = rs.getInt("ID_PERFIL");
+                //long idPerf = rs.getInt("ID_PERFIL");
                 String name = rs.getString("NOMBRES");
                 String ap = rs.getString("APELLIDOS");
                 String mail = rs.getString("CORREO");
                 String dni = rs.getString("DNI");
                 String user = rs.getString("USERNAME");
                 String pass = rs.getString("PASSWORD");
-                Date fecha = rs.getDate("FECHA_REGISTRO");
-                int reg = rs.getInt("REGISTRO_ACTIVO");
+                //Date fecha = rs.getDate("FECHA_REGISTRO");
+                //int reg = rs.getInt("REGISTRO_ACTIVO");
                 String perfil = rs.getString("NOMBRE");
 
                 if(perfil.equals("GERENTE")){
-                    Gerente ger = new Gerente(idUser,name,ap,mail,dni,user,pass,fecha,perfil);
+                    Gerente ger = new Gerente(idUser,name,ap,mail,dni,user,pass,perfil);
+                    usuarios.add(ger);
                 }
+                else if(perfil.equals("JEFE DE ALMACEN")){
+                    JefeDeAlmacen jefe = new JefeDeAlmacen(idUser,name,ap,mail,dni,user,pass,perfil);
+                    usuarios.add(jefe);
+                }
+                else if(perfil.equals("OPERARIO")){
+                    Operario oper = new Operario(idUser,name,ap,mail,dni,user,pass,perfil);
+                    usuarios.add(oper);
+                }
+                else if(perfil.equals("ADMINISTRADOR DE SISTEMAS")){
+                    AdministradorDeSistema admin = new AdministradorDeSistema(idUser,name,ap,mail,dni,user,pass,perfil);
+                    usuarios.add(admin);
+                }
+                
             }
+            con.close();
             
         }catch(Exception ex){
             System.out.println(ex.getMessage());
