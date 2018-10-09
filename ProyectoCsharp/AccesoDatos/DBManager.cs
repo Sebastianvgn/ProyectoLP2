@@ -11,7 +11,7 @@ namespace AccesoDatos
     public class DBManager
     {
         private static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=0Fjw8H; database=a20145779; SslMode=None";
-        private static MySqlConnection conexion = null;
+        private static MySqlConnection conexion = null; //carajo
         private MySqlCommand cmd = null;
         private MySqlDataAdapter adaptador = null;
         private DataTable tabla = null;
