@@ -95,6 +95,12 @@
     <Compile Include="frmMovimientosArticulo.Designer.cs">
       <DependentUpon>frmMovimientosArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNuevaContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevaContraseña.Designer.cs">
+      <DependentUpon>frmNuevaContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPedidosPorPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovimientosArticulo.resx">
       <DependentUpon>frmMovimientosArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaContraseña.resx">
+      <DependentUpon>frmNuevaContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPedidosPorPendientes.resx">
       <DependentUpon>frmPedidosPorPendientes.cs</DependentUpon>

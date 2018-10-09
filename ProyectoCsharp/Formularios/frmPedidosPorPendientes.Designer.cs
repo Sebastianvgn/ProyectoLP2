@@ -33,11 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedidosPorPendientes));
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
-            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblCantidadRegistros = new System.Windows.Forms.Label();
-            this.lblCant = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnMostrarPedido = new System.Windows.Forms.Button();
             this.responsableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_produccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_entrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +41,11 @@
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblCantidadRegistros = new System.Windows.Forms.Label();
+            this.lblCant = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnMostrarPedido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
             this.dgvPedidos.DataSource = this.pedidoBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -94,75 +94,15 @@
             this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedidos.EnableHeadersVisualStyles = false;
             this.dgvPedidos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvPedidos.Location = new System.Drawing.Point(9, 110);
-            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPedidos.Location = new System.Drawing.Point(12, 135);
+            this.dgvPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.RowHeadersVisible = false;
             this.dgvPedidos.RowTemplate.Height = 24;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidos.Size = new System.Drawing.Size(949, 306);
+            this.dgvPedidos.Size = new System.Drawing.Size(1265, 377);
             this.dgvPedidos.TabIndex = 9;
-            // 
-            // pedidoBindingSource
-            // 
-            this.pedidoBindingSource.DataSource = typeof(Pedido);
-            // 
-            // lblCantidadRegistros
-            // 
-            this.lblCantidadRegistros.AutoSize = true;
-            this.lblCantidadRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadRegistros.ForeColor = System.Drawing.Color.Green;
-            this.lblCantidadRegistros.Location = new System.Drawing.Point(14, 46);
-            this.lblCantidadRegistros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCantidadRegistros.Name = "lblCantidadRegistros";
-            this.lblCantidadRegistros.Size = new System.Drawing.Size(186, 20);
-            this.lblCantidadRegistros.TabIndex = 10;
-            this.lblCantidadRegistros.Text = "Cantidad de registros:";
-            // 
-            // lblCant
-            // 
-            this.lblCant.AutoSize = true;
-            this.lblCant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCant.ForeColor = System.Drawing.Color.Green;
-            this.lblCant.Location = new System.Drawing.Point(194, 46);
-            this.lblCant.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCant.Name = "lblCant";
-            this.lblCant.Size = new System.Drawing.Size(0, 20);
-            this.lblCant.TabIndex = 12;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.BackColor = System.Drawing.Color.White;
-            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(908, 24);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(50, 59);
-            this.btnSalir.TabIndex = 13;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnMostrarPedido
-            // 
-            this.btnMostrarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMostrarPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnMostrarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMostrarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarPedido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrarPedido.ForeColor = System.Drawing.Color.White;
-            this.btnMostrarPedido.Location = new System.Drawing.Point(706, 24);
-            this.btnMostrarPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnMostrarPedido.Name = "btnMostrarPedido";
-            this.btnMostrarPedido.Size = new System.Drawing.Size(176, 59);
-            this.btnMostrarPedido.TabIndex = 14;
-            this.btnMostrarPedido.Text = "Mostrar Pedido Seleccionado";
-            this.btnMostrarPedido.UseVisualStyleBackColor = false;
-            this.btnMostrarPedido.Click += new System.EventHandler(this.btnMostrarPedido_Click);
             // 
             // responsableDataGridViewTextBoxColumn
             // 
@@ -220,12 +160,70 @@
             this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
             this.areaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // pedidoBindingSource
+            // 
+            this.pedidoBindingSource.DataSource = typeof(Pedido);
+            // 
+            // lblCantidadRegistros
+            // 
+            this.lblCantidadRegistros.AutoSize = true;
+            this.lblCantidadRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadRegistros.ForeColor = System.Drawing.Color.Green;
+            this.lblCantidadRegistros.Location = new System.Drawing.Point(19, 57);
+            this.lblCantidadRegistros.Name = "lblCantidadRegistros";
+            this.lblCantidadRegistros.Size = new System.Drawing.Size(225, 25);
+            this.lblCantidadRegistros.TabIndex = 10;
+            this.lblCantidadRegistros.Text = "Cantidad de registros:";
+            // 
+            // lblCant
+            // 
+            this.lblCant.AutoSize = true;
+            this.lblCant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCant.ForeColor = System.Drawing.Color.Green;
+            this.lblCant.Location = new System.Drawing.Point(259, 57);
+            this.lblCant.Name = "lblCant";
+            this.lblCant.Size = new System.Drawing.Size(0, 25);
+            this.lblCant.TabIndex = 12;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.White;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(1211, 30);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(67, 73);
+            this.btnSalir.TabIndex = 13;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnMostrarPedido
+            // 
+            this.btnMostrarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMostrarPedido.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnMostrarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMostrarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarPedido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarPedido.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarPedido.Location = new System.Drawing.Point(941, 30);
+            this.btnMostrarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMostrarPedido.Name = "btnMostrarPedido";
+            this.btnMostrarPedido.Size = new System.Drawing.Size(235, 73);
+            this.btnMostrarPedido.TabIndex = 14;
+            this.btnMostrarPedido.Text = "Mostrar Pedido Seleccionado";
+            this.btnMostrarPedido.UseVisualStyleBackColor = false;
+            this.btnMostrarPedido.Click += new System.EventHandler(this.btnMostrarPedido_Click);
+            // 
             // frmPedidosPorPendientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(967, 425);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1289, 523);
             this.ControlBox = false;
             this.Controls.Add(this.btnMostrarPedido);
             this.Controls.Add(this.btnSalir);
@@ -233,7 +231,7 @@
             this.Controls.Add(this.lblCantidadRegistros);
             this.Controls.Add(this.dgvPedidos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmPedidosPorPendientes";
             this.Text = "frmPedidosPorPendientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();

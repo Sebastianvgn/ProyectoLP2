@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMermas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mermaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -41,8 +41,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.cbUnidad = new System.Windows.Forms.ComboBox();
-            this.lblUnidad = new System.Windows.Forms.Label();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.lblFechaFinal = new System.Windows.Forms.Label();
             this.lblFechaIni = new System.Windows.Forms.Label();
@@ -86,8 +84,6 @@
             this.gbFiltros.Controls.Add(this.lblNombre);
             this.gbFiltros.Controls.Add(this.cbCategoria);
             this.gbFiltros.Controls.Add(this.lblCategoria);
-            this.gbFiltros.Controls.Add(this.cbUnidad);
-            this.gbFiltros.Controls.Add(this.lblUnidad);
             this.gbFiltros.Controls.Add(this.dtpFechaFin);
             this.gbFiltros.Controls.Add(this.lblFechaFinal);
             this.gbFiltros.Controls.Add(this.lblFechaIni);
@@ -97,7 +93,7 @@
             this.gbFiltros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbFiltros.Name = "gbFiltros";
             this.gbFiltros.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbFiltros.Size = new System.Drawing.Size(647, 254);
+            this.gbFiltros.Size = new System.Drawing.Size(647, 231);
             this.gbFiltros.TabIndex = 11;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Aplicar Filtros";
@@ -112,7 +108,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.Aquamarine;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(588, 165);
+            this.btnBuscar.Location = new System.Drawing.Point(588, 128);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(38, 38);
@@ -121,7 +117,7 @@
             // 
             // txtNombArticulo
             // 
-            this.txtNombArticulo.Location = new System.Drawing.Point(276, 180);
+            this.txtNombArticulo.Location = new System.Drawing.Point(276, 143);
             this.txtNombArticulo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombArticulo.Name = "txtNombArticulo";
             this.txtNombArticulo.Size = new System.Drawing.Size(308, 30);
@@ -135,7 +131,7 @@
             this.cbMotivoBaja.FormattingEnabled = true;
             this.cbMotivoBaja.Items.AddRange(new object[] {
             "Cualquiera"});
-            this.cbMotivoBaja.Location = new System.Drawing.Point(276, 217);
+            this.cbMotivoBaja.Location = new System.Drawing.Point(276, 180);
             this.cbMotivoBaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMotivoBaja.Name = "cbMotivoBaja";
             this.cbMotivoBaja.Size = new System.Drawing.Size(201, 33);
@@ -145,7 +141,7 @@
             // 
             this.lblMotivoBaja.AutoSize = true;
             this.lblMotivoBaja.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblMotivoBaja.Location = new System.Drawing.Point(5, 224);
+            this.lblMotivoBaja.Location = new System.Drawing.Point(5, 187);
             this.lblMotivoBaja.Name = "lblMotivoBaja";
             this.lblMotivoBaja.Size = new System.Drawing.Size(145, 25);
             this.lblMotivoBaja.TabIndex = 9;
@@ -155,7 +151,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblNombre.Location = new System.Drawing.Point(5, 187);
+            this.lblNombre.Location = new System.Drawing.Point(5, 150);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(185, 25);
             this.lblNombre.TabIndex = 8;
@@ -169,7 +165,7 @@
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Items.AddRange(new object[] {
             "Cualquiera"});
-            this.cbCategoria.Location = new System.Drawing.Point(276, 142);
+            this.cbCategoria.Location = new System.Drawing.Point(276, 105);
             this.cbCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(201, 33);
@@ -179,35 +175,11 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCategoria.Location = new System.Drawing.Point(5, 150);
+            this.lblCategoria.Location = new System.Drawing.Point(5, 113);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(103, 25);
             this.lblCategoria.TabIndex = 6;
             this.lblCategoria.Text = "Categoria:";
-            // 
-            // cbUnidad
-            // 
-            this.cbUnidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbUnidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbUnidad.FormattingEnabled = true;
-            this.cbUnidad.Items.AddRange(new object[] {
-            "Cualquiera"});
-            this.cbUnidad.Location = new System.Drawing.Point(276, 103);
-            this.cbUnidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbUnidad.Name = "cbUnidad";
-            this.cbUnidad.Size = new System.Drawing.Size(201, 33);
-            this.cbUnidad.TabIndex = 5;
-            // 
-            // lblUnidad
-            // 
-            this.lblUnidad.AutoSize = true;
-            this.lblUnidad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblUnidad.Location = new System.Drawing.Point(5, 113);
-            this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(80, 25);
-            this.lblUnidad.TabIndex = 4;
-            this.lblUnidad.Text = "Unidad:";
             // 
             // dtpFechaFin
             // 
@@ -352,14 +324,14 @@
             this.dgvMermas.BackgroundColor = System.Drawing.Color.White;
             this.dgvMermas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMermas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMermas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMermas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMermas.ColumnHeadersHeight = 40;
             this.dgvMermas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMermas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -372,14 +344,14 @@
             this.precioDataGridViewTextBoxColumn,
             this.motivodebajaDataGridViewTextBoxColumn});
             this.dgvMermas.DataSource = this.mermaBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMermas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMermas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMermas.EnableHeadersVisualStyles = false;
             this.dgvMermas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvMermas.Location = new System.Drawing.Point(12, 270);
@@ -454,7 +426,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1345, 608);
             this.ControlBox = false;
             this.Controls.Add(this.dgvMermas);
@@ -483,8 +455,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.ComboBox cbUnidad;
-        private System.Windows.Forms.Label lblUnidad;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label lblFechaFinal;
         private System.Windows.Forms.Label lblFechaIni;

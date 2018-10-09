@@ -68,14 +68,14 @@ namespace Formularios
 
         private void OcultarPanelLateral()
         {
-            if (panelLateral.Width == 260)
+            if (panelLateral.Width == 297)
             {
-                panelLateral.Width = 50;
+                panelLateral.Width = 41;
                 //btnOcultarMenu.Location = new Point(6, 6);
             }
             else
             {
-                panelLateral.Width = 260;
+                panelLateral.Width = 297;
                 //btnOcultarMenu.Location = new Point(219, 6);
             }
         }

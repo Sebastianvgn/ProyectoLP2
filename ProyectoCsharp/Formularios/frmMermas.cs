@@ -18,7 +18,6 @@ namespace Formularios
         {
             InitializeComponent();
             cbMotivoBaja.DataSource = Enum.GetValues(typeof(TTipoMerma));
-            cbUnidad.DataSource = Enum.GetValues(typeof(TUnidad));
             mermas = new BindingList<Merma>();
             LeerMermas();
             dgvMermas.DataSource = mermas;

@@ -30,170 +30,50 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.gbFiltros = new System.Windows.Forms.GroupBox();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.cbUnidad = new System.Windows.Forms.ComboBox();
-            this.lblUnidad = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaFinal = new System.Windows.Forms.Label();
-            this.lblFechaIni = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRegistros = new System.Windows.Forms.Label();
             this.lblCantRegistros = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gbBusquedBasica = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.rbCatGeneral = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.rbDescripcion = new System.Windows.Forms.RadioButton();
-            this.rbCodigo = new System.Windows.Forms.RadioButton();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechacaducidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVerMovimientos = new System.Windows.Forms.Button();
-            this.gbFiltros.SuspendLayout();
+            this.btnVerMovimientos = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.articuloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gbBuscar = new System.Windows.Forms.GroupBox();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
+            this.rbMercaderia = new System.Windows.Forms.RadioButton();
+            this.rbInsumo = new System.Windows.Forms.RadioButton();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.gbBuscarPor = new System.Windows.Forms.GroupBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.rbCategoria = new System.Windows.Forms.RadioButton();
+            this.rbDescripcion = new System.Windows.Forms.RadioButton();
+            this.rbCodigo = new System.Windows.Forms.RadioButton();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).BeginInit();
-            this.gbBusquedBasica.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.gbBuscar.SuspendLayout();
+            this.gbBuscarPor.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gbFiltros
-            // 
-            this.gbFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbFiltros.Controls.Add(this.cbCategoria);
-            this.gbFiltros.Controls.Add(this.lblCategoria);
-            this.gbFiltros.Controls.Add(this.cbUnidad);
-            this.gbFiltros.Controls.Add(this.lblUnidad);
-            this.gbFiltros.Controls.Add(this.dateTimePicker2);
-            this.gbFiltros.Controls.Add(this.lblFechaFinal);
-            this.gbFiltros.Controls.Add(this.lblFechaIni);
-            this.gbFiltros.Controls.Add(this.dateTimePicker1);
-            this.gbFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFiltros.Location = new System.Drawing.Point(295, 8);
-            this.gbFiltros.Margin = new System.Windows.Forms.Padding(2);
-            this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Padding = new System.Windows.Forms.Padding(2);
-            this.gbFiltros.Size = new System.Drawing.Size(536, 162);
-            this.gbFiltros.TabIndex = 2;
-            this.gbFiltros.TabStop = false;
-            this.gbFiltros.Text = "Aplicar Filtros";
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Items.AddRange(new object[] {
-            "Cualquiera"});
-            this.cbCategoria.Location = new System.Drawing.Point(94, 119);
-            this.cbCategoria.Margin = new System.Windows.Forms.Padding(2);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(186, 28);
-            this.cbCategoria.TabIndex = 7;
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCategoria.Location = new System.Drawing.Point(4, 125);
-            this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(82, 20);
-            this.lblCategoria.TabIndex = 6;
-            this.lblCategoria.Text = "Categoria:";
-            // 
-            // cbUnidad
-            // 
-            this.cbUnidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbUnidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbUnidad.FormattingEnabled = true;
-            this.cbUnidad.Items.AddRange(new object[] {
-            "Cualquiera"});
-            this.cbUnidad.Location = new System.Drawing.Point(94, 85);
-            this.cbUnidad.Margin = new System.Windows.Forms.Padding(2);
-            this.cbUnidad.Name = "cbUnidad";
-            this.cbUnidad.Size = new System.Drawing.Size(186, 28);
-            this.cbUnidad.TabIndex = 5;
-            // 
-            // lblUnidad
-            // 
-            this.lblUnidad.AutoSize = true;
-            this.lblUnidad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblUnidad.Location = new System.Drawing.Point(4, 92);
-            this.lblUnidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUnidad.Name = "lblUnidad";
-            this.lblUnidad.Size = new System.Drawing.Size(64, 20);
-            this.lblUnidad.TabIndex = 4;
-            this.lblUnidad.Text = "Unidad:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker2.Location = new System.Drawing.Point(207, 53);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(316, 26);
-            this.dateTimePicker2.TabIndex = 3;
-            // 
-            // lblFechaFinal
-            // 
-            this.lblFechaFinal.AutoSize = true;
-            this.lblFechaFinal.Location = new System.Drawing.Point(4, 56);
-            this.lblFechaFinal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFechaFinal.Name = "lblFechaFinal";
-            this.lblFechaFinal.Size = new System.Drawing.Size(190, 20);
-            this.lblFechaFinal.TabIndex = 2;
-            this.lblFechaFinal.Text = "Fecha de caducidad final:";
-            // 
-            // lblFechaIni
-            // 
-            this.lblFechaIni.AutoSize = true;
-            this.lblFechaIni.Location = new System.Drawing.Point(4, 26);
-            this.lblFechaIni.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFechaIni.Name = "lblFechaIni";
-            this.lblFechaIni.Size = new System.Drawing.Size(199, 20);
-            this.lblFechaIni.TabIndex = 1;
-            this.lblFechaIni.Text = "Fecha de caducidad inicial:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.Location = new System.Drawing.Point(207, 23);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(316, 26);
-            this.dateTimePicker1.TabIndex = 0;
             // 
             // lblRegistros
             // 
             this.lblRegistros.AutoSize = true;
             this.lblRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistros.ForeColor = System.Drawing.Color.Green;
-            this.lblRegistros.Location = new System.Drawing.Point(244, 201);
+            this.lblRegistros.Location = new System.Drawing.Point(244, 218);
             this.lblRegistros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(258, 24);
@@ -205,7 +85,7 @@
             this.lblCantRegistros.AutoSize = true;
             this.lblCantRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantRegistros.ForeColor = System.Drawing.Color.Green;
-            this.lblCantRegistros.Location = new System.Drawing.Point(494, 201);
+            this.lblCantRegistros.Location = new System.Drawing.Point(494, 218);
             this.lblCantRegistros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantRegistros.Name = "lblCantRegistros";
             this.lblCantRegistros.Size = new System.Drawing.Size(0, 24);
@@ -261,14 +141,14 @@
             this.dgvArticulos.BackgroundColor = System.Drawing.Color.White;
             this.dgvArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvArticulos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvArticulos.ColumnHeadersHeight = 40;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -277,20 +157,21 @@
             this.unidadDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
             this.fechacaducidadDataGridViewTextBoxColumn,
-            this.categoriaDataGridViewTextBoxColumn});
+            this.categoriaDataGridViewTextBoxColumn,
+            this.btnVerMovimientos});
             this.dgvArticulos.DataSource = this.articuloBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvArticulos.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvArticulos.EnableHeadersVisualStyles = false;
             this.dgvArticulos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvArticulos.Location = new System.Drawing.Point(78, 255);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
@@ -300,114 +181,11 @@
             this.dgvArticulos.Size = new System.Drawing.Size(927, 315);
             this.dgvArticulos.TabIndex = 8;
             // 
-            // articuloBindingSource
-            // 
-            this.articuloBindingSource.DataSource = typeof(Articulo);
-            // 
-            // gbBusquedBasica
-            // 
-            this.gbBusquedBasica.Controls.Add(this.pictureBox3);
-            this.gbBusquedBasica.Controls.Add(this.rbCatGeneral);
-            this.gbBusquedBasica.Controls.Add(this.textBox1);
-            this.gbBusquedBasica.Controls.Add(this.rbDescripcion);
-            this.gbBusquedBasica.Controls.Add(this.rbCodigo);
-            this.gbBusquedBasica.Controls.Add(this.btnBuscar);
-            this.gbBusquedBasica.Controls.Add(this.shapeContainer1);
-            this.gbBusquedBasica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbBusquedBasica.Location = new System.Drawing.Point(11, 8);
-            this.gbBusquedBasica.Margin = new System.Windows.Forms.Padding(2);
-            this.gbBusquedBasica.Name = "gbBusquedBasica";
-            this.gbBusquedBasica.Padding = new System.Windows.Forms.Padding(2);
-            this.gbBusquedBasica.Size = new System.Drawing.Size(204, 232);
-            this.gbBusquedBasica.TabIndex = 9;
-            this.gbBusquedBasica.TabStop = false;
-            this.gbBusquedBasica.Text = "Buscar por";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(4, 133);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(194, 10);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            // 
-            // rbCatGeneral
-            // 
-            this.rbCatGeneral.AutoSize = true;
-            this.rbCatGeneral.Location = new System.Drawing.Point(21, 81);
-            this.rbCatGeneral.Margin = new System.Windows.Forms.Padding(2);
-            this.rbCatGeneral.Name = "rbCatGeneral";
-            this.rbCatGeneral.Size = new System.Drawing.Size(152, 24);
-            this.rbCatGeneral.TabIndex = 5;
-            this.rbCatGeneral.TabStop = true;
-            this.rbCatGeneral.Text = "Catalogo General";
-            this.rbCatGeneral.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(4, 114);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 19);
-            this.textBox1.TabIndex = 3;
-            // 
-            // rbDescripcion
-            // 
-            this.rbDescripcion.AutoSize = true;
-            this.rbDescripcion.Location = new System.Drawing.Point(21, 53);
-            this.rbDescripcion.Margin = new System.Windows.Forms.Padding(2);
-            this.rbDescripcion.Name = "rbDescripcion";
-            this.rbDescripcion.Size = new System.Drawing.Size(110, 24);
-            this.rbDescripcion.TabIndex = 2;
-            this.rbDescripcion.TabStop = true;
-            this.rbDescripcion.Text = "Descripcion";
-            this.rbDescripcion.UseVisualStyleBackColor = true;
-            // 
-            // rbCodigo
-            // 
-            this.rbCodigo.AutoSize = true;
-            this.rbCodigo.Location = new System.Drawing.Point(21, 24);
-            this.rbCodigo.Margin = new System.Windows.Forms.Padding(2);
-            this.rbCodigo.Name = "rbCodigo";
-            this.rbCodigo.Size = new System.Drawing.Size(77, 24);
-            this.rbCodigo.TabIndex = 1;
-            this.rbCodigo.TabStop = true;
-            this.rbCodigo.Text = "Codigo";
-            this.rbCodigo.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.AutoSize = true;
-            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.ForeColor = System.Drawing.Color.Aquamarine;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(61, 147);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(70, 70);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(2, 21);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Size = new System.Drawing.Size(200, 209);
-            this.shapeContainer1.TabIndex = 4;
-            this.shapeContainer1.TabStop = false;
-            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -422,8 +200,8 @@
             // unidadDataGridViewTextBoxColumn
             // 
             this.unidadDataGridViewTextBoxColumn.DataPropertyName = "Unidad";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.unidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.unidadDataGridViewTextBoxColumn.HeaderText = "Unidad";
             this.unidadDataGridViewTextBoxColumn.Name = "unidadDataGridViewTextBoxColumn";
             this.unidadDataGridViewTextBoxColumn.ReadOnly = true;
@@ -431,8 +209,8 @@
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.cantidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
@@ -440,8 +218,8 @@
             // fechacaducidadDataGridViewTextBoxColumn
             // 
             this.fechacaducidadDataGridViewTextBoxColumn.DataPropertyName = "Fecha_caducidad";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fechacaducidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fechacaducidadDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.fechacaducidadDataGridViewTextBoxColumn.HeaderText = "Fecha de Caducidad";
             this.fechacaducidadDataGridViewTextBoxColumn.Name = "fechacaducidadDataGridViewTextBoxColumn";
             this.fechacaducidadDataGridViewTextBoxColumn.ReadOnly = true;
@@ -449,56 +227,217 @@
             // categoriaDataGridViewTextBoxColumn
             // 
             this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.categoriaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.categoriaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
             this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
             this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // btnVerMovimientos
             // 
-            this.btnVerMovimientos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerMovimientos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnVerMovimientos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerMovimientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerMovimientos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerMovimientos.ForeColor = System.Drawing.Color.White;
-            this.btnVerMovimientos.Location = new System.Drawing.Point(801, 192);
-            this.btnVerMovimientos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVerMovimientos.HeaderText = "Ver Movimientos";
             this.btnVerMovimientos.Name = "btnVerMovimientos";
-            this.btnVerMovimientos.Size = new System.Drawing.Size(176, 59);
-            this.btnVerMovimientos.TabIndex = 15;
-            this.btnVerMovimientos.Text = "Ver Movimientos Seleccionado";
-            this.btnVerMovimientos.UseVisualStyleBackColor = false;
-            this.btnVerMovimientos.Click += new System.EventHandler(this.btnVerMovimientos_Click);
+            this.btnVerMovimientos.ReadOnly = true;
+            this.btnVerMovimientos.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnVerMovimientos.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnVerMovimientos.Text = "Ver Movimientos";
+            this.btnVerMovimientos.ToolTipText = "Ver Movimientos";
+            this.btnVerMovimientos.UseColumnTextForButtonValue = true;
+            // 
+            // articuloBindingSource
+            // 
+            this.articuloBindingSource.DataSource = typeof(Articulo);
+            // 
+            // gbBuscar
+            // 
+            this.gbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBuscar.Controls.Add(this.rbTodos);
+            this.gbBuscar.Controls.Add(this.rbMercaderia);
+            this.gbBuscar.Controls.Add(this.rbInsumo);
+            this.gbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbBuscar.Location = new System.Drawing.Point(86, 9);
+            this.gbBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscar.Name = "gbBuscar";
+            this.gbBuscar.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscar.Size = new System.Drawing.Size(310, 61);
+            this.gbBuscar.TabIndex = 2;
+            this.gbBuscar.TabStop = false;
+            this.gbBuscar.Text = "Buscar";
+            // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Checked = true;
+            this.rbTodos.Location = new System.Drawing.Point(235, 30);
+            this.rbTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(71, 24);
+            this.rbTodos.TabIndex = 2;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodos_CheckedChanged);
+            // 
+            // rbMercaderia
+            // 
+            this.rbMercaderia.AutoSize = true;
+            this.rbMercaderia.Location = new System.Drawing.Point(115, 30);
+            this.rbMercaderia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMercaderia.Name = "rbMercaderia";
+            this.rbMercaderia.Size = new System.Drawing.Size(106, 24);
+            this.rbMercaderia.TabIndex = 1;
+            this.rbMercaderia.Text = "Mercadería";
+            this.rbMercaderia.UseVisualStyleBackColor = true;
+            this.rbMercaderia.CheckedChanged += new System.EventHandler(this.rbMercaderia_CheckedChanged);
+            // 
+            // rbInsumo
+            // 
+            this.rbInsumo.AutoSize = true;
+            this.rbInsumo.Location = new System.Drawing.Point(15, 30);
+            this.rbInsumo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbInsumo.Name = "rbInsumo";
+            this.rbInsumo.Size = new System.Drawing.Size(88, 24);
+            this.rbInsumo.TabIndex = 0;
+            this.rbInsumo.Text = "Insumos";
+            this.rbInsumo.UseVisualStyleBackColor = true;
+            this.rbInsumo.CheckedChanged += new System.EventHandler(this.rbInsumo_CheckedChanged);
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Items.AddRange(new object[] {
+            "Frutas y Verduras",
+            "Carnes",
+            "Lácteos"});
+            this.cbCategoria.Location = new System.Drawing.Point(138, 89);
+            this.cbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(371, 25);
+            this.cbCategoria.TabIndex = 9;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtDescripcion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtDescripcion.Enabled = false;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(138, 59);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(371, 23);
+            this.txtDescripcion.TabIndex = 9;
+            // 
+            // gbBuscarPor
+            // 
+            this.gbBuscarPor.Controls.Add(this.txtCodigo);
+            this.gbBuscarPor.Controls.Add(this.rbCategoria);
+            this.gbBuscarPor.Controls.Add(this.cbCategoria);
+            this.gbBuscarPor.Controls.Add(this.rbDescripcion);
+            this.gbBuscarPor.Controls.Add(this.txtDescripcion);
+            this.gbBuscarPor.Controls.Add(this.rbCodigo);
+            this.gbBuscarPor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbBuscarPor.Location = new System.Drawing.Point(86, 86);
+            this.gbBuscarPor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscarPor.Name = "gbBuscarPor";
+            this.gbBuscarPor.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbBuscarPor.Size = new System.Drawing.Size(524, 130);
+            this.gbBuscarPor.TabIndex = 10;
+            this.gbBuscarPor.TabStop = false;
+            this.gbBuscarPor.Text = "Buscar Por";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Enabled = false;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(138, 32);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(371, 23);
+            this.txtCodigo.TabIndex = 10;
+            // 
+            // rbCategoria
+            // 
+            this.rbCategoria.AutoSize = true;
+            this.rbCategoria.Checked = true;
+            this.rbCategoria.Location = new System.Drawing.Point(15, 88);
+            this.rbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbCategoria.Name = "rbCategoria";
+            this.rbCategoria.Size = new System.Drawing.Size(96, 24);
+            this.rbCategoria.TabIndex = 3;
+            this.rbCategoria.TabStop = true;
+            this.rbCategoria.Text = "Categoría";
+            this.rbCategoria.UseVisualStyleBackColor = true;
+            this.rbCategoria.CheckedChanged += new System.EventHandler(this.rbCategoria_CheckedChanged);
+            // 
+            // rbDescripcion
+            // 
+            this.rbDescripcion.AutoSize = true;
+            this.rbDescripcion.Location = new System.Drawing.Point(15, 59);
+            this.rbDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbDescripcion.Name = "rbDescripcion";
+            this.rbDescripcion.Size = new System.Drawing.Size(110, 24);
+            this.rbDescripcion.TabIndex = 2;
+            this.rbDescripcion.Text = "Descripción";
+            this.rbDescripcion.UseVisualStyleBackColor = true;
+            this.rbDescripcion.CheckedChanged += new System.EventHandler(this.rbDescripcion_CheckedChanged);
+            // 
+            // rbCodigo
+            // 
+            this.rbCodigo.AutoSize = true;
+            this.rbCodigo.Location = new System.Drawing.Point(15, 32);
+            this.rbCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbCodigo.Name = "rbCodigo";
+            this.rbCodigo.Size = new System.Drawing.Size(77, 24);
+            this.rbCodigo.TabIndex = 1;
+            this.rbCodigo.Text = "Código";
+            this.rbCodigo.UseVisualStyleBackColor = true;
+            this.rbCodigo.CheckedChanged += new System.EventHandler(this.rbCodigo_CheckedChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(626, 134);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(86, 44);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1049, 588);
-            this.Controls.Add(this.btnVerMovimientos);
-            this.Controls.Add(this.gbBusquedBasica);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.gbBuscarPor);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lblCantRegistros);
             this.Controls.Add(this.lblRegistros);
-            this.Controls.Add(this.gbFiltros);
+            this.Controls.Add(this.gbBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmArticulos";
             this.Text = "frmArticulos";
             this.Load += new System.EventHandler(this.frmArticulos_Load);
-            this.gbFiltros.ResumeLayout(false);
-            this.gbFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articuloBindingSource)).EndInit();
-            this.gbBusquedBasica.ResumeLayout(false);
-            this.gbBusquedBasica.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.gbBuscar.ResumeLayout(false);
+            this.gbBuscar.PerformLayout();
+            this.gbBuscarPor.ResumeLayout(false);
+            this.gbBuscarPor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,34 +445,29 @@
 
         #endregion
         private System.Windows.Forms.BindingSource articuloBindingSource;
-        private System.Windows.Forms.GroupBox gbFiltros;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label lblFechaFinal;
-        private System.Windows.Forms.Label lblFechaIni;
-        private System.Windows.Forms.ComboBox cbCategoria;
-        private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.ComboBox cbUnidad;
-        private System.Windows.Forms.Label lblUnidad;
         private System.Windows.Forms.Label lblRegistros;
         private System.Windows.Forms.Label lblCantRegistros;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvArticulos;
-        private System.Windows.Forms.GroupBox gbBusquedBasica;
-        private System.Windows.Forms.RadioButton rbCatGeneral;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton rbDescripcion;
-        private System.Windows.Forms.RadioButton rbCodigo;
-        private System.Windows.Forms.Button btnBuscar;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechacaducidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnVerMovimientos;
+        private System.Windows.Forms.DataGridViewButtonColumn btnVerMovimientos;
+        private System.Windows.Forms.GroupBox gbBuscar;
+        private System.Windows.Forms.RadioButton rbMercaderia;
+        private System.Windows.Forms.RadioButton rbInsumo;
+        private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.RadioButton rbTodos;
+        private System.Windows.Forms.GroupBox gbBuscarPor;
+        private System.Windows.Forms.RadioButton rbDescripcion;
+        private System.Windows.Forms.RadioButton rbCodigo;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.RadioButton rbCategoria;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

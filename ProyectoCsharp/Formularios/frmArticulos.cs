@@ -18,7 +18,6 @@ namespace Formularios
         {
             InitializeComponent();
             articulos = new BindingList<Articulo>();
-            cbUnidad.DataSource = Enum.GetValues(typeof(TUnidad));
             LeerArticulos();
             
             dgvArticulos.DataSource = articulos;
@@ -76,6 +75,64 @@ namespace Formularios
                 string unidad = dgvArticulos.Rows[i].Cells[2].Value.ToString();
                 frmMovimientosArticulo frm = new frmMovimientosArticulo(codigo, categoria, descripcion, unidad);
                 frm.ShowDialog();
+            }
+        }
+
+        private void rbCodigo_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbCodigo.Checked)
+            {
+                txtCodigo.Enabled = true;
+                txtDescripcion.Enabled = false;
+                cbCategoria.Enabled = false;
+            }
+        }
+
+        private void rbDescripcion_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbDescripcion.Checked)
+            {
+                txtCodigo.Enabled = false;
+                txtDescripcion.Enabled = true;
+                cbCategoria.Enabled = false;
+            }
+        }
+
+        private void rbCategoria_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbCategoria.Checked)
+            {
+                txtCodigo.Enabled = false;
+                txtDescripcion.Enabled = false;
+                cbCategoria.Enabled = true;
+            }
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbTodos.Checked)
+            {
+                rbCategoria.Enabled = true;
+                cbCategoria.Enabled = true;
+            }
+        }
+
+        private void rbMercaderia_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbMercaderia.Checked)
+            {
+                rbCategoria.Enabled = false;
+                cbCategoria.Enabled = false;
+                rbCategoria.Checked = false;
+            }
+        }
+
+        private void rbInsumo_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbInsumo.Checked)
+            {
+                rbCategoria.Enabled = true;
+                cbCategoria.Enabled = true;
             }
         }
     }

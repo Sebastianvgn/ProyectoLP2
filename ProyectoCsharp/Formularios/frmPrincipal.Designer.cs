@@ -35,6 +35,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnOcultarMenu = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
             this.btnArticulosCaducar = new System.Windows.Forms.Button();
             this.btnAyuda = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.btnIngresarPedido = new System.Windows.Forms.Button();
             this.btnGenerarConsolidado = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnOcultarMenu = new System.Windows.Forms.Button();
             this.btnInsumos = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panelSuperior.SuspendLayout();
@@ -58,16 +58,18 @@
             // 
             // panelSuperior
             // 
-            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(164)))), ((int)(((byte)(211)))));
             this.panelSuperior.Controls.Add(this.btnOcultar);
             this.panelSuperior.Controls.Add(this.btnMaximizar);
             this.panelSuperior.Controls.Add(this.btnCerrar);
             this.panelSuperior.Controls.Add(this.label1);
             this.panelSuperior.Controls.Add(this.btnMinimizar);
+            this.panelSuperior.Controls.Add(this.btnOcultarMenu);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(1346, 38);
+            this.panelSuperior.Size = new System.Drawing.Size(1795, 47);
             this.panelSuperior.TabIndex = 0;
             this.panelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
             // 
@@ -76,9 +78,10 @@
             this.btnOcultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOcultar.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultar.Image")));
-            this.btnOcultar.Location = new System.Drawing.Point(1247, 5);
+            this.btnOcultar.Location = new System.Drawing.Point(1663, 6);
+            this.btnOcultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOcultar.Name = "btnOcultar";
-            this.btnOcultar.Size = new System.Drawing.Size(28, 28);
+            this.btnOcultar.Size = new System.Drawing.Size(37, 34);
             this.btnOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnOcultar.TabIndex = 4;
             this.btnOcultar.TabStop = false;
@@ -89,9 +92,10 @@
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1281, 5);
+            this.btnMaximizar.Location = new System.Drawing.Point(1708, 6);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(28, 28);
+            this.btnMaximizar.Size = new System.Drawing.Size(37, 34);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximizar.TabIndex = 2;
             this.btnMaximizar.TabStop = false;
@@ -102,9 +106,10 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1315, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(1753, 6);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 28);
+            this.btnCerrar.Size = new System.Drawing.Size(37, 34);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.TabStop = false;
@@ -115,9 +120,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 22);
+            this.label1.Size = new System.Drawing.Size(375, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sistema de Almacén LUCET SA";
             // 
@@ -126,13 +132,35 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1281, 5);
+            this.btnMinimizar.Location = new System.Drawing.Point(1708, 6);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(28, 28);
+            this.btnMinimizar.Size = new System.Drawing.Size(37, 34);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizar.TabIndex = 3;
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnOcultarMenu
+            // 
+            this.btnOcultarMenu.AutoSize = true;
+            this.btnOcultarMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnOcultarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOcultarMenu.FlatAppearance.BorderSize = 0;
+            this.btnOcultarMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnOcultarMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnOcultarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOcultarMenu.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOcultarMenu.ForeColor = System.Drawing.Color.White;
+            this.btnOcultarMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultarMenu.Image")));
+            this.btnOcultarMenu.Location = new System.Drawing.Point(396, 0);
+            this.btnOcultarMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOcultarMenu.Name = "btnOcultarMenu";
+            this.btnOcultarMenu.Size = new System.Drawing.Size(51, 47);
+            this.btnOcultarMenu.TabIndex = 1;
+            this.btnOcultarMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOcultarMenu.UseVisualStyleBackColor = false;
+            this.btnOcultarMenu.Click += new System.EventHandler(this.btnOcultarMenu_Click);
             // 
             // panelLateral
             // 
@@ -146,12 +174,12 @@
             this.panelLateral.Controls.Add(this.btnIngresarPedido);
             this.panelLateral.Controls.Add(this.btnGenerarConsolidado);
             this.panelLateral.Controls.Add(this.btnSalir);
-            this.panelLateral.Controls.Add(this.btnOcultarMenu);
             this.panelLateral.Controls.Add(this.btnInsumos);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLateral.Location = new System.Drawing.Point(0, 38);
+            this.panelLateral.Location = new System.Drawing.Point(0, 47);
+            this.panelLateral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(260, 801);
+            this.panelLateral.Size = new System.Drawing.Size(396, 986);
             this.panelLateral.TabIndex = 1;
             // 
             // btnArticulosCaducar
@@ -165,12 +193,13 @@
             this.btnArticulosCaducar.ForeColor = System.Drawing.Color.White;
             this.btnArticulosCaducar.Image = ((System.Drawing.Image)(resources.GetObject("btnArticulosCaducar.Image")));
             this.btnArticulosCaducar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArticulosCaducar.Location = new System.Drawing.Point(0, 490);
+            this.btnArticulosCaducar.Location = new System.Drawing.Point(0, 603);
+            this.btnArticulosCaducar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnArticulosCaducar.Name = "btnArticulosCaducar";
-            this.btnArticulosCaducar.Size = new System.Drawing.Size(260, 51);
+            this.btnArticulosCaducar.Size = new System.Drawing.Size(396, 63);
             this.btnArticulosCaducar.TabIndex = 10;
             this.btnArticulosCaducar.Text = "Artículos a Caducar";
-            this.btnArticulosCaducar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnArticulosCaducar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnArticulosCaducar.UseVisualStyleBackColor = true;
             this.btnArticulosCaducar.Click += new System.EventHandler(this.btnArticulosCaducar_Click);
             // 
@@ -185,12 +214,14 @@
             this.btnAyuda.ForeColor = System.Drawing.Color.White;
             this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 547);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 673);
+            this.btnAyuda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(260, 51);
+            this.btnAyuda.Size = new System.Drawing.Size(396, 63);
             this.btnAyuda.TabIndex = 9;
             this.btnAyuda.Text = "Ayuda";
             this.btnAyuda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAyuda.UseVisualStyleBackColor = true;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
@@ -205,12 +236,13 @@
             this.btnPedidosPendientes.ForeColor = System.Drawing.Color.White;
             this.btnPedidosPendientes.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidosPendientes.Image")));
             this.btnPedidosPendientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPedidosPendientes.Location = new System.Drawing.Point(0, 433);
+            this.btnPedidosPendientes.Location = new System.Drawing.Point(0, 533);
+            this.btnPedidosPendientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPedidosPendientes.Name = "btnPedidosPendientes";
-            this.btnPedidosPendientes.Size = new System.Drawing.Size(260, 51);
+            this.btnPedidosPendientes.Size = new System.Drawing.Size(396, 63);
             this.btnPedidosPendientes.TabIndex = 8;
             this.btnPedidosPendientes.Text = "Pedidos Pendientes";
-            this.btnPedidosPendientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPedidosPendientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPedidosPendientes.UseVisualStyleBackColor = true;
             this.btnPedidosPendientes.Click += new System.EventHandler(this.btnPedidosPendientes_Click);
             // 
@@ -226,12 +258,13 @@
             this.btnMermas.ForeColor = System.Drawing.Color.White;
             this.btnMermas.Image = ((System.Drawing.Image)(resources.GetObject("btnMermas.Image")));
             this.btnMermas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMermas.Location = new System.Drawing.Point(0, 376);
+            this.btnMermas.Location = new System.Drawing.Point(0, 463);
+            this.btnMermas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMermas.Name = "btnMermas";
-            this.btnMermas.Size = new System.Drawing.Size(260, 51);
+            this.btnMermas.Size = new System.Drawing.Size(396, 63);
             this.btnMermas.TabIndex = 7;
             this.btnMermas.Text = "Mermas";
-            this.btnMermas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMermas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMermas.UseVisualStyleBackColor = false;
             this.btnMermas.Click += new System.EventHandler(this.btnMermas_Click);
             // 
@@ -246,12 +279,13 @@
             this.btnRegistroIngresoComprobantes.ForeColor = System.Drawing.Color.White;
             this.btnRegistroIngresoComprobantes.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroIngresoComprobantes.Image")));
             this.btnRegistroIngresoComprobantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistroIngresoComprobantes.Location = new System.Drawing.Point(0, 252);
+            this.btnRegistroIngresoComprobantes.Location = new System.Drawing.Point(0, 310);
+            this.btnRegistroIngresoComprobantes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistroIngresoComprobantes.Name = "btnRegistroIngresoComprobantes";
-            this.btnRegistroIngresoComprobantes.Size = new System.Drawing.Size(260, 56);
+            this.btnRegistroIngresoComprobantes.Size = new System.Drawing.Size(396, 69);
             this.btnRegistroIngresoComprobantes.TabIndex = 6;
             this.btnRegistroIngresoComprobantes.Text = "Registro Ingreso Comprobantes";
-            this.btnRegistroIngresoComprobantes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistroIngresoComprobantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistroIngresoComprobantes.UseVisualStyleBackColor = true;
             this.btnRegistroIngresoComprobantes.Click += new System.EventHandler(this.btnRegistroIngresoComprobantes_Click);
             // 
@@ -266,12 +300,13 @@
             this.btnRegistroTransferencias.ForeColor = System.Drawing.Color.White;
             this.btnRegistroTransferencias.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroTransferencias.Image")));
             this.btnRegistroTransferencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistroTransferencias.Location = new System.Drawing.Point(3, 314);
+            this.btnRegistroTransferencias.Location = new System.Drawing.Point(4, 386);
+            this.btnRegistroTransferencias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistroTransferencias.Name = "btnRegistroTransferencias";
-            this.btnRegistroTransferencias.Size = new System.Drawing.Size(260, 56);
+            this.btnRegistroTransferencias.Size = new System.Drawing.Size(392, 69);
             this.btnRegistroTransferencias.TabIndex = 5;
-            this.btnRegistroTransferencias.Text = "Registro\r\nTransferencias";
-            this.btnRegistroTransferencias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistroTransferencias.Text = "Registro Transferencias";
+            this.btnRegistroTransferencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRegistroTransferencias.UseVisualStyleBackColor = true;
             this.btnRegistroTransferencias.Click += new System.EventHandler(this.btnRegistroTransferencias_Click);
             // 
@@ -286,12 +321,13 @@
             this.btnIngresarPedido.ForeColor = System.Drawing.Color.White;
             this.btnIngresarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnIngresarPedido.Image")));
             this.btnIngresarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngresarPedido.Location = new System.Drawing.Point(0, 195);
+            this.btnIngresarPedido.Location = new System.Drawing.Point(0, 240);
+            this.btnIngresarPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIngresarPedido.Name = "btnIngresarPedido";
-            this.btnIngresarPedido.Size = new System.Drawing.Size(260, 51);
+            this.btnIngresarPedido.Size = new System.Drawing.Size(396, 63);
             this.btnIngresarPedido.TabIndex = 4;
             this.btnIngresarPedido.Text = "Ingresar Pedido";
-            this.btnIngresarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIngresarPedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresarPedido.UseVisualStyleBackColor = true;
             this.btnIngresarPedido.Click += new System.EventHandler(this.btnIngresarPedido_Click);
             // 
@@ -306,12 +342,13 @@
             this.btnGenerarConsolidado.ForeColor = System.Drawing.Color.White;
             this.btnGenerarConsolidado.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarConsolidado.Image")));
             this.btnGenerarConsolidado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarConsolidado.Location = new System.Drawing.Point(0, 138);
+            this.btnGenerarConsolidado.Location = new System.Drawing.Point(0, 170);
+            this.btnGenerarConsolidado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerarConsolidado.Name = "btnGenerarConsolidado";
-            this.btnGenerarConsolidado.Size = new System.Drawing.Size(260, 51);
+            this.btnGenerarConsolidado.Size = new System.Drawing.Size(396, 63);
             this.btnGenerarConsolidado.TabIndex = 3;
             this.btnGenerarConsolidado.Text = "Generar Consolidado";
-            this.btnGenerarConsolidado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerarConsolidado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGenerarConsolidado.UseVisualStyleBackColor = true;
             this.btnGenerarConsolidado.Click += new System.EventHandler(this.btnGenerarConsolidado_Click);
             // 
@@ -327,34 +364,15 @@
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 701);
+            this.btnSalir.Location = new System.Drawing.Point(0, 863);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(260, 51);
+            this.btnSalir.Size = new System.Drawing.Size(396, 63);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnOcultarMenu
-            // 
-            this.btnOcultarMenu.AutoSize = true;
-            this.btnOcultarMenu.BackColor = System.Drawing.Color.Black;
-            this.btnOcultarMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOcultarMenu.FlatAppearance.BorderSize = 0;
-            this.btnOcultarMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.btnOcultarMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnOcultarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOcultarMenu.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOcultarMenu.ForeColor = System.Drawing.Color.White;
-            this.btnOcultarMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultarMenu.Image")));
-            this.btnOcultarMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOcultarMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnOcultarMenu.Name = "btnOcultarMenu";
-            this.btnOcultarMenu.Size = new System.Drawing.Size(260, 51);
-            this.btnOcultarMenu.TabIndex = 1;
-            this.btnOcultarMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOcultarMenu.UseVisualStyleBackColor = false;
-            this.btnOcultarMenu.Click += new System.EventHandler(this.btnOcultarMenu_Click);
             // 
             // btnInsumos
             // 
@@ -367,12 +385,13 @@
             this.btnInsumos.ForeColor = System.Drawing.Color.White;
             this.btnInsumos.Image = ((System.Drawing.Image)(resources.GetObject("btnInsumos.Image")));
             this.btnInsumos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInsumos.Location = new System.Drawing.Point(0, 81);
+            this.btnInsumos.Location = new System.Drawing.Point(0, 100);
+            this.btnInsumos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInsumos.Name = "btnInsumos";
-            this.btnInsumos.Size = new System.Drawing.Size(260, 51);
+            this.btnInsumos.Size = new System.Drawing.Size(396, 63);
             this.btnInsumos.TabIndex = 0;
             this.btnInsumos.Text = "Insumos y Mercadería";
-            this.btnInsumos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInsumos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInsumos.UseVisualStyleBackColor = true;
             this.btnInsumos.Click += new System.EventHandler(this.btnInsumos_Click);
             // 
@@ -381,22 +400,23 @@
             this.panelPrincipal.BackColor = System.Drawing.Color.White;
             this.panelPrincipal.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrincipal.Location = new System.Drawing.Point(260, 38);
+            this.panelPrincipal.Location = new System.Drawing.Point(396, 47);
+            this.panelPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(1086, 801);
+            this.panelPrincipal.Size = new System.Drawing.Size(1399, 986);
             this.panelPrincipal.TabIndex = 2;
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1346, 839);
+            this.ClientSize = new System.Drawing.Size(1795, 1033);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelLateral);
             this.Controls.Add(this.panelSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPrincipal";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
@@ -407,7 +427,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.panelLateral.ResumeLayout(false);
-            this.panelLateral.PerformLayout();
             this.ResumeLayout(false);
 
         }

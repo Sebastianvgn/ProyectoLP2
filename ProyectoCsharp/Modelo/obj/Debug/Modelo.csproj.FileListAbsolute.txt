@@ -51,3 +51,14 @@ C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.pdb
 C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
 C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.dll
 C:\temp\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.dll
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.dll
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.pdb
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.dll
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.pdb
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.dll
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.pdb

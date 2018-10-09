@@ -203,3 +203,52 @@ C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.Properties.
 C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csproj.GenerateResource.Cache
 C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.exe
 C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Formularios.exe.config
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Formularios.exe
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Formularios.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Modelo.dll
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Modelo.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csprojResolveAssemblyReference.cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmArticulosCaducar.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmArticulos.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmDetallePedido.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmGenerarConsolidado.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmIngresarPedido.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmLogin.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmMermas.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmMovimientosArticulo.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmPedidosPorPendientes.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmPrincipal.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmRecuperarContraseña.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmRegistroIngresoComprobantes.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmRegistroTransferencias.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.Properties.Resources.resources
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csproj.GenerateResource.Cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csproj.CoreCompileInputs.cache
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.exe
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.pdb
+C:\Users\JHONATAN LOLI\Desktop\FACULTAD\Nivel 7\Lenguaje de Programacion 2\Trabajo grupal\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmNuevaContraseña.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Formularios.exe.config
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Formularios.exe
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Formularios.pdb
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Modelo.dll
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Modelo.pdb
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csprojResolveAssemblyReference.cache
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmArticulosCaducar.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmArticulos.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmDetallePedido.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmGenerarConsolidado.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmIngresarPedido.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmLogin.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmMermas.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmMovimientosArticulo.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmNuevaContraseña.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmPedidosPorPendientes.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmPrincipal.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmRecuperarContraseña.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmRegistroIngresoComprobantes.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmRegistroTransferencias.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.Properties.Resources.resources
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csproj.GenerateResource.Cache
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.exe
+C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.pdb

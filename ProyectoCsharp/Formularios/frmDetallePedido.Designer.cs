@@ -56,9 +56,9 @@
             this.panel_superior.Controls.Add(this.btnCerrar);
             this.panel_superior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_superior.Location = new System.Drawing.Point(0, 0);
-            this.panel_superior.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_superior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_superior.Name = "panel_superior";
-            this.panel_superior.Size = new System.Drawing.Size(784, 32);
+            this.panel_superior.Size = new System.Drawing.Size(1045, 39);
             this.panel_superior.TabIndex = 11;
             this.panel_superior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_superior_MouseDown);
             // 
@@ -67,9 +67,10 @@
             this.txtTitulo.AutoSize = true;
             this.txtTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.ForeColor = System.Drawing.Color.White;
-            this.txtTitulo.Location = new System.Drawing.Point(264, 7);
+            this.txtTitulo.Location = new System.Drawing.Point(352, 9);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(269, 19);
+            this.txtTitulo.Size = new System.Drawing.Size(342, 23);
             this.txtTitulo.TabIndex = 7;
             this.txtTitulo.Text = "Detalles del pedido seleccionado";
             this.txtTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTitulo_MouseDown);
@@ -79,9 +80,10 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(753, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(1004, 4);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 28);
+            this.btnCerrar.Size = new System.Drawing.Size(37, 34);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.TabStop = false;
@@ -138,26 +140,26 @@
             this.dgvDetallesPedidos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetallesPedidos.EnableHeadersVisualStyles = false;
             this.dgvDetallesPedidos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDetallesPedidos.Location = new System.Drawing.Point(36, 58);
-            this.dgvDetallesPedidos.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDetallesPedidos.Location = new System.Drawing.Point(48, 71);
+            this.dgvDetallesPedidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDetallesPedidos.Name = "dgvDetallesPedidos";
             this.dgvDetallesPedidos.ReadOnly = true;
             this.dgvDetallesPedidos.RowHeadersVisible = false;
             this.dgvDetallesPedidos.RowTemplate.Height = 24;
             this.dgvDetallesPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetallesPedidos.Size = new System.Drawing.Size(715, 494);
+            this.dgvDetallesPedidos.Size = new System.Drawing.Size(953, 608);
             this.dgvDetallesPedidos.TabIndex = 12;
             // 
             // frmDetallePedido
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(784, 581);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1045, 715);
             this.Controls.Add(this.dgvDetallesPedidos);
             this.Controls.Add(this.panel_superior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDetallePedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDetallePedido";
