@@ -8,6 +8,8 @@ namespace AccesoDatos
 {
     public class DBManager
     {
-        public static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=a20145779; password=0Fjw8H; database=a20145779; SslMode=None";
+        public static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=0Fjw8H; database=a20145779; SslMode=None";
+
+
     }
 }
