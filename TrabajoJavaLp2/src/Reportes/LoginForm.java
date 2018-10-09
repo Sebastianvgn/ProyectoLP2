@@ -49,34 +49,34 @@ public class LoginForm extends javax.swing.JFrame {
 
         lblTextLogin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTextLogin.setForeground(new java.awt.Color(255, 255, 255));
-        lblTextLogin.setText("Login Form");
+        lblTextLogin.setText("Sistema de Almacén LUCET SAC - Ingreso");
 
         javax.swing.GroupLayout pnlTopLayout = new javax.swing.GroupLayout(pnlTop);
         pnlTop.setLayout(pnlTopLayout);
         pnlTopLayout.setHorizontalGroup(
             pnlTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTopLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(35, 35, 35)
                 .addComponent(lblTextLogin)
-                .addContainerGap(435, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         pnlTopLayout.setVerticalGroup(
             pnlTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTopLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(47, 47, 47)
                 .addComponent(lblTextLogin)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pnlBottom.setBackground(new java.awt.Color(255, 255, 255));
 
         lblPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/password.png"))); // NOI18N
-        lblPassword.setText("Password:");
+        lblPassword.setText("Contraseña:");
 
         lblUsername.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblUsername.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/user.png"))); // NOI18N
-        lblUsername.setText("Username:");
+        lblUsername.setText("Usuario:");
 
         txtUsername.setBackground(new java.awt.Color(108, 122, 137));
         txtUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -99,7 +99,7 @@ public class LoginForm extends javax.swing.JFrame {
         btnLogin.setBackground(new java.awt.Color(1, 50, 67));
         btnLogin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("Login");
+        btnLogin.setText("Ingresar");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -109,7 +109,7 @@ public class LoginForm extends javax.swing.JFrame {
         btnClose.setBackground(new java.awt.Color(1, 50, 67));
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnClose.setForeground(new java.awt.Color(255, 255, 255));
-        btnClose.setText("Close");
+        btnClose.setText("Salir");
         btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCloseMouseClicked(evt);
@@ -124,7 +124,7 @@ public class LoginForm extends javax.swing.JFrame {
         lblRecover.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblRecover.setForeground(new java.awt.Color(0, 51, 255));
         lblRecover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Reportes/help.png"))); // NOI18N
-        lblRecover.setText("Recover password");
+        lblRecover.setText("Recuperar Contraseña");
         lblRecover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblRecover.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -158,7 +158,7 @@ public class LoginForm extends javax.swing.JFrame {
         pnlBottomLayout.setVerticalGroup(
             pnlBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBottomLayout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addGroup(pnlBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsername))
@@ -187,8 +187,7 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(pnlBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlBottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
