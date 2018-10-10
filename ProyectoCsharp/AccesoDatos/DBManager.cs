@@ -10,8 +10,10 @@ namespace AccesoDatos
 {
     public class DBManager
     {
+
         private static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=0Fjw8H; database=a20145779; SslMode=None";
-        private static MySqlConnection conexion = null; //carajo
+        private static MySqlConnection conexion = null; 
+
         private MySqlCommand cmd = null;
         private MySqlDataAdapter adaptador = null;
         private DataTable tabla = null;
@@ -21,8 +23,9 @@ namespace AccesoDatos
             try
             {
                 conexion = new MySqlConnection(cadena);
-                cmd = new MySqlCommand(nombProcedimiento, conexion);
                 conexion.Open();
+                cmd = new MySqlCommand(nombProcedimiento, conexion);
+                
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddRange(parametrosEntrada);
                 cmd.ExecuteNonQuery();
@@ -68,6 +71,7 @@ namespace AccesoDatos
         {
             try
             {
+                conexion = new MySqlConnection(cadena);
                 cmd = new MySqlCommand(datos, conexion);
                 conexion.Open();
                 leer = cmd.ExecuteReader();

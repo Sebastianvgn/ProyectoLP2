@@ -253,3 +253,9 @@ C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.csproj.
 C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.exe
 C:\temp\LP2\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.pdb
 C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\obj\Debug\Formularios.frmNuevaContraseña.resources
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\LogicaNegocio.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\AccesoDatos.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\MySql.Data.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\Google.Protobuf.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\LogicaNegocio.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\Formularios\bin\Debug\AccesoDatos.pdb

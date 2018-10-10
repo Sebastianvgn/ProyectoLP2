@@ -21,6 +21,8 @@ public class Articulo {
 	private Date fecha_caducidad;
 	private Categoria categoria;
 
+    
+
 	//Constructores
 	public Articulo(){
 		id_articulo = 0;
@@ -30,16 +32,16 @@ public class Articulo {
 		categoria = null;
 	}
 
-	public Articulo(long id_articulo, String codigo, String descripcion, double cantidad, TUnidad unidad,
-		Date fecha_caducidad, Categoria categoria){
-		setId_articulo(id_articulo);
-		setCodigo(codigo);
-		setDescripcion(descripcion);
-		setCantidad(cantidad);
-		setUnidad(unidad);
-		setFecha_caducidad(fecha_caducidad);
-		setCategoria(categoria);
-	}
+	public Articulo(long id_articulo, String codigo, String descripcion, double cantidad, double precio, TUnidad unidad, Date fecha_caducidad, Categoria categoria) {
+            this.id_articulo = id_articulo;
+            this.codigo = codigo;
+            this.descripcion = descripcion;
+            this.cantidad = cantidad;
+            this.precio = precio;
+            this.unidad = unidad;
+            this.fecha_caducidad = fecha_caducidad;
+            this.categoria = categoria;
+        }
 
 	//Metodos set y get
 	public void setId_articulo(long id_articulo){

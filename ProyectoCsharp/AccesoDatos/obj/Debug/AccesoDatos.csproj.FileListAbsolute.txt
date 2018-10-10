@@ -9,3 +9,5 @@ C:\temp\ProyectoLP2\ProyectoCsharp\AccesoDatos\bin\Debug\MySql.Web.dll
 C:\temp\ProyectoLP2\ProyectoCsharp\AccesoDatos\obj\Debug\AccesoDatos.csprojResolveAssemblyReference.cache
 C:\temp\ProyectoLP2\ProyectoCsharp\AccesoDatos\obj\Debug\AccesoDatos.dll
 C:\temp\ProyectoLP2\ProyectoCsharp\AccesoDatos\obj\Debug\AccesoDatos.pdb
+C:\temp\ProyectoLP2\ProyectoCsharp\AccesoDatos\bin\Debug\Modelo.dll
+C:\temp\ProyectoLP2\ProyectoCsharp\AccesoDatos\bin\Debug\Modelo.pdb

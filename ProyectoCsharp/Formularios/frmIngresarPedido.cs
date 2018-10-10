@@ -146,8 +146,8 @@ namespace Formularios
             StreamReader sr = new StreamReader(fs);
             while ((id = sr.ReadLine()) != null)
             {
-                Operario user = new Operario(Int32.Parse(id), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine());
-                operarios.Add(user);
+                //Operario user = new Operario(Int32.Parse(id), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine());
+                //operarios.Add(user);
             }
             sr.Close();
             fs.Close();
