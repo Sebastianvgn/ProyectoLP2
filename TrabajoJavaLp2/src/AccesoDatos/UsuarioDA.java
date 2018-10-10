@@ -30,7 +30,7 @@ public class UsuarioDA {
             Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
                     "inf282g2", "UInag9");
             Statement sentencia = con.createStatement();
-            String instruccion = "SELECT U.*, P.NOMBRE FROM USUARIO AS U, PERFIL AS P WHERE U.ID_PERFIL = P.ID_PERFIL";
+            String instruccion = "SELECT U.*, P.NOMBRE FROM USUARIO AS U, PERFIL AS P WHERE U.ID_PERFIL = P.ID_PERFIL AND U.REGISTRO_ACTIVO = 1";
             ResultSet rs = sentencia.executeQuery(instruccion);
             
             while(rs.next()){

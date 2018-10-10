@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package Vista;
+import LogicaNegocio.ProveedorBL;
 import javax.swing.JOptionPane;
+import modelo.Proveedor;
 /**
  *
  * @author a20141056
  */
 public class NewProveedorForm extends javax.swing.JDialog {
-
+    
     /**
      * Creates new form NewProveedorForm
      */
@@ -28,9 +30,7 @@ public class NewProveedorForm extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtName = new javax.swing.JTextField();
         txtRazon = new javax.swing.JTextField();
-        lblName = new javax.swing.JLabel();
         btnCrear = new javax.swing.JButton();
         lblCorreo = new javax.swing.JLabel();
         lblRUC = new javax.swing.JLabel();
@@ -45,12 +45,7 @@ public class NewProveedorForm extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
         txtRazon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-
-        lblName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblName.setText("Nombre:");
 
         btnCrear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCrear.setText("Crear");
@@ -121,7 +116,6 @@ public class NewProveedorForm extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblName)
                             .addComponent(lblRUC)
                             .addComponent(lblRazon)
                             .addComponent(lblCorreo)
@@ -129,7 +123,6 @@ public class NewProveedorForm extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                                 .addComponent(txtRazon, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                                 .addComponent(txtRUC, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                                 .addComponent(txtCorreo))
@@ -142,30 +135,26 @@ public class NewProveedorForm extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRUC)
                     .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtRazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRazon))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblRazon)
+                    .addComponent(txtRazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCorreo)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTelefono)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -173,6 +162,13 @@ public class NewProveedorForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        String ruc = txtRUC.getText();
+        String razon = txtRazon.getText();
+        String correo = txtCorreo.getText();
+        String tele = txtTelefono.getText();
+        Proveedor prov = new Proveedor(ruc, razon, correo, tele);
+        ProveedorBL proveedorBL = new ProveedorBL();
+        proveedorBL.crearProveedor(prov);
         JOptionPane.showMessageDialog(this,"Proveedor creado.", "Confirmación",
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
@@ -228,14 +224,12 @@ public class NewProveedorForm extends javax.swing.JDialog {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
     private javax.swing.JLabel lblCorreo;
-    private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblRUC;
     private javax.swing.JLabel lblRazon;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTextLogin;
     private javax.swing.JPanel pnlTop;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtRazon;
     private javax.swing.JTextField txtTelefono;
