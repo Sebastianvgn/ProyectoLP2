@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
+    //hols
     public partial class frmDetallePedido : Form
     {
         private BindingList<DetallePedido> detalles;
