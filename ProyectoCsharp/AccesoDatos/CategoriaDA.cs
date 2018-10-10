@@ -18,9 +18,9 @@ namespace AccesoDatos
             objManager = new DBManager();
         }
 
-        public DataTable ListarCategorias()
+        public DataTable ListarCategorias(string query)
         {
-            return objManager.MostrarTablaDatos("SELECT * from CATEGORIA where ID_CATEGORIA != 2");
+            return objManager.MostrarTablaDatos(query);
 
         }
     }

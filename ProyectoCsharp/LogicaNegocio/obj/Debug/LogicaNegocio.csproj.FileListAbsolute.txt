@@ -32,3 +32,16 @@ C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin
 C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
 C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\AccesoDatos.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\Modelo.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\MySql.Data.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\Google.Protobuf.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\bin\Debug\Modelo.pdb
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

@@ -67,3 +67,9 @@ C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\
 C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csprojResolveAssemblyReference.cache
 C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.dll
 C:\Users\alulab14.INF.001\Downloads\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.pdb
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\Modelo\bin\Debug\Modelo.pdb
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.dll
+D:\Programming\C#\ProyectoLP2\ProyectoCsharp\Modelo\obj\Debug\Modelo.pdb

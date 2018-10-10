@@ -17,9 +17,14 @@ namespace LogicaNegocio
             categoriaDA = new CategoriaDA();
         }
 
-        public DataTable ListarCategorias()
+        public DataTable ListarInsumos()
         {
-            return categoriaDA.ListarCategorias();
+            return categoriaDA.ListarCategorias("SELECT NOMBRE FROM CATEGORIA WHERE ID_FAMILIA != 2");
+        }
+
+        public DataTable ListarMercaderias()
+        {
+            return categoriaDA.ListarCategorias("SELECT NOMBRE FROM CATEGORIA WHERE ID_FAMILIA = 2");
         }
     }
 }

@@ -19,6 +19,9 @@ namespace Formularios
         private ArticuloBL articuloBL;
         private DataView vistaArticulos;
         private CategoriaBL categoriaBL;
+        private DataTable insumos;
+        private DataTable mercaderias;
+        private DataTable categoriasCompletas;
 
         public frmArticulos()
         {
@@ -27,8 +30,17 @@ namespace Formularios
             categoriaBL = new CategoriaBL();
             dtArticulos = articuloBL.ListarArticulos();
             vistaArticulos = new DataView(dtArticulos);
-            cbCategoria.DataSource = categoriaBL.ListarCategorias();
+            categoriasCompletas = new DataTable();
+            insumos = categoriaBL.ListarInsumos();
+            mercaderias = categoriaBL.ListarMercaderias();
+            categoriasCompletas.Merge(insumos);
+            categoriasCompletas.Merge(mercaderias);
+            cbCategoria.DataSource = categoriasCompletas;
             cbCategoria.DisplayMember = "NOMBRE";
+            rbCategoria.Checked = false;
+            cbCategoria.Enabled = false;
+            rbDescripcion.Checked = true;
+            txtDescripcion.Enabled = true;
             dgvArticulos.DataSource = dtArticulos;
             lblCantRegistros.Text = dgvArticulos.Rows.Count.ToString();
         }
@@ -43,7 +55,12 @@ namespace Formularios
             //dgvArticulos.Rows.Add("INSAB", "ACEITE VEGETAL", "LITROS", "70", "");
         }
 
-        
+        private void FiltrarArticulos(string filtro) {
+            vistaArticulos.RowFilter = "";
+            vistaArticulos.RowFilter = filtro;
+            dgvArticulos.DataSource = vistaArticulos;
+            lblCantRegistros.Text = dgvArticulos.Rows.Count.ToString();
+        }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -71,6 +88,7 @@ namespace Formularios
             {
                 txtCodigo.Enabled = true;
                 txtDescripcion.Enabled = false;
+                txtDescripcion.Text = "";
                 cbCategoria.Enabled = false;
             }
         }
@@ -80,22 +98,34 @@ namespace Formularios
             if(rbDescripcion.Checked)
             {
                 txtCodigo.Enabled = false;
+                txtCodigo.Text = "";
                 txtDescripcion.Enabled = true;
-                cbCategoria.Enabled = false;
-            }
-            else
-            {
                 cbCategoria.Enabled = false;
             }
         }
 
         private void rbCategoria_CheckedChanged(object sender, EventArgs e)
         {
-            if(rbCategoria.Checked)
+            if (rbCategoria.Checked)
             {
                 txtCodigo.Enabled = false;
                 txtDescripcion.Enabled = false;
                 cbCategoria.Enabled = true;
+                FiltrarArticulos(String.Format("Categoria = '{0}'", cbCategoria.Text));
+            }
+            else
+            {
+                if (rbMercaderia.Checked)
+                {
+                    FiltrarArticulos("Categoria like '%MER-*'");
+                }
+                else if (rbInsumo.Checked) {
+                    FiltrarArticulos("Categoria NOT like '%MER-*'");
+                }
+                else if (rbTodos.Checked)
+                {
+                    FiltrarArticulos("");
+                }
             }
         }
 
@@ -103,23 +133,43 @@ namespace Formularios
         {
             if(rbTodos.Checked)
             {
+                rbDescripcion.Checked = true;
                 rbCategoria.Enabled = true;
-                cbCategoria.Enabled = true;
-                vistaArticulos.RowFilter = "";
-                dgvArticulos.DataSource = vistaArticulos;
+                rbCategoria.Checked = false;
+                cbCategoria.Enabled = false;
+                DataTable categoria = new DataTable();
+                cbCategoria.DataSource = categoriasCompletas;
+                cbCategoria.DisplayMember = "NOMBRE";
+                FiltrarArticulos("");
             }
         }
+
+        private void FiltroMercaderiaInicial() {
+            vistaArticulos.RowFilter = "";
+            vistaArticulos.RowFilter = "Categoria like '%MER-*'";
+            dgvArticulos.DataSource = vistaArticulos;
+        }
+    
 
         private void rbMercaderia_CheckedChanged(object sender, EventArgs e)
         {
             if(rbMercaderia.Checked)
             {
-                rbCategoria.Enabled = false;
-                cbCategoria.Enabled = false;
+                rbDescripcion.Checked = true;
+                rbCategoria.Enabled = true;
                 rbCategoria.Checked = false;
-                vistaArticulos.RowFilter = "Categoria = 'MERCADERIA'";
-                dgvArticulos.DataSource = vistaArticulos;
+                cbCategoria.Enabled = false;
+                cbCategoria.DataSource = mercaderias;
+                FiltrarArticulos("Categoria like '%MER-*'");
+                lblCantRegistros.Text = dgvArticulos.Rows.Count.ToString();
             }
+        }
+
+        private void FiltroInsumosInicial()
+        {
+            vistaArticulos.RowFilter = "";
+            vistaArticulos.RowFilter = "Categoria NOT like '%MER-*'";
+            dgvArticulos.DataSource = vistaArticulos;
         }
 
         private void rbInsumo_CheckedChanged(object sender, EventArgs e)
@@ -127,7 +177,11 @@ namespace Formularios
             if(rbInsumo.Checked)
             {
                 rbCategoria.Enabled = true;
-                cbCategoria.Enabled = true;
+                rbCategoria.Checked = false;
+                cbCategoria.Enabled = false;
+                cbCategoria.DataSource = insumos;
+                FiltrarArticulos("Categoria NOT like '%MER-*'");
+                lblCantRegistros.Text = dgvArticulos.Rows.Count.ToString();
             }
         }
 
@@ -140,13 +194,61 @@ namespace Formularios
         {
             if (rbCategoria.Checked)
             {
-                vistaArticulos.RowFilter = "";
+                
                 int i = cbCategoria.SelectedIndex;
                 if (i < 0) return;
-                string filtro = cbCategoria.Text;
-                vistaArticulos.RowFilter = String.Format("Categoria = '{0}'", filtro);
-                //vistaArticulos.RowFilter = "Categoria = '" + filtro + "'";
-                dgvArticulos.DataSource = vistaArticulos;
+                FiltrarArticulos(String.Format("Categoria = '{0}'", cbCategoria.Text));
+            }
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                if (rbTodos.Checked)
+                    FiltrarArticulos(String.Format("Codigo LIKE '%{0}*'", txtCodigo.Text));
+                else if (rbInsumo.Checked)
+                    FiltrarArticulos(String.Format("Codigo LIKE '%{0}*' AND Categoria NOT like '%MER-*'", txtCodigo.Text));
+                else if (rbMercaderia.Checked)
+                {
+                    FiltrarArticulos(String.Format("Codigo LIKE '%{0}*' AND Categoria like '%MER-*'", txtCodigo.Text));
+                }
+            }
+            else {
+                if (rbTodos.Checked)
+                    FiltrarArticulos(String.Format("", txtCodigo.Text));
+                else if (rbInsumo.Checked)
+                    FiltrarArticulos(String.Format("Categoria NOT like '%MER-*'", txtCodigo.Text));
+                else if (rbMercaderia.Checked)
+                {
+                    FiltrarArticulos(String.Format("Categoria like '%MER-*'", txtCodigo.Text));
+                }
+            }
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDescripcion.Text != "")
+            {
+                if (rbTodos.Checked)
+                    FiltrarArticulos(String.Format("Nombre LIKE '%{0}*'", txtDescripcion.Text));
+                else if (rbInsumo.Checked)
+                    FiltrarArticulos(String.Format("Nombre LIKE '%{0}*' AND Categoria NOT like '%MER-*'", txtDescripcion.Text));
+                else if (rbMercaderia.Checked)
+                {
+                    FiltrarArticulos(String.Format("Nombre LIKE '%{0}*' AND Categoria like '%MER-*'", txtDescripcion.Text));
+                }
+            }
+            else
+            {
+                if (rbTodos.Checked)
+                    FiltrarArticulos("");
+                else if (rbInsumo.Checked)
+                    FiltrarArticulos("Categoria NOT like '%MER-*'");
+                else if (rbMercaderia.Checked)
+                {
+                    FiltrarArticulos("Categoria like '%MER-*'");
+                }
             }
         }
     }
