@@ -131,6 +131,8 @@
     <Compile Include="frmRegistroTransferencias.designer.cs">
       <DependentUpon>frmRegistroTransferencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numero_Controlador.cs" />
+    <Compile Include="Password_Controlador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmArticulosCaducar.resx">

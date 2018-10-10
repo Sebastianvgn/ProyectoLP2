@@ -44,10 +44,15 @@ namespace Formularios
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            EnviarCodigo();
+        }
+
+        private void EnviarCodigo()
+        {
             int idUsuario;
             string codigo;
-            usuarioBL.RecuperarContraseña(txtCorreo.Text, out codigo, out idUsuario);
-            if(idUsuario != 0)
+            usuarioBL.EnviarCodigo(txtCorreo.Text, out codigo, out idUsuario);
+            if (idUsuario != 0)
             {
                 MessageBox.Show("Se envió el nombre de usuario y contraseña al correo:\n" + txtCorreo.Text,
                     "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -64,6 +69,12 @@ namespace Formularios
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+                EnviarCodigo();
         }
     }
 }

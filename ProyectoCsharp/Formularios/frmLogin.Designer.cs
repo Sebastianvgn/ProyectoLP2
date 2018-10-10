@@ -55,9 +55,9 @@
             this.panelSuperior.Controls.Add(this.lblHeader);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(676, 82);
+            this.panelSuperior.Size = new System.Drawing.Size(507, 67);
             this.panelSuperior.TabIndex = 0;
             this.panelSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelSuperior_MouseDown);
             // 
@@ -66,9 +66,10 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(23, 23);
+            this.lblHeader.Location = new System.Drawing.Point(17, 19);
+            this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(612, 34);
+            this.lblHeader.Size = new System.Drawing.Size(487, 25);
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Sistema de Almacén LUCET SAC - User Login";
             // 
@@ -82,12 +83,12 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(29, 322);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogin.Location = new System.Drawing.Point(22, 262);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(221, 62);
+            this.btnLogin.Size = new System.Drawing.Size(166, 50);
             this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -101,10 +102,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(421, 322);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Location = new System.Drawing.Point(316, 262);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(221, 62);
+            this.btnSalir.Size = new System.Drawing.Size(166, 50);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -114,9 +115,10 @@
             // 
             this.linkRecuperarContraseña.AutoSize = true;
             this.linkRecuperarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkRecuperarContraseña.Location = new System.Drawing.Point(255, 281);
+            this.linkRecuperarContraseña.Location = new System.Drawing.Point(191, 228);
+            this.linkRecuperarContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkRecuperarContraseña.Name = "linkRecuperarContraseña";
-            this.linkRecuperarContraseña.Size = new System.Drawing.Size(175, 20);
+            this.linkRecuperarContraseña.Size = new System.Drawing.Size(150, 17);
             this.linkRecuperarContraseña.TabIndex = 3;
             this.linkRecuperarContraseña.TabStop = true;
             this.linkRecuperarContraseña.Text = "Recuperar contraseña";
@@ -127,20 +129,19 @@
             this.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(195, 153);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsername.Location = new System.Drawing.Point(146, 124);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(293, 23);
+            this.txtUsername.Size = new System.Drawing.Size(220, 19);
             this.txtUsername.TabIndex = 4;
-            this.txtUsername.Text = "jhloli";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(133, 143);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(100, 116);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(41, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -148,10 +149,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(133, 215);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(100, 175);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(41, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -161,21 +162,20 @@
             this.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(195, 221);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Location = new System.Drawing.Point(146, 180);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(293, 23);
+            this.txtPassword.Size = new System.Drawing.Size(220, 19);
             this.txtPassword.TabIndex = 7;
-            this.txtPassword.Text = "20145779";
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(195, 175);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(146, 142);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(293, 12);
+            this.pictureBox3.Size = new System.Drawing.Size(220, 10);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
@@ -183,10 +183,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(193, 244);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(145, 198);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(293, 12);
+            this.pictureBox4.Size = new System.Drawing.Size(220, 10);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
@@ -198,7 +197,8 @@
             this.btnVerContraseña.FlatAppearance.BorderSize = 0;
             this.btnVerContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerContraseña.Image = ((System.Drawing.Image)(resources.GetObject("btnVerContraseña.Image")));
-            this.btnVerContraseña.Location = new System.Drawing.Point(494, 206);
+            this.btnVerContraseña.Location = new System.Drawing.Point(370, 167);
+            this.btnVerContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVerContraseña.Name = "btnVerContraseña";
             this.btnVerContraseña.Size = new System.Drawing.Size(38, 38);
             this.btnVerContraseña.TabIndex = 11;
@@ -212,7 +212,8 @@
             this.btnOcultarContraseña.FlatAppearance.BorderSize = 0;
             this.btnOcultarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOcultarContraseña.Image = ((System.Drawing.Image)(resources.GetObject("btnOcultarContraseña.Image")));
-            this.btnOcultarContraseña.Location = new System.Drawing.Point(494, 206);
+            this.btnOcultarContraseña.Location = new System.Drawing.Point(370, 167);
+            this.btnOcultarContraseña.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOcultarContraseña.Name = "btnOcultarContraseña";
             this.btnOcultarContraseña.Size = new System.Drawing.Size(38, 38);
             this.btnOcultarContraseña.TabIndex = 12;
@@ -222,10 +223,10 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(676, 416);
+            this.ClientSize = new System.Drawing.Size(507, 338);
             this.Controls.Add(this.btnVerContraseña);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -239,7 +240,7 @@
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.btnOcultarContraseña);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

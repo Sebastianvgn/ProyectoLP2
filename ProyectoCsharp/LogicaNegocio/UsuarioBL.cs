@@ -18,7 +18,7 @@ namespace LogicaNegocio
             usuarioDA = new UsuarioDA();
         }
 
-        public void RecuperarContraseña(string correo, out string codigo, out int idUsuario)
+        public void EnviarCodigo(string correo, out string codigo, out int idUsuario)
         {
             DataTable tabla = usuarioDA.MostrarNombreUsuario(correo);
             codigo = "";
@@ -89,6 +89,16 @@ namespace LogicaNegocio
                 return;
                 
             }
+        }
+
+        public bool RegistrarNuevaContraseña(int idUsuario, string password)
+        {
+            return usuarioDA.RegistrarNuevaContraseña(idUsuario, password);
+        }
+
+        public bool IngresarSistema(string username, string password)
+        {
+            return usuarioDA.IngresarSistema(username, password);
         }
 
         private string GenerarCodigo()
