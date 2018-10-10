@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using LogicaNegocio;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +15,21 @@ namespace Formularios
 {
     public partial class frmArticulos : Form
     {
-        private BindingList<Articulo> articulos;
+        private DataTable dtArticulos;
+        private ArticuloBL articuloBL;
+        private DataView vistaArticulos;
+        private CategoriaBL categoriaBL;
+
         public frmArticulos()
         {
             InitializeComponent();
-            articulos = new BindingList<Articulo>();
-            LeerArticulos();
-            
-            dgvArticulos.DataSource = articulos;
+            articuloBL = new ArticuloBL();
+            categoriaBL = new CategoriaBL();
+            dtArticulos = articuloBL.ListarArticulos();
+            vistaArticulos = new DataView(dtArticulos);
+            cbCategoria.DataSource = categoriaBL.ListarCategorias();
+            cbCategoria.DisplayMember = "NOMBRE";
+            dgvArticulos.DataSource = dtArticulos;
             lblCantRegistros.Text = dgvArticulos.Rows.Count.ToString();
         }
 
@@ -35,29 +43,7 @@ namespace Formularios
             //dgvArticulos.Rows.Add("INSAB", "ACEITE VEGETAL", "LITROS", "70", "");
         }
 
-        private void LeerArticulos()
-        {
-            String id, unidad;
-            FileStream fs = new FileStream("Articulos.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            while ((id = sr.ReadLine()) != null)
-            {
-                Articulo art = new Articulo();
-                art.Id_articulo = Int32.Parse(id);
-                art.Codigo = sr.ReadLine();
-                art.Descripcion = sr.ReadLine();
-                art.Cantidad = Double.Parse(sr.ReadLine());
-                unidad = sr.ReadLine();
-                art.Unidad = (TUnidad)Enum.Parse(typeof(TUnidad), unidad);
-                art.Fecha_caducidad = Convert.ToDateTime(sr.ReadLine());
-                Categoria cat = new Categoria();
-                cat.Nombre = sr.ReadLine();
-                art.Categoria = cat;
-                articulos.Add(art);
-            }
-            sr.Close();
-            fs.Close();
-        }
+        
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
@@ -97,6 +83,10 @@ namespace Formularios
                 txtDescripcion.Enabled = true;
                 cbCategoria.Enabled = false;
             }
+            else
+            {
+                cbCategoria.Enabled = false;
+            }
         }
 
         private void rbCategoria_CheckedChanged(object sender, EventArgs e)
@@ -115,6 +105,8 @@ namespace Formularios
             {
                 rbCategoria.Enabled = true;
                 cbCategoria.Enabled = true;
+                vistaArticulos.RowFilter = "";
+                dgvArticulos.DataSource = vistaArticulos;
             }
         }
 
@@ -125,6 +117,8 @@ namespace Formularios
                 rbCategoria.Enabled = false;
                 cbCategoria.Enabled = false;
                 rbCategoria.Checked = false;
+                vistaArticulos.RowFilter = "Categoria = 'MERCADERIA'";
+                dgvArticulos.DataSource = vistaArticulos;
             }
         }
 
@@ -134,6 +128,25 @@ namespace Formularios
             {
                 rbCategoria.Enabled = true;
                 cbCategoria.Enabled = true;
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rbCategoria.Checked)
+            {
+                vistaArticulos.RowFilter = "";
+                int i = cbCategoria.SelectedIndex;
+                if (i < 0) return;
+                string filtro = cbCategoria.Text;
+                vistaArticulos.RowFilter = String.Format("Categoria = '{0}'", filtro);
+                //vistaArticulos.RowFilter = "Categoria = '" + filtro + "'";
+                dgvArticulos.DataSource = vistaArticulos;
             }
         }
     }
