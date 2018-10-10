@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticulos.designer.cs">
+      <DependentUpon>frmArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArticulosCaducar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmArticulosCaducar.Designer.cs">
       <DependentUpon>frmArticulosCaducar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmArticulos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmArticulos.Designer.cs">
-      <DependentUpon>frmArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDetallePedido.cs">
       <SubType>Form</SubType>
@@ -131,13 +131,15 @@
     <Compile Include="frmRegistroTransferencias.designer.cs">
       <DependentUpon>frmRegistroTransferencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Numero_Controlador.cs" />
+    <Compile Include="Password_Controlador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmArticulosCaducar.resx">
-      <DependentUpon>frmArticulosCaducar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmArticulos.resx">
       <DependentUpon>frmArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticulosCaducar.resx">
+      <DependentUpon>frmArticulosCaducar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetallePedido.resx">
       <DependentUpon>frmDetallePedido.cs</DependentUpon>

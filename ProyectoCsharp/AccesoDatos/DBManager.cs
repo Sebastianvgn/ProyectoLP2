@@ -10,13 +10,12 @@ namespace AccesoDatos
 {
     public class DBManager
     {
-
-        private static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=0Fjw8H; database=a20145779; SslMode=None";
-        private static MySqlConnection conexion = null; 
-
+        private static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=UInag9; database=inf282g2; SslMode=None";
+        private static MySqlConnection conexion = null;
         private MySqlCommand cmd = null;
         private MySqlDataAdapter adaptador = null;
         private DataTable tabla = null;
+        private MySqlDataReader leer = null;
 
         public bool EjecutarProcedure(MySqlParameter[] parametrosEntrada, string nombProcedimiento)
         {
@@ -25,7 +24,6 @@ namespace AccesoDatos
                 conexion = new MySqlConnection(cadena);
                 conexion.Open();
                 cmd = new MySqlCommand(nombProcedimiento, conexion);
-                
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddRange(parametrosEntrada);
                 cmd.ExecuteNonQuery();
@@ -48,8 +46,8 @@ namespace AccesoDatos
             try
             {
                 conexion = new MySqlConnection(cadena);
-                tabla = new DataTable();
                 conexion.Open();
+                tabla = new DataTable();
                 adaptador = new MySqlDataAdapter(comando, conexion);
                 adaptador.Fill(tabla);
                 conexion.Close();
@@ -67,14 +65,15 @@ namespace AccesoDatos
             }
         }
 
-        /*public MySqlDataReader MostrarInformacion(string datos)
+        public MySqlDataReader MostrarInformacion(string datos)
         {
             try
             {
                 conexion = new MySqlConnection(cadena);
-                cmd = new MySqlCommand(datos, conexion);
                 conexion.Open();
+                cmd = new MySqlCommand(datos, conexion);
                 leer = cmd.ExecuteReader();
+                conexion.Close();
                 return leer;
             }
             catch (Exception ex)
@@ -86,6 +85,6 @@ namespace AccesoDatos
                 conexion.Dispose();
                 cmd.Dispose();
             }
-        }*/
+        }
     }
 }

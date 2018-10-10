@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,11 @@ namespace Formularios
 {
     public partial class frmLogin : Form
     {
+        private UsuarioBL usuarioBL;
         public frmLogin()
         {
             InitializeComponent();
+            usuarioBL = new UsuarioBL();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -30,19 +33,29 @@ namespace Formularios
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "jhloli" && txtPassword.Text == "20145779")
+            IngresarSistema();
+        }
+
+        private void IngresarSistema()
+        {
+            bool existeUsuario = usuarioBL.IngresarSistema(txtUsername.Text, txtPassword.Text);
+            if (existeUsuario)
             {
                 frmPrincipal frm = new frmPrincipal();
                 this.Hide();
                 frm.ShowDialog();
                 this.Visible = true;
             }
+            else
+                MessageBox.Show("ERROR: El usuario o la contraseña no existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void linkRecuperarContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRecuperarContraseña frm = new frmRecuperarContraseña();
+            this.Hide();
             frm.ShowDialog();
+            this.Visible = true;
         }
 
         private void btnVerContraseña_Click(object sender, EventArgs e)
@@ -63,6 +76,18 @@ namespace Formularios
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                IngresarSistema();
+            }
+            else
+            {
+                e.Handled = Password_Controlador.Validar_Password(e.KeyChar);
+            }
         }
     }
 }

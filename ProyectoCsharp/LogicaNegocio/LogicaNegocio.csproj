@@ -43,10 +43,11 @@
     <Compile Include="ArticuloBL.cs" />
     <Compile Include="CategoriaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
-      <Project>{57131C91-DD8D-4EDD-AEF1-4030F1E4C762}</Project>
+      <Project>{57131c91-dd8d-4edd-aef1-4030f1e4c762}</Project>
       <Name>AccesoDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
