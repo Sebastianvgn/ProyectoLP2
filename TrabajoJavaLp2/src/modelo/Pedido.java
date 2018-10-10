@@ -9,7 +9,7 @@ public class Pedido{
 	private Usuario responsable;
 	private TEstado estado;
 	private TTipoPedido tipo_pedido;
-	private AlmacenVirtual almacen;
+	private Almacen almacen;
 	private Area area;
 	private double monto;
 	private double monto_igv;
@@ -29,7 +29,7 @@ public class Pedido{
 	}
 
 	public Pedido(long id_pedido,Date fecha_produccion,Date fecha_entrega,String hora_entrega, 
-					Usuario responsable, TEstado estado, TTipoPedido tipo_pedido,AlmacenVirtual almacen,
+					Usuario responsable, TEstado estado, TTipoPedido tipo_pedido,Almacen almacen,
 					Area area, double monto, double monto_igv, double total){
        	this.id_pedido = id_pedido;
         this.fecha_produccion=fecha_produccion;
@@ -103,10 +103,10 @@ public class Pedido{
 		return this.tipo_pedido;
 	}
 	
-	public void setAlmacen(AlmacenVirtual almacen){
+	public void setAlmacen(Almacen almacen){
 		this.almacen=almacen;
 	}
-	public AlmacenVirtual getAlmacen(){
+	public Almacen getAlmacen(){
 		return this.almacen;
 	}
 	
