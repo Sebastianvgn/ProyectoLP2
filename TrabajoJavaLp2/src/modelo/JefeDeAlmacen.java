@@ -1,9 +1,9 @@
 package modelo;
 public class JefeDeAlmacen extends Usuario{
-	private AlmacenPrincipal almacen; 
+	private Almacen almacen; 
 
 	public JefeDeAlmacen(){
-		almacen = new AlmacenPrincipal();
+		almacen = new Almacen();
 	}
 
 	public JefeDeAlmacen(long id_usuario, String nombre, String apellidos, String correo, String codigo,
@@ -14,11 +14,11 @@ public class JefeDeAlmacen extends Usuario{
             setAlmacen(almacen);
 	}
 
-	public AlmacenPrincipal getAlmacen(){
+	public Almacen getAlmacen(){
 		return almacen;
 	}
 
-	public void setAlmacen(AlmacenPrincipal almacen){
+	public void setAlmacen(Almacen almacen){
 		this.almacen = almacen;
 	}
 }

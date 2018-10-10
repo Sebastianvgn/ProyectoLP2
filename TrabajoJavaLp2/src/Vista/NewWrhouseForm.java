@@ -5,18 +5,44 @@
  */
 package Vista;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import LogicaNegocio.UsuarioBL;
+import LogicaNegocio.AlmacenBL;
+import java.util.ArrayList;
+import modelo.Almacen;
+import modelo.Area;
+import modelo.Usuario;
 /**
  *
  * @author a20141056
  */
 public class NewWrhouseForm extends javax.swing.JDialog {
-
+    
+    private ArrayList<Area> areas;
+    private DefaultTableModel modelo;
+    private ArrayList<Usuario> usuarios;
     /**
      * Creates new form NewWrhouse
      */
     public NewWrhouseForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        UsuarioBL usuarioBL = new UsuarioBL();
+        usuarios = usuarioBL.listarUsuarios();
+        
+        modelo = (DefaultTableModel)tblOperarios.getModel();
+        Object[] fila = new Object[2];
+        
+        int cant = usuarios.size();
+        int i;
+        for(i = 0; i<cant; i++){
+            if(usuarios.get(i).getDescripcion_permisos().equals("OPERARIO")){
+                fila[0] = usuarios.get(i).getUsername();
+                fila[1] = usuarios.get(i).getNombre();
+                modelo.addRow(fila);
+            }
+        }
+        
     }
 
     /**
@@ -41,8 +67,8 @@ public class NewWrhouseForm extends javax.swing.JDialog {
         cmbTipo = new javax.swing.JComboBox<>();
         lblTipo1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tblOperarios = new javax.swing.JTable();
+        btnAreas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -94,7 +120,7 @@ public class NewWrhouseForm extends javax.swing.JDialog {
             .addGroup(pnlTopLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(lblTextLogin)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -105,7 +131,7 @@ public class NewWrhouseForm extends javax.swing.JDialog {
         lblTipo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTipo1.setText("Operario:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblOperarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -113,13 +139,13 @@ public class NewWrhouseForm extends javax.swing.JDialog {
                 "Usuario", "Nombres"
             }
         ));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTable1);
+        tblOperarios.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblOperarios);
 
-        jButton1.setText("Agregar Areas");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAreas.setText("Agregar Areas");
+        btnAreas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAreasActionPerformed(evt);
             }
         });
 
@@ -144,12 +170,12 @@ public class NewWrhouseForm extends javax.swing.JDialog {
                             .addComponent(lblTipo1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                            .addComponent(txtName)
+                            .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(36, 36, 36)
-                                .addComponent(jButton1))
+                                .addComponent(btnAreas))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -169,7 +195,7 @@ public class NewWrhouseForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTipo)
-                    .addComponent(jButton1))
+                    .addComponent(btnAreas))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTipo1)
@@ -186,6 +212,23 @@ public class NewWrhouseForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        AlmacenBL almacenBL = new AlmacenBL();
+        int user = 0;
+        int row = tblOperarios.getSelectedRow();
+        int col = tblOperarios.getSelectedColumn();
+        String username = tblOperarios.getValueAt(row, col).toString();
+        int num = usuarios.size();
+        for(int i = 0; i<num; i++){
+            if(usuarios.get(i).getUsername().equals(username)){
+                user = i+1;
+            }
+        }
+        Almacen alm = new Almacen();
+        alm.setNomAlmacen(txtName.getText());
+        alm.setDescripcion(txtDesc.getText());
+        int ind = cmbTipo.getSelectedIndex();
+        alm.setTipo_almacen(ind);
+        almacenBL.crearAlmacen(alm, areas, user);
         JOptionPane.showMessageDialog(this,"Almacén creado.", "Confirmación",
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
@@ -195,11 +238,11 @@ public class NewWrhouseForm extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAreasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreasActionPerformed
         NewAreaForm naf = new NewAreaForm(null,true);
         naf.setVisible(true);
-        naf.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        areas = naf.areas;
+    }//GEN-LAST:event_btnAreasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,19 +288,19 @@ public class NewWrhouseForm extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAreas;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
     private javax.swing.JComboBox<String> cmbTipo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblDesc;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblTextLogin;
     private javax.swing.JLabel lblTipo;
     private javax.swing.JLabel lblTipo1;
     private javax.swing.JPanel pnlTop;
+    private javax.swing.JTable tblOperarios;
     private javax.swing.JTextArea txtDesc;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables

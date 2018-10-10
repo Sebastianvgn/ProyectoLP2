@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class RegistroIngreso{
 	private long id_Ingreso;
 	private Proveedor proveedor;
-	private AlmacenPrincipal almacen;
+	private Almacen almacen;
 	private Date fecha;
 	private Date fecha_proceso;
 	private TTipoComprobante tipoComprobante;
@@ -27,7 +27,7 @@ public class RegistroIngreso{
         this.detalles = new ArrayList<DetalleRegistroIngreso>();
 	}
 
-	public RegistroIngreso(long id_Ingreso, Proveedor proveedor, AlmacenPrincipal almacen,Date fecha,
+	public RegistroIngreso(long id_Ingreso, Proveedor proveedor, Almacen almacen,Date fecha,
 				Date fecha_proceso, TTipoComprobante tipoComprobante, double subtotal, 
 				double igv, double monto_igv,double total, TEstado estado){
 		
@@ -59,10 +59,10 @@ public class RegistroIngreso{
 		return this.id_Ingreso;
 	}
 
-	public void setAlmacen(AlmacenPrincipal almacen){
+	public void setAlmacen(Almacen almacen){
 		this.almacen = almacen;
 	}
-	public AlmacenPrincipal getAlmacen(){
+	public Almacen getAlmacen(){
 		return this.almacen;
 	}
 
