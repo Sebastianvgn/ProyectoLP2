@@ -84,6 +84,10 @@ namespace Formularios
             {
                 IngresarSistema();
             }
+            else
+            {
+                e.Handled = Password_Controlador.Validar_Password(e.KeyChar);
+            }
         }
     }
 }
