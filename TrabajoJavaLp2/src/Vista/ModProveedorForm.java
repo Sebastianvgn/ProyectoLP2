@@ -5,18 +5,34 @@
  */
 package Vista;
 import javax.swing.JOptionPane;
+import LogicaNegocio.ProveedorBL;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import modelo.Proveedor;
 /**
  *
  * @author a20141056
  */
 public class ModProveedorForm extends javax.swing.JDialog {
 
+    private ArrayList<Proveedor> proveedores;
     /**
      * Creates new form ModProveedorForm
      */
     public ModProveedorForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        ProveedorBL proveedorBL = new ProveedorBL();
+        proveedores = new ArrayList<Proveedor>();
+        proveedores = proveedorBL.listarProveedores();
+        Object[] fila = new Object[1];
+        DefaultTableModel modelo = (DefaultTableModel)tblProveedores.getModel();
+        int cant = proveedores.size();
+        int i;
+        for(i = 0; i<cant; i++){
+            fila[0] = proveedores.get(i).getRazon_socual();
+            modelo.addRow(fila);
+        }
     }
 
     /**
@@ -29,14 +45,12 @@ public class ModProveedorForm extends javax.swing.JDialog {
     private void initComponents() {
 
         lblRUC = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
         txtRUC = new javax.swing.JTextField();
-        lblName = new javax.swing.JLabel();
         lblUsersSystem = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
         btnModificar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblArticulos = new javax.swing.JTable();
+        tblProveedores = new javax.swing.JTable();
         lblRazon = new javax.swing.JLabel();
         lblCorreo = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
@@ -51,16 +65,9 @@ public class ModProveedorForm extends javax.swing.JDialog {
         lblRUC.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblRUC.setText("RUC:");
 
-        txtName.setEditable(false);
-        txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtName.setDisabledTextColor(new java.awt.Color(153, 153, 153));
-
-        txtRUC.setEditable(false);
         txtRUC.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtRUC.setDisabledTextColor(new java.awt.Color(153, 153, 153));
-
-        lblName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblName.setText("Nombre:");
+        txtRUC.setEnabled(false);
 
         lblUsersSystem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblUsersSystem.setText("Lista Proveedores");
@@ -76,16 +83,29 @@ public class ModProveedorForm extends javax.swing.JDialog {
             }
         });
 
-        tblArticulos.setModel(new javax.swing.table.DefaultTableModel(
+        tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
                 "Proveedores"
             }
-        ));
-        tblArticulos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(tblArticulos);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblProveedores.getTableHeader().setReorderingAllowed(false);
+        tblProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProveedoresMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tblProveedores);
 
         lblRazon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblRazon.setText("Razón Social:");
@@ -101,17 +121,17 @@ public class ModProveedorForm extends javax.swing.JDialog {
             }
         });
 
-        txtRazon.setEditable(false);
         txtRazon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtRazon.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtRazon.setEnabled(false);
 
-        txtCorreo.setEditable(false);
         txtCorreo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtCorreo.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtCorreo.setEnabled(false);
 
-        txtTelefono.setEditable(false);
         txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTelefono.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtTelefono.setEnabled(false);
 
         pnlTop.setBackground(new java.awt.Color(1, 50, 67));
 
@@ -157,7 +177,6 @@ public class ModProveedorForm extends javax.swing.JDialog {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblName)
                             .addComponent(lblRUC)
                             .addComponent(lblRazon)
                             .addComponent(lblCorreo)
@@ -165,7 +184,6 @@ public class ModProveedorForm extends javax.swing.JDialog {
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRazon, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -177,11 +195,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUsersSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblName)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(lblUsersSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
@@ -215,6 +229,21 @@ public class ModProveedorForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        String ruc = txtRUC.getText();
+        String correo = txtCorreo.getText();
+        String razon = txtRazon.getText();
+        String telefono = txtTelefono.getText();
+        int cant = proveedores.size();
+        long numprov=0;
+        for(int i = 0; i<cant; i++){
+            if(proveedores.get(i).getRazon_socual().equals(razon)){
+                numprov = proveedores.get(i).getId_proveedor();
+            }
+        }
+        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,telefono);
+        ProveedorBL proveedorBL = new ProveedorBL();
+        proveedorBL.modificarProveedor(prov);
+        
         JOptionPane.showMessageDialog(this,"Proveedor Modificado.", "Confirmación",
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
@@ -223,6 +252,28 @@ public class ModProveedorForm extends javax.swing.JDialog {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void tblProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProveedoresMouseClicked
+        txtCorreo.setEnabled(true);
+        txtRUC.setEnabled(true);
+        txtRazon.setEnabled(true);
+        txtTelefono.setEnabled(true);
+        int cant = proveedores.size();
+        int row = tblProveedores.getSelectedRow();
+        int col = tblProveedores.getSelectedColumn();
+        
+        String razon = tblProveedores.getValueAt(row, col).toString();
+        int index = 0;
+        for(int i = 0; i<cant; i++){
+            if(proveedores.get(i).getRazon_socual().equals(razon)){
+                index = i;
+            }
+        }
+        txtCorreo.setText(proveedores.get(index).getEmail());
+        txtRUC.setText(proveedores.get(index).getRUC());
+        txtRazon.setText(proveedores.get(index).getRazon_socual());
+        txtTelefono.setText(proveedores.get(index).getTelefono());
+    }//GEN-LAST:event_tblProveedoresMouseClicked
 
     /**
      * @param args the command line arguments
@@ -271,16 +322,14 @@ public class ModProveedorForm extends javax.swing.JDialog {
     private javax.swing.JButton btnModificar;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCorreo;
-    private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblRUC;
     private javax.swing.JLabel lblRazon;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTextLogin;
     private javax.swing.JLabel lblUsersSystem;
     private javax.swing.JPanel pnlTop;
-    private javax.swing.JTable tblArticulos;
+    private javax.swing.JTable tblProveedores;
     private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtRazon;
     private javax.swing.JTextField txtTelefono;

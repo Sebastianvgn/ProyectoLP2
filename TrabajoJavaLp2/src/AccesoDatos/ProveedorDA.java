@@ -29,13 +29,13 @@ public class ProveedorDA {
             ResultSet rs = sentencia.executeQuery(instruccion);
             
             while(rs.next()){
-                long idUser = rs.getInt("ID_PROVEEDOR");
+                long idProv = rs.getInt("ID_PROVEEDOR");
                 String ruc = rs.getString("RUC");
                 String razonSocial = rs.getString("RAZON_SOCIAL");
                 String mail = rs.getString("CORREO");
                 String tele = rs.getString("TELEFONO");
-                Proveedor prov = new Proveedor(ruc,razonSocial,mail,tele);
-                
+                Proveedor prov = new Proveedor(idProv,ruc,razonSocial,mail,tele);
+                proveedores.add(prov);
             }
             con.close();
         }catch(Exception ex){
@@ -58,6 +58,28 @@ public class ProveedorDA {
             ps.setString(3, prov.getEmail());
             ps.setString(4, prov.getEmail());
             ps.setInt(5, 1);
+            
+            ps.executeUpdate();
+            
+            con.close();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public void modificarProveedor(Proveedor prov){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE PROVEEDOR SET RUC = ?, RAZON_SOCIAL = ?,"
+                    + "CORREO = ?, TELEFONO=?,"
+                    + "FECHA_REGISTRO = NOW() WHERE ID_PROVEEDOR = ?;");
+            ps.setString(1,prov.getRUC());
+            ps.setString(2,prov.getRazon_socual());
+            ps.setString(3, prov.getEmail());
+            ps.setString(4, prov.getTelefono());
+            ps.setLong(5,prov.getId_proveedor());
             
             ps.executeUpdate();
             

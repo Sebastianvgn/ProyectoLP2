@@ -130,7 +130,7 @@ public class UsuarioDA {
             
             ps.executeUpdate();
             
-            ps.close();
+            con.close();
             
         }catch(Exception ex){
             System.out.println(ex.getMessage());

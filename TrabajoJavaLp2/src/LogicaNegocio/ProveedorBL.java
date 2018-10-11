@@ -19,11 +19,15 @@ public class ProveedorBL {
         proveedorDA = new ProveedorDA();
     }
     
-    public ArrayList<Proveedor> listarProveedoreS(){
+    public ArrayList<Proveedor> listarProveedores(){
         return proveedorDA.listarProveedores();
     }
     
     public void crearProveedor(Proveedor prov){
         proveedorDA.crearProveedor(prov);
+    }
+    
+    public void modificarProveedor(Proveedor prov){
+        proveedorDA.modificarProveedor(prov);
     }
 }

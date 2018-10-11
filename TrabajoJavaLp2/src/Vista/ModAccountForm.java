@@ -328,8 +328,7 @@ public class ModAccountForm extends javax.swing.JDialog {
                 numuser = usuarios.get(i).getId_usuario();
             }
         }
-        
-        //gerente operario jefe de almacen
+
         if(index == 0){
             String tipo = "GERENTE";
             user = new Gerente(numuser,nombre,apellido,correo,dni,username,pass,tipo);
