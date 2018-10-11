@@ -75,6 +75,7 @@ public class ModAccountForm extends javax.swing.JDialog {
         lblPuesto = new javax.swing.JLabel();
         txtPuesto = new javax.swing.JTextField();
         cbTipo = new java.awt.Checkbox();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -198,12 +199,22 @@ public class ModAccountForm extends javax.swing.JDialog {
             }
         });
 
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,10 +311,11 @@ public class ModAccountForm extends javax.swing.JDialog {
                             .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
 
@@ -394,6 +406,42 @@ public class ModAccountForm extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_cbTipoItemStateChanged
 
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        Usuario user = null;
+        String nombre = txtName.getText();
+        String apellido = txtApellidos.getText();
+        String correo = txtCorreo.getText();
+        String dni = txtDni.getText();
+        String username = txtUser.getText();
+        String pass = txtPass.getText();
+        int index = cmbTipo.getSelectedIndex();
+        int cant = usuarios.size();
+        long numuser = 0;
+        for(int i = 0; i<cant; i++){
+            if(usuarios.get(i).getUsername().equals(username)){
+                numuser = usuarios.get(i).getId_usuario();
+            }
+        }
+
+        if(index == 0){
+            String tipo = "GERENTE";
+            user = new Gerente(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+        }else if(index == 1){
+            String tipo = "OPERARIO";
+            user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+        }else{
+            String tipo = "JEFE DE ALMACEN";
+            user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+        }
+        
+        UsuarioBL usuarioBL = new UsuarioBL();
+        usuarioBL.eliminarUsuario(user);
+        
+        JOptionPane.showMessageDialog(this,"Cuenta Eliminada.", "Confirmación",
+            JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -438,6 +486,7 @@ public class ModAccountForm extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private java.awt.Checkbox cbTipo;
     private javax.swing.JComboBox<String> cmbTipo;

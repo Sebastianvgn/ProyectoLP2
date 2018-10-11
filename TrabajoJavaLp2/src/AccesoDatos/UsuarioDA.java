@@ -136,5 +136,22 @@ public class UsuarioDA {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public void eliminarUsuario(Usuario user){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE USUARIO SET REGISTRO_ACTIVO = ? WHERE ID_USUARIO = ?");
+            ps.setInt(1, 0);
+            ps.setLong(2, user.getId_usuario());
+            
+            ps.executeUpdate();
+            
+            con.close();         
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
 
 }

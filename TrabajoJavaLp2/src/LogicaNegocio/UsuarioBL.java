@@ -50,4 +50,8 @@ public class UsuarioBL {
     public void modificarUsuario(Usuario user){
         usuariosDA.modificarUsuario(user);
     }
+    
+    public void eliminarUsuario(Usuario user){
+        usuariosDA.eliminarUsuario(user);
+    }
 }
