@@ -46,4 +46,8 @@ public class UsuarioBL {
     public void crearUsuario(Usuario user){
         usuariosDA.crearUsuario(user);
     }
+    
+    public void modificarUsuario(Usuario user){
+        usuariosDA.modificarUsuario(user);
+    }
 }
