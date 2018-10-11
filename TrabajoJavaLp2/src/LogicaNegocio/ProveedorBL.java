@@ -30,4 +30,8 @@ public class ProveedorBL {
     public void modificarProveedor(Proveedor prov){
         proveedorDA.modificarProveedor(prov);
     }
+    
+    public void eliminarProveedor(Proveedor prov){
+        proveedorDA.eliminarProveedor(prov);
+    }
 }

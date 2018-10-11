@@ -56,7 +56,7 @@ public class ProveedorDA {
             ps.setString(1, prov.getRUC());
             ps.setString(2, prov.getRazon_socual());
             ps.setString(3, prov.getEmail());
-            ps.setString(4, prov.getEmail());
+            ps.setString(4, prov.getTelefono());
             ps.setInt(5, 1);
             
             ps.executeUpdate();
@@ -84,6 +84,23 @@ public class ProveedorDA {
             ps.executeUpdate();
             
             con.close();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public void eliminarProveedor(Proveedor prov){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE PROVEEDOR SET REGISTRO_ACTIVO = ? WHERE ID_PROVEEDOR = ?");
+            ps.setInt(1, 0);
+            ps.setLong(2, prov.getId_proveedor());
+            
+            ps.executeUpdate();
+            
+            con.close();     
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
