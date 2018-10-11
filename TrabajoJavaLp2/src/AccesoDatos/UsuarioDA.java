@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import modelo.Usuario;
 import modelo.Gerente;
 import modelo.Operario;
@@ -101,6 +100,38 @@ public class UsuarioDA {
             ps.executeUpdate();
             
             con.close();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public void modificarUsuario(Usuario user){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE USUARIO SET ID_PERFIL = ?, NOMBRES = ?,"
+                    + "APELLIDOS = ?, CORREO=?, DNI=?, USERNAME=?, PASSWORD=?,"
+                    + "FECHA_REGISTRO = NOW() WHERE ID_USUARIO = ?;");
+            if(user.getDescripcion_permisos().equals("GERENTE")){
+                ps.setInt(1, 1);
+            }else if(user.getDescripcion_permisos().equals("JEFE DE ALMACEN")){
+                ps.setInt(1, 3);
+            }else if(user.getDescripcion_permisos().equals("OPERARIO")){
+                ps.setInt(1, 4);
+            }
+            ps.setString(2, user.getNombre());
+            ps.setString(3, user.getApellidos());
+            ps.setString(4, user.getCorreo());
+            ps.setString(5, user.getDni());
+            ps.setString(6, user.getUsername());
+            ps.setString(7, user.getContrasena());
+            ps.setLong(8,user.getId_usuario());
+            
+            ps.executeUpdate();
+            
+            con.close();
+            
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }

@@ -213,14 +213,14 @@ public class NewWrhouseForm extends javax.swing.JDialog {
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         AlmacenBL almacenBL = new AlmacenBL();
-        int user = 0;
+        long user = 0;
         int row = tblOperarios.getSelectedRow();
         int col = tblOperarios.getSelectedColumn();
         String username = tblOperarios.getValueAt(row, col).toString();
         int num = usuarios.size();
         for(int i = 0; i<num; i++){
             if(usuarios.get(i).getUsername().equals(username)){
-                user = i+1;
+                user = usuarios.get(i).getId_usuario();
             }
         }
         Almacen alm = new Almacen();

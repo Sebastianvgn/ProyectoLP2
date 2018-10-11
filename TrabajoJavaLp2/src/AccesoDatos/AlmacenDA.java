@@ -18,7 +18,7 @@ import modelo.Usuario;
  * @author alulab14
 */
 public class AlmacenDA {
-    public int crearAlmacen(Almacen alm, int user){
+    public int crearAlmacen(Almacen alm, long user){
         int auto_id = 0;
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -30,7 +30,7 @@ public class AlmacenDA {
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
             auto_id = rs.getInt(1);
-            ps.setInt(1,user);
+            ps.setLong(1,user);
             ps.setString(2,alm.getNomAlmacen());
             ps.setInt(3, alm.getTipo_almacen());
             ps.setString(4, alm.getDescripcion());

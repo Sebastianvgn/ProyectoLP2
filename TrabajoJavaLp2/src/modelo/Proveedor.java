@@ -1,24 +1,35 @@
 package modelo;
 public class Proveedor{
+        private long id_proveedor;
 	private String ruc;
 	private String razon_social;
 	private String email;
 	private String telefono;
 
-	public Proveedor(){
-		ruc = null;
-		razon_social = null;
-		email = null;
-		telefono = null;
+        public Proveedor(){
+            id_proveedor = 0;
+            ruc = null;
+            razon_social = null;
+            email = null;
+            telefono = null;
 	}
+        
+        public Proveedor(long id_proveedor, String ruc, String razon_social, String email, String telefono) {
+            this.id_proveedor = id_proveedor;
+            this.ruc = ruc;
+            this.razon_social = razon_social;
+            this.email = email;
+            this.telefono = telefono;
+        }
 
-	public Proveedor(String ruc, String razon_social, String email, String telefono){
-		setRUC(ruc);
-		setRazon_social(razon_social);
-		setEmail(email);
-		setTelefono(telefono);
-	}
+        public long getId_proveedor() {
+            return id_proveedor;
+        }
 
+        public void setId_proveedor(long id_proveedor) {
+            this.id_proveedor = id_proveedor;
+        }
+        
 	public void setRUC(String ruc){
 		this.ruc = ruc;
 	}

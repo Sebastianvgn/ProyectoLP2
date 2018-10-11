@@ -22,7 +22,7 @@ public class AlmacenBL {
         areaDA = new AreaDA();
     }
     
-    public void crearAlmacen(Almacen alm, ArrayList<Area> ar, int user){
+    public void crearAlmacen(Almacen alm, ArrayList<Area> ar, long user){
         int auto_id = almacenDA.crearAlmacen(alm, user);
         int cant = ar.size();
         int i;
