@@ -63,6 +63,8 @@ public class NewProveedorForm extends javax.swing.JDialog {
         lblRUC.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblRUC.setText("RUC:");
 
+        txtCorreo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         lblTelefono.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTelefono.setText("Teléfono:");
 
@@ -80,6 +82,14 @@ public class NewProveedorForm extends javax.swing.JDialog {
         txtRUC.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
 
         pnlTop.setBackground(new java.awt.Color(1, 50, 67));
 
@@ -106,6 +116,8 @@ public class NewProveedorForm extends javax.swing.JDialog {
 
         lblDireccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDireccion.setText("Dirección:");
+
+        txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +153,7 @@ public class NewProveedorForm extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 30, Short.MAX_VALUE)
+                .addGap(18, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRUC)
                     .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,10 +161,10 @@ public class NewProveedorForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRazon)
                     .addComponent(txtRazon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCorreo))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCorreo)
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,7 +177,7 @@ public class NewProveedorForm extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,10 +186,35 @@ public class NewProveedorForm extends javax.swing.JDialog {
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         String ruc = txtRUC.getText();
+        if(ruc.length() != 11 || ruc.length() == 0){
+            JOptionPane.showMessageDialog(this,"RUC inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String razon = txtRazon.getText();
+        if(razon.length() == 0){
+            JOptionPane.showMessageDialog(this,"Razon Social inválida", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String correo = txtCorreo.getText();
+        if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
+            JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String direccion = txtDireccion.getText();
+        if(direccion.length() == 0){
+            JOptionPane.showMessageDialog(this,"Dirección inválida", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String tele = txtTelefono.getText();
+        if(tele.length() > 9){
+            JOptionPane.showMessageDialog(this,"Número telefónico inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         Proveedor prov = new Proveedor(0,ruc, razon, correo, direccion, tele);
         ProveedorBL proveedorBL = new ProveedorBL();
         proveedorBL.crearProveedor(prov);
@@ -189,6 +226,17 @@ public class NewProveedorForm extends javax.swing.JDialog {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyPressed
+        
+    }//GEN-LAST:event_txtTelefonoKeyPressed
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
 
     /**
      * @param args the command line arguments
