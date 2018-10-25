@@ -1,8 +1,17 @@
 package Vista;
 
 
+import LogicaNegocio.UsuarioBL;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Gerente;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,8 +28,10 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
     /**
      * Creates new form RecoverPasswordForm
      */
+    private UsuarioBL usuarioBL;
     public RecoverPasswordForm() {
         initComponents();
+        usuarioBL = new UsuarioBL();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,11 +46,12 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
         lblTxtPassRec = new javax.swing.JLabel();
         pnlRecBottom = new javax.swing.JPanel();
         lblRecMail = new javax.swing.JLabel();
-        lblRecUser = new javax.swing.JLabel();
-        txtRecUsername = new javax.swing.JTextField();
         btnRecSend = new javax.swing.JButton();
         txtRecEmail = new javax.swing.JTextField();
         btnRecClose = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,20 +82,7 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
 
         lblRecMail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblRecMail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/email.png"))); // NOI18N
-        lblRecMail.setText("Email Address:");
-
-        lblRecUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblRecUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/user.png"))); // NOI18N
-        lblRecUser.setText("Username:");
-
-        txtRecUsername.setBackground(new java.awt.Color(108, 122, 137));
-        txtRecUsername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtRecUsername.setForeground(new java.awt.Color(228, 241, 254));
-        txtRecUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRecUsernameActionPerformed(evt);
-            }
-        });
+        lblRecMail.setText("Correo Electrónico");
 
         btnRecSend.setBackground(new java.awt.Color(1, 50, 67));
         btnRecSend.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -114,44 +113,63 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("¿Olvidó su Contraseña?");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("Por favor, ingrese su correo electrónico de usuario para enviarle  ");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("su nombre de usuario y su contraseña.");
+
         javax.swing.GroupLayout pnlRecBottomLayout = new javax.swing.GroupLayout(pnlRecBottom);
         pnlRecBottom.setLayout(pnlRecBottomLayout);
         pnlRecBottomLayout.setHorizontalGroup(
             pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRecBottomLayout.createSequentialGroup()
-                .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(129, 129, 129)
+                .addComponent(btnRecClose, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRecSend, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
+            .addGroup(pnlRecBottomLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlRecBottomLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRecUser)
-                            .addComponent(lblRecMail))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRecUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRecEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel3)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnlRecBottomLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(btnRecClose, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRecSend, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(pnlRecBottomLayout.createSequentialGroup()
+                                .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnlRecBottomLayout.createSequentialGroup()
+                                        .addComponent(lblRecMail)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtRecEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 4, Short.MAX_VALUE)))
+                        .addGap(19, 19, 19))))
         );
         pnlRecBottomLayout.setVerticalGroup(
             pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRecBottomLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtRecUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblRecUser))
-                .addGap(32, 32, 32)
-                .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblRecMail)
                     .addComponent(txtRecEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addGap(52, 52, 52)
                 .addGroup(pnlRecBottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRecClose, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRecSend, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,16 +183,12 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlRecTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlRecBottom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlRecBottom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtRecUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRecUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtRecUsernameActionPerformed
 
     private void txtRecEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRecEmailActionPerformed
         // TODO add your handling code here:
@@ -184,6 +198,8 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
     private void btnRecSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecSendActionPerformed
 
       
+        //EnviarConGMail("jhloli@pucp.pe", "Prueba", "Mensaje de prueba");
+        Gerente usuario = usuarioBL.EnviarCorreo(txtRecEmail.getText());
         JOptionPane.showMessageDialog(this,"Correo enviado.", "Confirmacion",
                                       JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnRecSendActionPerformed
@@ -235,12 +251,13 @@ public class RecoverPasswordForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRecClose;
     private javax.swing.JButton btnRecSend;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblRecMail;
-    private javax.swing.JLabel lblRecUser;
     private javax.swing.JLabel lblTxtPassRec;
     private javax.swing.JPanel pnlRecBottom;
     private javax.swing.JPanel pnlRecTop;
     private javax.swing.JTextField txtRecEmail;
-    private javax.swing.JTextField txtRecUsername;
     // End of variables declaration//GEN-END:variables
 }

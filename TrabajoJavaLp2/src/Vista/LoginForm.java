@@ -222,14 +222,14 @@ public class LoginForm extends javax.swing.JFrame {
         String pass = new String(txtPass.getPassword());
         String tipo = usuariobl.buscarUsuario(user, pass);
         if(tipo.equals("ADMINISTRADOR DE SISTEMAS")){
-            MainMenuAdmin mmf = new MainMenuAdmin();
+            MenuAdminSist mmf = new MenuAdminSist();
             mmf.setVisible(true);
             mmf.pack();
             mmf.setLocationRelativeTo(null);
             mmf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.dispose();
         }else if(tipo.equals("GERENTE")){
-            MainMenuGerente mm2 = new MainMenuGerente();
+            MenuGerent mm2 = new MenuGerent();
             mm2.setVisible(true);
             mm2.pack();
             mm2.setLocationRelativeTo(null);
@@ -265,14 +265,14 @@ public class LoginForm extends javax.swing.JFrame {
             String pass = new String(txtPass.getPassword());
             String tipo = usuariobl.buscarUsuario(user, pass);
             if(tipo.equals("ADMINISTRADOR DE SISTEMAS")){
-                MainMenuAdmin mmf = new MainMenuAdmin();
+                MenuAdminSist mmf = new MenuAdminSist();
                 mmf.setVisible(true);
                 mmf.pack();
                 mmf.setLocationRelativeTo(null);
                 mmf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 this.dispose();
             }else if(tipo.equals("GERENTE")){
-                MainMenuGerente mm2 = new MainMenuGerente();
+                MenuGerent mm2 = new MenuGerent();
                 mm2.setVisible(true);
                 mm2.pack();
                 mm2.setLocationRelativeTo(null);

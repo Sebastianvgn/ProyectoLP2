@@ -153,5 +153,36 @@ public class UsuarioDA {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public Gerente MostrarNombreUsuario(String correo) {
+        Gerente usuario=null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            Statement sentencia = con.createStatement();
+            String instruccion = "SELECT U.*, P.NOMBRE FROM USUARIO AS U, PERFIL AS P WHERE U.ID_PERFIL = P.ID_PERFIL AND U.REGISTRO_ACTIVO = 1 AND CORREO = '" + correo + "'";
+            ResultSet rs = sentencia.executeQuery(instruccion);
+            if(rs.next()) {
+                long idUser = rs.getInt("ID_USUARIO");
+                //long idPerf = rs.getInt("ID_PERFIL");
+                String name = rs.getString("NOMBRES");
+                String ap = rs.getString("APELLIDOS");
+                String mail = rs.getString("CORREO");
+                String dni = rs.getString("DNI");
+                String user = rs.getString("USERNAME");
+                String pass = rs.getString("PASSWORD");
+                //Date fecha = rs.getDate("FECHA_REGISTRO");
+                //int reg = rs.getInt("REGISTRO_ACTIVO");
+                String perfil = rs.getString("NOMBRE");
+                usuario = new Gerente(idUser,name,ap,mail,dni,user,pass,perfil);
+            }
+            con.close();
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return usuario;
+    }
 
 }

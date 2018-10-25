@@ -5,6 +5,7 @@
  */
 package AccesoDatos;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,7 +26,14 @@ public class AlmacenDA {
             Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
                     "inf282g2", "UInag9");
             
-            PreparedStatement ps = con.prepareStatement("INSERT INTO ALMACEN(ID_USUARIO,NOMBRE,TIPO_ALMACEN,DESCRIPCION,"
+            CallableStatement cSmt = con.prepareCall("{call REGISTRAR_ALMACENES(?,?,?,?)}");
+            cSmt.registerOutParameter("idAlmacen", java.sql.Types.INTEGER);
+            cSmt.setLong("_ID_USUARIO", user);
+            cSmt.setString("_NOMBRE", alm.getNomAlmacen());
+            cSmt.setInt("_TIPO_ALMACEN", alm.getTipo_almacen());
+            cSmt.execute();
+            auto_id = cSmt.getInt("idAlmacen");
+            /*PreparedStatement ps = con.prepareStatement("INSERT INTO ALMACEN(ID_USUARIO,NOMBRE,TIPO_ALMACEN,DESCRIPCION,"
                     + "FECHA_REGISTRO,REGISTRO_ACTIVO) VALUES(?,?,?,?,NOW(),?);", Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
@@ -36,7 +44,7 @@ public class AlmacenDA {
             ps.setString(4, alm.getDescripcion());
             ps.setInt(5, 1);
             
-            ps.executeUpdate();
+            ps.executeUpdate();*/
             
             con.close();
         }catch(Exception ex){
