@@ -60,6 +60,8 @@ public class ModProveedorForm extends javax.swing.JDialog {
         pnlTop = new javax.swing.JPanel();
         lblTextLogin = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
+        lblDireccion = new javax.swing.JLabel();
+        txtDireccion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -165,6 +167,13 @@ public class ModProveedorForm extends javax.swing.JDialog {
             }
         });
 
+        lblDireccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblDireccion.setText("Dirección:");
+
+        txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtDireccion.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtDireccion.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,16 +197,24 @@ public class ModProveedorForm extends javax.swing.JDialog {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRUC)
-                            .addComponent(lblRazon)
-                            .addComponent(lblCorreo)
-                            .addComponent(lblTelefono))
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRazon, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblRUC)
+                                    .addComponent(lblRazon)
+                                    .addComponent(lblCorreo)
+                                    .addComponent(lblTelefono))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtRUC, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtRazon, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblDireccion))))
                 .addContainerGap(28, Short.MAX_VALUE))
             .addComponent(pnlTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -223,6 +240,10 @@ public class ModProveedorForm extends javax.swing.JDialog {
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDireccion)
+                            .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTelefono)
                             .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
@@ -244,6 +265,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
         String ruc = txtRUC.getText();
         String correo = txtCorreo.getText();
         String razon = txtRazon.getText();
+        String direccion = txtDireccion.getText();
         String telefono = txtTelefono.getText();
         int cant = proveedores.size();
         long numprov=0;
@@ -252,7 +274,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
                 numprov = proveedores.get(i).getId_proveedor();
             }
         }
-        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,telefono);
+        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,direccion,telefono);
         ProveedorBL proveedorBL = new ProveedorBL();
         proveedorBL.modificarProveedor(prov);
         
@@ -269,6 +291,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
         txtCorreo.setEnabled(true);
         txtRUC.setEnabled(true);
         txtRazon.setEnabled(true);
+        txtDireccion.setEnabled(true);
         txtTelefono.setEnabled(true);
         int cant = proveedores.size();
         int row = tblProveedores.getSelectedRow();
@@ -284,6 +307,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
         txtCorreo.setText(proveedores.get(index).getEmail());
         txtRUC.setText(proveedores.get(index).getRUC());
         txtRazon.setText(proveedores.get(index).getRazon_socual());
+        txtDireccion.setText(proveedores.get(index).getDireccion());
         txtTelefono.setText(proveedores.get(index).getTelefono());
     }//GEN-LAST:event_tblProveedoresMouseClicked
 
@@ -291,6 +315,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
         String ruc = txtRUC.getText();
         String correo = txtCorreo.getText();
         String razon = txtRazon.getText();
+        String direccion = txtDireccion.getText();
         String telefono = txtTelefono.getText();
         int cant = proveedores.size();
         long numprov=0;
@@ -299,11 +324,11 @@ public class ModProveedorForm extends javax.swing.JDialog {
                 numprov = proveedores.get(i).getId_proveedor();
             }
         }
-        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,telefono);
+        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,direccion,telefono);
         ProveedorBL proveedorBL = new ProveedorBL();
         proveedorBL.eliminarProveedor(prov);
         
-        JOptionPane.showMessageDialog(this,"Proveedor Modificado.", "Confirmación",
+        JOptionPane.showMessageDialog(this,"Proveedor Eliminado.", "Confirmación",
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -356,6 +381,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
     private javax.swing.JButton btnModificar;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblRUC;
     private javax.swing.JLabel lblRazon;
     private javax.swing.JLabel lblTelefono;
@@ -364,6 +390,7 @@ public class ModProveedorForm extends javax.swing.JDialog {
     private javax.swing.JPanel pnlTop;
     private javax.swing.JTable tblProveedores;
     private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtRUC;
     private javax.swing.JTextField txtRazon;
     private javax.swing.JTextField txtTelefono;

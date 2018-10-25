@@ -4,6 +4,7 @@ public class Proveedor{
 	private String ruc;
 	private String razon_social;
 	private String email;
+        private String direccion;
 	private String telefono;
 
         public Proveedor(){
@@ -11,14 +12,16 @@ public class Proveedor{
             ruc = null;
             razon_social = null;
             email = null;
+            direccion = null;
             telefono = null;
 	}
         
-        public Proveedor(long id_proveedor, String ruc, String razon_social, String email, String telefono) {
+        public Proveedor(long id_proveedor, String ruc, String razon_social, String email, String direccion, String telefono) {
             this.id_proveedor = id_proveedor;
             this.ruc = ruc;
             this.razon_social = razon_social;
             this.email = email;
+            this.direccion = direccion;
             this.telefono = telefono;
         }
 
@@ -53,6 +56,14 @@ public class Proveedor{
 	public String getEmail(){
 		return email;
 	}
+        
+        public String getDireccion() {
+            return direccion;
+        }
+
+        public void setDireccion(String direccion) {
+            this.direccion = direccion;
+        }
 
 	public void setTelefono(String telefono){
 		this.telefono = telefono;
