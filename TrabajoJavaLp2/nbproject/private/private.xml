@@ -3,14 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/AccesoDatos/UsuarioDA.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/Vista/MenuGerent.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/Vista/LoginForm.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/Vista/MenuAdminSist.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/LogicaNegocio/UsuarioBL.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/modelo/Usuario.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/modelo/Gerente.java</file>
-            <file>file:/C:/Users/alulab14.INF.007/Downloads/ProyectoLP2/TrabajoJavaLp2/src/Vista/RecoverPasswordForm.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/modelo/Usuario.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/LogicaNegocio/AlmacenBL.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/AccesoDatos/AlmacenDA.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/modelo/Operario.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/modelo/Proveedor.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/Vista/NewProveedorForm.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/AccesoDatos/ProveedorDA.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/modelo/Area.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/Vista/NewAreaForm.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/LogicaNegocio/ProveedorBL.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/Vista/NewAccountForm.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/Vista/NewWrhouseForm.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/AccesoDatos/AreaDA.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/Vista/ModProveedorForm.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/modelo/Almacen.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/LogicaNegocio/UsuarioBL.java</file>
+            <file>file:/C:/Users/Sebastian/Desktop/Codigo%20LP2/ProyectoLP2/TrabajoJavaLp2/src/Vista/LoginForm.java</file>
         </group>
     </open-files>
 </project-private>

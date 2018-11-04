@@ -237,7 +237,17 @@ public class NewAccountForm extends javax.swing.JDialog {
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         Usuario usuario = null;
         String name = txtName.getText();
+        if(name.length() == 0){
+            JOptionPane.showMessageDialog(this,"Nombre inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String ap = txtApellido.getText();
+        if(ap.length() == 0){
+            JOptionPane.showMessageDialog(this,"Apellido inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String mail = txtMail.getText();
         if(!mail.contains("@") || !mail.contains(".") || mail.length() == 0){
             JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
@@ -251,7 +261,17 @@ public class NewAccountForm extends javax.swing.JDialog {
             return;
         }
         String user = txtUser.getText();
+        if(user.length() == 0){
+            JOptionPane.showMessageDialog(this,"Usuario inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String pass = txtPass.getText(); 
+        if(pass.length() == 0){
+            JOptionPane.showMessageDialog(this,"Contraseña inválida", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         int espInd = cmbTipo.getSelectedIndex();
         String tipo = "";
         if(espInd == 0){

@@ -181,6 +181,11 @@ public class ModAccountForm extends javax.swing.JDialog {
         txtDni.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtDni.setDisabledTextColor(new java.awt.Color(153, 153, 153));
         txtDni.setEnabled(false);
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
+            }
+        });
 
         cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerente", "Operario", "Jefe de Almacén" }));
         cmbTipo.setEnabled(false);
@@ -306,10 +311,11 @@ public class ModAccountForm extends javax.swing.JDialog {
                             .addComponent(txtPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblPuesto))
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPerm)
-                            .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblPerm)
+                                .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -327,11 +333,41 @@ public class ModAccountForm extends javax.swing.JDialog {
         
         Usuario user = null;
         String nombre = txtName.getText();
+        if(nombre.length() == 0){
+            JOptionPane.showMessageDialog(this,"Nombre inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String apellido = txtApellidos.getText();
+        if(apellido.length() == 0){
+            JOptionPane.showMessageDialog(this,"Apellido inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String correo = txtCorreo.getText();
+        if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
+            JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String dni = txtDni.getText();
+        if(dni.length() != 8){
+            JOptionPane.showMessageDialog(this,"DNI inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String username = txtUser.getText();
+        if(username.length() == 0){
+            JOptionPane.showMessageDialog(this,"Usuario inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String pass = txtPass.getText();
+        if(pass.length() == 0){
+            JOptionPane.showMessageDialog(this,"Contraseña inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         int index = cmbTipo.getSelectedIndex();
         int cant = usuarios.size();
         long numuser = 0;
@@ -441,6 +477,13 @@ public class ModAccountForm extends javax.swing.JDialog {
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDniKeyTyped
 
     /**
      * @param args the command line arguments
