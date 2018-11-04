@@ -129,6 +129,16 @@ public class NewAccountForm extends javax.swing.JDialog {
         lblDni.setText("DNI:");
 
         txtDni.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniActionPerformed(evt);
+            }
+        });
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,7 +239,17 @@ public class NewAccountForm extends javax.swing.JDialog {
         String name = txtName.getText();
         String ap = txtApellido.getText();
         String mail = txtMail.getText();
+        if(!mail.contains("@") || !mail.contains(".") || mail.length() == 0){
+            JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String dni = txtDni.getText();
+        if(dni.length() != 8){
+            JOptionPane.showMessageDialog(this,"DNI inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String user = txtUser.getText();
         String pass = txtPass.getText(); 
         int espInd = cmbTipo.getSelectedIndex();
@@ -252,6 +272,17 @@ public class NewAccountForm extends javax.swing.JDialog {
                                       JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniActionPerformed
+
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDniKeyTyped
 
     /**
      * @param args the command line arguments

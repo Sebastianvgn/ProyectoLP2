@@ -135,6 +135,11 @@ public class ModProveedorForm extends javax.swing.JDialog {
         txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTelefono.setDisabledTextColor(new java.awt.Color(153, 153, 153));
         txtTelefono.setEnabled(false);
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
 
         pnlTop.setBackground(new java.awt.Color(1, 50, 67));
 
@@ -263,10 +268,35 @@ public class ModProveedorForm extends javax.swing.JDialog {
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         String ruc = txtRUC.getText();
-        String correo = txtCorreo.getText();
+        if(ruc.length() != 11 || ruc.length() == 0){
+            JOptionPane.showMessageDialog(this,"RUC inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String razon = txtRazon.getText();
+        if(razon.length() == 0){
+            JOptionPane.showMessageDialog(this,"Razon Social inválida", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        String correo = txtCorreo.getText();
+        if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
+            JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String direccion = txtDireccion.getText();
+        if(direccion.length() == 0){
+            JOptionPane.showMessageDialog(this,"Dirección inválida", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         String telefono = txtTelefono.getText();
+        if(telefono.length() > 9){
+            JOptionPane.showMessageDialog(this,"Número telefónico inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         int cant = proveedores.size();
         long numprov=0;
         for(int i = 0; i<cant; i++){
@@ -332,6 +362,13 @@ public class ModProveedorForm extends javax.swing.JDialog {
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        char c = evt.getKeyChar();
+        if(!(Character.isDigit(c))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
 
     /**
      * @param args the command line arguments
