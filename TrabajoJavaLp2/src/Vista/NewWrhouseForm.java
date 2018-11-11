@@ -217,6 +217,11 @@ public class NewWrhouseForm extends javax.swing.JDialog {
         int row = tblOperarios.getSelectedRow();
         int col = tblOperarios.getSelectedColumn();
         String username = tblOperarios.getValueAt(row, col).toString();
+        if(username.length() == 0){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un usuario", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         int num = usuarios.size();
         for(int i = 0; i<num; i++){
             if(usuarios.get(i).getUsername().equals(username)){
@@ -224,8 +229,20 @@ public class NewWrhouseForm extends javax.swing.JDialog {
             }
         }
         Almacen alm = new Almacen();
-        alm.setNomAlmacen(txtName.getText());
-        alm.setDescripcion(txtDesc.getText());
+        String nomAlm = txtName.getText();
+        if(nomAlm.length() == 0){
+            JOptionPane.showMessageDialog(this,"Nombre inválido", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        alm.setNomAlmacen(nomAlm);
+        String desAlm = txtDesc.getText();
+        if(desAlm.length() == 0){
+            JOptionPane.showMessageDialog(this,"Descripción inválida", "Alerta",
+            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        alm.setDescripcion(desAlm);
         int ind = cmbTipo.getSelectedIndex();
         alm.setTipo_almacen(ind);
         almacenBL.crearAlmacen(alm, areas, user);
