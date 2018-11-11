@@ -92,7 +92,15 @@ public class NewAreaForm extends javax.swing.JDialog {
             new String [] {
                 "Nombre de áreas"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblArea.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblArea);
 

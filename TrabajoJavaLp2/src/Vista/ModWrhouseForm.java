@@ -41,19 +41,23 @@ public class ModWrhouseForm extends javax.swing.JDialog {
         btnCancelar = new javax.swing.JButton();
         pnlTop = new javax.swing.JPanel();
         lblTextLogin = new javax.swing.JLabel();
+        lblOperario = new javax.swing.JLabel();
+        txtOperario = new javax.swing.JTextField();
+        btnOperarios = new javax.swing.JButton();
+        lblOperario1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblAccount.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblAccount.setText("Descripción:");
 
-        txtName.setEditable(false);
         txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtName.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtName.setEnabled(false);
 
-        txtDescripcion.setEditable(false);
         txtDescripcion.setColumns(20);
         txtDescripcion.setRows(5);
+        txtDescripcion.setEnabled(false);
         jScrollPane1.setViewportView(txtDescripcion);
 
         lblName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -112,12 +116,30 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
+        lblOperario.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblOperario.setText("Operario:");
+
+        txtOperario.setEditable(false);
+        txtOperario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtOperario.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtOperario.setEnabled(false);
+
+        btnOperarios.setText("...");
+        btnOperarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOperariosActionPerformed(evt);
+            }
+        });
+
+        lblOperario1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblOperario1.setText("Áreas:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblUsersSystem)
@@ -126,19 +148,29 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblName)
-                            .addComponent(lblAccount))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                            .addComponent(lblOperario)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(48, 48, 48)
+                                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblName)
+                                        .addComponent(lblAccount))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                                        .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                                        .addComponent(txtOperario)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnOperarios)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblOperario1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addComponent(pnlTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -146,7 +178,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -156,16 +188,24 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAccount)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44))
+                            .addComponent(lblOperario)
+                            .addComponent(txtOperario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOperarios, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblOperario1)
+                        .addGap(124, 124, 124))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblUsersSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86))))
+                        .addGap(86, 86, 86)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -181,6 +221,10 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnOperariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperariosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOperariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,15 +271,19 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnOperarios;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAccount;
     private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblOperario;
+    private javax.swing.JLabel lblOperario1;
     private javax.swing.JLabel lblTextLogin;
     private javax.swing.JLabel lblUsersSystem;
     private javax.swing.JPanel pnlTop;
     private javax.swing.JTable tblArticulos;
     private javax.swing.JTextArea txtDescripcion;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtOperario;
     // End of variables declaration//GEN-END:variables
 }

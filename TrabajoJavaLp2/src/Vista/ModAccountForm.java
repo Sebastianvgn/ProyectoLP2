@@ -129,7 +129,15 @@ public class ModAccountForm extends javax.swing.JDialog {
             new String [] {
                 "Usuarios del Sistema"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblUsers.getTableHeader().setReorderingAllowed(false);
         tblUsers.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
