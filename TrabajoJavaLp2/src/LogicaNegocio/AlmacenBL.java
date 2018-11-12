@@ -31,4 +31,16 @@ public class AlmacenBL {
         }
         alm.setAreas(ar);
     }
+    
+    public ArrayList<Almacen> listarAlmacenes(){
+        ArrayList<Almacen> almacenes = almacenDA.listarAlmacenes();
+        int cant = almacenes.size();
+        for(int i = 0; i<cant; i++){
+            long id = almacenes.get(i).getIdAlmacen();
+            ArrayList<Area> areas = new ArrayList<Area>();
+            areas = areaDA.listarAreas(id);
+            almacenes.get(i).setAreas(areas);
+        }
+        return almacenes;
+    }
 }

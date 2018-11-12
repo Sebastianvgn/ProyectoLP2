@@ -11,7 +11,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import modelo.Almacen;
+import modelo.Operario;
 import modelo.Usuario;
 
 /**
@@ -51,5 +53,48 @@ public class AlmacenDA {
             System.out.println(ex.getMessage());
         }
         return auto_id;
+    }
+    
+    public ArrayList<Almacen> listarAlmacenes(){
+        ArrayList<Almacen> almacenes = new ArrayList<Almacen>();
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            Statement sentencia = con.createStatement();
+            String instruccion = "SELECT * FROM ALMACEN WHERE REGISTRO_ACTIVO = 1";
+            ResultSet rs = sentencia.executeQuery(instruccion);
+            ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+            UsuarioDA usuarioDA = new UsuarioDA();
+            usuarios = usuarioDA.listarUsuarios();
+            int cant = usuarios.size();
+            
+            while(rs.next()){
+                ArrayList<Operario> operarios = new ArrayList<Operario>();
+                long idAlm = rs.getInt("ID_ALMACEN");
+                long iduser = rs.getInt("ID_USUARIO");
+                for(int i = 0; i<cant; i++){
+                    if(iduser == usuarios.get(i).getId_usuario()){
+                        operarios.add((Operario)usuarios.get(i));
+                        break;
+                    }
+                }
+                String nombre = rs.getString("NOMBRE");
+                int tipo = rs.getInt("TIPO_ALMACEN");
+                String desc = rs.getString("DESCRIPCION");
+                Almacen al = new Almacen();
+                al.setDescripcion(desc);
+                al.setIdAlmacen(idAlm);
+                al.setNomAlmacen(nombre);
+                al.setOperarios(operarios);
+                al.setTipo_almacen(tipo);
+                almacenes.add(al);
+                
+            }
+            con.close();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return almacenes;
     }
 }

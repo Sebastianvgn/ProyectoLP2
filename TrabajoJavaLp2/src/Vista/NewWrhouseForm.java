@@ -126,7 +126,7 @@ public class NewWrhouseForm extends javax.swing.JDialog {
         lblTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTipo.setText("Tipo:");
 
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Almacén Virtual", "Allmacén Principal" }));
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Almacén Virtual", "Almacén Principal" }));
 
         lblTipo1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTipo1.setText("Operario:");
@@ -138,7 +138,15 @@ public class NewWrhouseForm extends javax.swing.JDialog {
             new String [] {
                 "Usuario", "Nombres"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblOperarios.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tblOperarios);
 
