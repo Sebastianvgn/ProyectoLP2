@@ -19,16 +19,17 @@ import modelo.Usuario;
 public class ModWrhouseForm extends javax.swing.JDialog {
 
     private ArrayList<Area> areas;
-    
     private DefaultTableModel modelo;
+    private DefaultTableModel modeloArea;
     private ArrayList<Usuario> usuarios;
+    private ArrayList<Almacen> almacenes;
     private AlmacenBL almacenBL;
 
     public ModWrhouseForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         almacenBL = new AlmacenBL();
-        ArrayList<Almacen> almacenes = almacenBL.listarAlmacenes();
+        almacenes = almacenBL.listarAlmacenes();
         modelo = (DefaultTableModel)tblAlmacen.getModel();
         Object[] fila = new Object[1];
         int cant = almacenes.size();
@@ -36,8 +37,18 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             fila[0] = almacenes.get(i).getNomAlmacen();
             modelo.addRow(fila);
         }
+        modeloArea = (DefaultTableModel)tblAreas.getModel();
+        
+        
     }
 
+    public ArrayList<Area> getAreas() {
+        return areas;
+    }
+
+    public void setAreas(ArrayList<Area> areas) {
+        this.areas = areas;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -102,8 +113,21 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             new String [] {
                 "Almacenes"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblAlmacen.getTableHeader().setReorderingAllowed(false);
+        tblAlmacen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblAlmacenMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblAlmacen);
 
         btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -220,7 +244,6 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblUsersSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,7 +262,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblOperario)
                             .addComponent(txtOperario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnOperarios, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE))
+                            .addComponent(btnOperarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblOperario1)
@@ -270,6 +293,37 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private void btnOperariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOperariosActionPerformed
+
+    private void tblAlmacenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAlmacenMouseClicked
+        txtName.setEnabled(true);
+        txtDescripcion.setEnabled(true);
+        txtOperario.setEnabled(true);
+        modeloArea.getDataVector().removeAllElements();
+        
+        int row = tblAlmacen.getSelectedRow();
+        int col = tblAlmacen.getSelectedColumn();
+        int cant = almacenes.size();
+        String nombreAlm = tblAlmacen.getValueAt(row, col).toString();
+        int index = 0;
+        for(int i = 0; i<cant;i++){
+            if(almacenes.get(i).getNomAlmacen().equals(nombreAlm)){
+                index = i;
+            }
+        }
+        txtName.setText(almacenes.get(index).getNomAlmacen());
+        txtDescripcion.setText(almacenes.get(index).getDescripcion());
+        txtOperario.setText(almacenes.get(index).getOperarios().get(0).getNombre());
+        
+        Object[] fila = new Object[1];
+        areas = new ArrayList<Area>();
+        areas = almacenes.get(index).getAreas();
+        int cant2 = areas.size();
+        for(int i = 0; i<cant2; i++){
+            fila[0] = areas.get(i).getNombreArea();
+            modeloArea.addRow(fila);
+        }
+        
+    }//GEN-LAST:event_tblAlmacenMouseClicked
 
     /**
      * @param args the command line arguments
