@@ -2,6 +2,7 @@ package Vista;
 import LogicaNegocio.AlmacenBL;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Almacen;
 import modelo.Area;
@@ -24,6 +25,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Almacen> almacenes;
     private AlmacenBL almacenBL;
+    private JTable tablaArea;
 
     public ModWrhouseForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -38,6 +40,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             modelo.addRow(fila);
         }
         modeloArea = (DefaultTableModel)tblAreas.getModel();
+        this.tablaArea = tblAreas;
         
         
     }
@@ -76,7 +79,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
         lblOperario1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblAreas = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnEditarArea = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -198,8 +201,13 @@ public class ModWrhouseForm extends javax.swing.JDialog {
         tblAreas.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tblAreas);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("Editar");
+        btnEditarArea.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnEditarArea.setText("Editar");
+        btnEditarArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAreaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -235,7 +243,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                                         .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                                         .addComponent(txtOperario)
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEditarArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnOperarios)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -268,7 +276,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                             .addComponent(lblOperario1)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -322,8 +330,16 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             fila[0] = areas.get(i).getNombreArea();
             modeloArea.addRow(fila);
         }
+        this.tablaArea = tblAreas;
         
     }//GEN-LAST:event_tblAlmacenMouseClicked
+
+    private void btnEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAreaActionPerformed
+        ModAreaForm maf = new ModAreaForm(null,true);
+        maf.setTblArea(tablaArea);
+        maf.setVisible(true);
+        areas = maf.areas;
+    }//GEN-LAST:event_btnEditarAreaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,9 +385,9 @@ public class ModWrhouseForm extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEditarArea;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnOperarios;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
