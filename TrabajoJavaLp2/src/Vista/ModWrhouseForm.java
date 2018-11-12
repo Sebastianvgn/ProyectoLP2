@@ -6,6 +6,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Almacen;
 import modelo.Area;
+import modelo.Operario;
 import modelo.Usuario;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,6 +27,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private ArrayList<Almacen> almacenes;
     private AlmacenBL almacenBL;
     private JTable tablaArea;
+    private String ger;
 
     public ModWrhouseForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -299,7 +301,10 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnOperariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOperariosActionPerformed
-        // TODO add your handling code here:
+        ModOperarioForm mof = new ModOperarioForm(null,true,ger);
+        mof.setVisible(true);
+        Operario oper = mof.op;
+        txtOperario.setText(oper.getNombre());
     }//GEN-LAST:event_btnOperariosActionPerformed
 
     private void tblAlmacenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAlmacenMouseClicked
@@ -321,6 +326,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
         txtName.setText(almacenes.get(index).getNomAlmacen());
         txtDescripcion.setText(almacenes.get(index).getDescripcion());
         txtOperario.setText(almacenes.get(index).getOperarios().get(0).getNombre());
+        ger = almacenes.get(index).getOperarios().get(0).getNombre();
         
         Object[] fila = new Object[1];
         areas = new ArrayList<Area>();
