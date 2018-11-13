@@ -341,7 +341,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     }//GEN-LAST:event_tblAlmacenMouseClicked
 
     private void btnEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAreaActionPerformed
-        ModAreaForm maf = new ModAreaForm(null,true);
+        ModAreaForm maf = new ModAreaForm(null,true, tablaArea);
         maf.setTblArea(tablaArea);
         maf.setVisible(true);
         areas = maf.areas;
