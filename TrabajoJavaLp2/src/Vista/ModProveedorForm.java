@@ -342,25 +342,35 @@ public class ModProveedorForm extends javax.swing.JDialog {
     }//GEN-LAST:event_tblProveedoresMouseClicked
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        String ruc = txtRUC.getText();
-        String correo = txtCorreo.getText();
-        String razon = txtRazon.getText();
-        String direccion = txtDireccion.getText();
-        String telefono = txtTelefono.getText();
-        int cant = proveedores.size();
-        long numprov=0;
-        for(int i = 0; i<cant; i++){
-            if(proveedores.get(i).getRazon_socual().equals(razon)){
-                numprov = proveedores.get(i).getId_proveedor();
-            }
+        boolean select = tblProveedores.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un Proveedor.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
-        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,direccion,telefono);
-        ProveedorBL proveedorBL = new ProveedorBL();
-        proveedorBL.eliminarProveedor(prov);
-        
-        JOptionPane.showMessageDialog(this,"Proveedor Eliminado.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea realizar esta acción?","Eliminar",dialog);
+        if(result==0){
+            String ruc = txtRUC.getText();
+            String correo = txtCorreo.getText();
+            String razon = txtRazon.getText();
+            String direccion = txtDireccion.getText();
+            String telefono = txtTelefono.getText();
+            int cant = proveedores.size();
+            long numprov=0;
+            for(int i = 0; i<cant; i++){
+                if(proveedores.get(i).getRazon_socual().equals(razon)){
+                    numprov = proveedores.get(i).getId_proveedor();
+                }
+            }
+            Proveedor prov = new Proveedor(numprov,ruc,razon,correo,direccion,telefono);
+            ProveedorBL proveedorBL = new ProveedorBL();
+            proveedorBL.eliminarProveedor(prov);
+
+            JOptionPane.showMessageDialog(this,"Proveedor Eliminado.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped

@@ -334,10 +334,11 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                             .addComponent(lblTipoAlm)
                             .addComponent(txtTipoAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTipo)
-                            .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblTipo)
+                                .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -356,43 +357,47 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        String nom = txtName.getText();
-        String desc = txtDescripcion.getText();
-        Almacen alm = new Almacen();
-        ArrayList<Operario> operarios = new ArrayList<Operario>();
-        String nomOp = txtOperario.getText();
-        Operario operar = null;
-        int tam = usuarios.size();
-        for(int i = 0; i< tam; i++){
-            if(usuarios.get(i).getNombre().equals(nomOp)){
-                operar = (Operario)usuarios.get(i);
-                operarios.add(operar);
-                break;
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Desea realizar estos cambios?","Modificar",dialog);
+        if(result==0){
+            String nom = txtName.getText();
+            String desc = txtDescripcion.getText();
+            Almacen alm = new Almacen();
+            ArrayList<Operario> operarios = new ArrayList<Operario>();
+            String nomOp = txtOperario.getText();
+            Operario operar = null;
+            int tam = usuarios.size();
+            for(int i = 0; i< tam; i++){
+                if(usuarios.get(i).getNombre().equals(nomOp)){
+                    operar = (Operario)usuarios.get(i);
+                    operarios.add(operar);
+                    break;
+                }
             }
-        }
-        alm.setAreas(areas);
-        alm.setDescripcion(desc);
-        alm.setNomAlmacen(nom);
-        alm.setOperarios(operarios);
-        alm.setIdAlmacen(almacenes.get(index).getIdAlmacen());
-        boolean flag = true;
-        if(areas.equals(almacenes.get(index).getAreas())){
-            flag = false;
-        }
-        int indnum = cmbTipo.getSelectedIndex();
-        if(indnum>=0){
-            alm.setTipo_almacen(indnum);
-        }else{
-            if(txtTipoAlmacen.getText().equals("Almacén Virtual")){
-                alm.setTipo_almacen(0);
+            alm.setAreas(areas);
+            alm.setDescripcion(desc);
+            alm.setNomAlmacen(nom);
+            alm.setOperarios(operarios);
+            alm.setIdAlmacen(almacenes.get(index).getIdAlmacen());
+            boolean flag = true;
+            if(areas.equals(almacenes.get(index).getAreas())){
+                flag = false;
+            }
+            int indnum = cmbTipo.getSelectedIndex();
+            if(indnum>=0){
+                alm.setTipo_almacen(indnum);
             }else{
-                alm.setTipo_almacen(1);
+                if(txtTipoAlmacen.getText().equals("Almacén Virtual")){
+                    alm.setTipo_almacen(0);
+                }else{
+                    alm.setTipo_almacen(1);
+                }
             }
+            almacenBL.modificarAlmacen(alm, almacenes.get(index).getAreas(), flag);
+            JOptionPane.showMessageDialog(this,"Almacén Modificado.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
-        almacenBL.modificarAlmacen(alm, flag);
-        JOptionPane.showMessageDialog(this,"Almacén Modificado.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -464,20 +469,30 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     }//GEN-LAST:event_btnEditarAreaActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        String nom = txtName.getText();
-        String desc = txtDescripcion.getText();
-        Almacen alm = new Almacen();
-        ArrayList<Operario> operarios = new ArrayList<Operario>();
-        operarios = almacenes.get(index).getOperarios();
-        alm.setAreas(areas);
-        alm.setDescripcion(desc);
-        alm.setNomAlmacen(nom);
-        alm.setOperarios(operarios);
-        alm.setIdAlmacen(almacenes.get(index).getIdAlmacen());
-        almacenBL.eliminarAlmacen(alm);
-        JOptionPane.showMessageDialog(this,"Almacén Eliminado.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
+        boolean select = tblAlmacen.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un almacén.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea realizar esta acción?","Eliminar",dialog);
+        if(result==0){
+            String nom = txtName.getText();
+            String desc = txtDescripcion.getText();
+            Almacen alm = new Almacen();
+            ArrayList<Operario> operarios = new ArrayList<Operario>();
+            operarios = almacenes.get(index).getOperarios();
+            alm.setAreas(areas);
+            alm.setDescripcion(desc);
+            alm.setNomAlmacen(nom);
+            alm.setOperarios(operarios);
+            alm.setIdAlmacen(almacenes.get(index).getIdAlmacen());
+            almacenBL.eliminarAlmacen(alm);
+            JOptionPane.showMessageDialog(this,"Almacén Eliminado.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void cbTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTipoItemStateChanged

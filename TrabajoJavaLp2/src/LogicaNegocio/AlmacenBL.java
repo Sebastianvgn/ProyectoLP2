@@ -44,15 +44,15 @@ public class AlmacenBL {
         return almacenes;
     }
     
-    public void modificarAlmacen(Almacen alm, boolean flag){
+    public void modificarAlmacen(Almacen alm, ArrayList<Area> areasPrim, boolean flag){
         ArrayList<Area> areas = new ArrayList<Area>();
         areas = alm.getAreas();
         int cant = areas.size();
         int idAlm = (int)alm.getIdAlmacen();
-        
+        int cant2 = areasPrim.size();
         if(flag){
-            for(int i = 0; i<cant; i++){
-                areaDA.eliminarAreas(areas.get(i), alm.getIdAlmacen());
+            for(int i = 0; i<cant2; i++){
+                areaDA.eliminarAreas(areasPrim.get(i), alm.getIdAlmacen());
             }
             for(int j = 0; j<cant; j++){
                 areaDA.crearArea(areas.get(j), idAlm);

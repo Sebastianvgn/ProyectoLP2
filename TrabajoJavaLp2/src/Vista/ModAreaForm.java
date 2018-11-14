@@ -108,6 +108,11 @@ public class ModAreaForm extends javax.swing.JDialog {
 
         btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         tblArea.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -183,7 +188,13 @@ public class ModAreaForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnagregarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarAreaActionPerformed
+        
         String ar = txtArea.getText();
+        if(ar.isEmpty()){
+            JOptionPane.showMessageDialog(this,"Debe poner un área válida.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
         Object[] fila = new Object[1];
         fila[0] = ar;
         modelo2.addRow(fila);
@@ -191,24 +202,40 @@ public class ModAreaForm extends javax.swing.JDialog {
     }//GEN-LAST:event_btnagregarAreaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        int cant = modelo2.getRowCount();
-        int i;
-        ArrayList<Area> ars = new ArrayList<Area>();
-        for(i = 0; i<cant; i++){
-            Area ar = new Area();
-            String nombre = modelo2.getValueAt(i, 0).toString();
-            ar.setNombreArea(nombre);
-            ars.add(ar);
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Desea realizar estos cambios?","Modificar",dialog);
+        if(result==0){
+            
+        
+            int cant = modelo2.getRowCount();
+            int i;
+            ArrayList<Area> ars = new ArrayList<Area>();
+            for(i = 0; i<cant; i++){
+                Area ar = new Area();
+                String nombre = modelo2.getValueAt(i, 0).toString();
+                ar.setNombreArea(nombre);
+                ars.add(ar);
+            }
+            areas = ars;
+            JOptionPane.showMessageDialog(this,"Áreas modificadas.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
-        areas = ars;
-        JOptionPane.showMessageDialog(this,"Áreas modificadas.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int row = -1;
+        row = tblArea.getSelectedRow();
+        if(row != -1)
+            ((DefaultTableModel)tblArea.getModel()).removeRow(row);
+        else{
+            
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

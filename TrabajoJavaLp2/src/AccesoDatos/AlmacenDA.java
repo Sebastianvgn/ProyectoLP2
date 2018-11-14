@@ -28,11 +28,12 @@ public class AlmacenDA {
             Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
                     "inf282g2", "UInag9");
             
-            CallableStatement cSmt = con.prepareCall("{call REGISTRAR_ALMACENES(?,?,?,?)}");
+            CallableStatement cSmt = con.prepareCall("{call REGISTRAR_ALMACENES(?,?,?,?,?)}");
             cSmt.registerOutParameter("idAlmacen", java.sql.Types.INTEGER);
             cSmt.setLong("_ID_USUARIO", user);
             cSmt.setString("_NOMBRE", alm.getNomAlmacen());
             cSmt.setInt("_TIPO_ALMACEN", alm.getTipo_almacen());
+            cSmt.setString("_DESCRIPCION", alm.getDescripcion());
             cSmt.execute();
             auto_id = cSmt.getInt("idAlmacen");
             /*PreparedStatement ps = con.prepareStatement("INSERT INTO ALMACEN(ID_USUARIO,NOMBRE,TIPO_ALMACEN,DESCRIPCION,"

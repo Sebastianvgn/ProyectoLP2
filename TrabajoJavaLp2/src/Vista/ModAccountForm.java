@@ -202,6 +202,7 @@ public class ModAccountForm extends javax.swing.JDialog {
         lblPuesto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblPuesto.setText("Puesto:");
 
+        txtPuesto.setEditable(false);
         txtPuesto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtPuesto.setDisabledTextColor(new java.awt.Color(153, 153, 153));
         txtPuesto.setEnabled(false);
