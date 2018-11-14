@@ -267,50 +267,60 @@ public class ModProveedorForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        String ruc = txtRUC.getText();
-        if(ruc.length() != 11 || ruc.length() == 0){
-            JOptionPane.showMessageDialog(this,"RUC inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
+        boolean select = tblProveedores.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un Proveedor.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-        String razon = txtRazon.getText();
-        if(razon.length() == 0){
-            JOptionPane.showMessageDialog(this,"Razon Social inválida", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String correo = txtCorreo.getText();
-        if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
-            JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String direccion = txtDireccion.getText();
-        if(direccion.length() == 0){
-            JOptionPane.showMessageDialog(this,"Dirección inválida", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String telefono = txtTelefono.getText();
-        if(telefono.length() > 9){
-            JOptionPane.showMessageDialog(this,"Número telefónico inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        int cant = proveedores.size();
-        long numprov=0;
-        for(int i = 0; i<cant; i++){
-            if(proveedores.get(i).getRazon_socual().equals(razon)){
-                numprov = proveedores.get(i).getId_proveedor();
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Desea realizar estos cambios?","Aviso",dialog);
+        if(result==0){
+            String ruc = txtRUC.getText();
+            if(ruc.length() != 11 || ruc.length() == 0){
+                JOptionPane.showMessageDialog(this,"RUC inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
             }
+            String razon = txtRazon.getText();
+            if(razon.length() == 0){
+                JOptionPane.showMessageDialog(this,"Razon Social inválida", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String correo = txtCorreo.getText();
+            if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
+                JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String direccion = txtDireccion.getText();
+            if(direccion.length() == 0){
+                JOptionPane.showMessageDialog(this,"Dirección inválida", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String telefono = txtTelefono.getText();
+            if(telefono.length() > 9){
+                JOptionPane.showMessageDialog(this,"Número telefónico inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            int cant = proveedores.size();
+            long numprov=0;
+            for(int i = 0; i<cant; i++){
+                if(proveedores.get(i).getRazon_socual().equals(razon)){
+                    numprov = proveedores.get(i).getId_proveedor();
+                }
+            }
+            Proveedor prov = new Proveedor(numprov,ruc,razon,correo,direccion,telefono);
+            ProveedorBL proveedorBL = new ProveedorBL();
+            proveedorBL.modificarProveedor(prov);
+
+            JOptionPane.showMessageDialog(this,"Proveedor Modificado.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
-        Proveedor prov = new Proveedor(numprov,ruc,razon,correo,direccion,telefono);
-        ProveedorBL proveedorBL = new ProveedorBL();
-        proveedorBL.modificarProveedor(prov);
-        
-        JOptionPane.showMessageDialog(this,"Proveedor Modificado.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

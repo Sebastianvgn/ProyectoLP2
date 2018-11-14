@@ -91,7 +91,7 @@ public class ModAreaForm extends javax.swing.JDialog {
         });
 
         btnAgregar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnAgregar.setText("Agregar");
+        btnAgregar.setText("Modificar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
@@ -228,13 +228,15 @@ public class ModAreaForm extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int row = -1;
-        row = tblArea.getSelectedRow();
-        if(row != -1)
-            ((DefaultTableModel)tblArea.getModel()).removeRow(row);
-        else{
-            
+        boolean select = tblArea.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un área.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
+        int row = tblArea.getSelectedRow();
+        ((DefaultTableModel)tblArea.getModel()).removeRow(row);
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**

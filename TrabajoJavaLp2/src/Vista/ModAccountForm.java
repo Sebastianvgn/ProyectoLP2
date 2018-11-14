@@ -340,70 +340,79 @@ public class ModAccountForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        
-        Usuario user = null;
-        String nombre = txtName.getText();
-        if(nombre.length() == 0){
-            JOptionPane.showMessageDialog(this,"Nombre inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
+        boolean select = tblUsers.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un Usuario.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-        String apellido = txtApellidos.getText();
-        if(apellido.length() == 0){
-            JOptionPane.showMessageDialog(this,"Apellido inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String correo = txtCorreo.getText();
-        if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
-            JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String dni = txtDni.getText();
-        if(dni.length() != 8){
-            JOptionPane.showMessageDialog(this,"DNI inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String username = txtUser.getText();
-        if(username.length() == 0){
-            JOptionPane.showMessageDialog(this,"Usuario inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        String pass = txtPass.getText();
-        if(pass.length() == 0){
-            JOptionPane.showMessageDialog(this,"Contraseña inválido", "Alerta",
-            JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        int index = cmbTipo.getSelectedIndex();
-        int cant = usuarios.size();
-        long numuser = 0;
-        for(int i = 0; i<cant; i++){
-            if(usuarios.get(i).getUsername().equals(username)){
-                numuser = usuarios.get(i).getId_usuario();
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Desea realizar estos cambios?","Aviso",dialog);
+        if(result==0){
+            Usuario user = null;
+            String nombre = txtName.getText();
+            if(nombre.length() == 0){
+                JOptionPane.showMessageDialog(this,"Nombre inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
             }
-        }
+            String apellido = txtApellidos.getText();
+            if(apellido.length() == 0){
+                JOptionPane.showMessageDialog(this,"Apellido inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String correo = txtCorreo.getText();
+            if(!correo.contains("@") || !correo.contains(".") || correo.length() == 0){
+                JOptionPane.showMessageDialog(this,"Correo inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String dni = txtDni.getText();
+            if(dni.length() != 8){
+                JOptionPane.showMessageDialog(this,"DNI inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String username = txtUser.getText();
+            if(username.length() == 0){
+                JOptionPane.showMessageDialog(this,"Usuario inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            String pass = txtPass.getText();
+            if(pass.length() == 0){
+                JOptionPane.showMessageDialog(this,"Contraseña inválido", "Alerta",
+                JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            int index = cmbTipo.getSelectedIndex();
+            int cant = usuarios.size();
+            long numuser = 0;
+            for(int i = 0; i<cant; i++){
+                if(usuarios.get(i).getUsername().equals(username)){
+                    numuser = usuarios.get(i).getId_usuario();
+                }
+            }
 
-        if(index == 0){
-            String tipo = "GERENTE";
-            user = new Gerente(numuser,nombre,apellido,correo,dni,username,pass,tipo);
-        }else if(index == 1){
-            String tipo = "OPERARIO";
-            user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
-        }else{
-            String tipo = "JEFE DE ALMACEN";
-            user = new JefeDeAlmacen(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            if(index == 0){
+                String tipo = "GERENTE";
+                user = new Gerente(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            }else if(index == 1){
+                String tipo = "OPERARIO";
+                user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            }else{
+                String tipo = "JEFE DE ALMACEN";
+                user = new JefeDeAlmacen(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            }
+
+            UsuarioBL usuarioBL = new UsuarioBL();
+            usuarioBL.modificarUsuario(user);
+
+            JOptionPane.showMessageDialog(this,"Cuenta Modificada.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
-        
-        UsuarioBL usuarioBL = new UsuarioBL();
-        usuarioBL.modificarUsuario(user);
-        
-        JOptionPane.showMessageDialog(this,"Cuenta Modificada.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -453,39 +462,49 @@ public class ModAccountForm extends javax.swing.JDialog {
     }//GEN-LAST:event_cbTipoItemStateChanged
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        Usuario user = null;
-        String nombre = txtName.getText();
-        String apellido = txtApellidos.getText();
-        String correo = txtCorreo.getText();
-        String dni = txtDni.getText();
-        String username = txtUser.getText();
-        String pass = txtPass.getText();
-        int index = cmbTipo.getSelectedIndex();
-        int cant = usuarios.size();
-        long numuser = 0;
-        for(int i = 0; i<cant; i++){
-            if(usuarios.get(i).getUsername().equals(username)){
-                numuser = usuarios.get(i).getId_usuario();
+        boolean select = tblUsers.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un Usuario.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
+        int result = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea realizar esta acción?","Aviso",dialog);
+        if(result==0){
+            Usuario user = null;
+            String nombre = txtName.getText();
+            String apellido = txtApellidos.getText();
+            String correo = txtCorreo.getText();
+            String dni = txtDni.getText();
+            String username = txtUser.getText();
+            String pass = txtPass.getText();
+            int index = cmbTipo.getSelectedIndex();
+            int cant = usuarios.size();
+            long numuser = 0;
+            for(int i = 0; i<cant; i++){
+                if(usuarios.get(i).getUsername().equals(username)){
+                    numuser = usuarios.get(i).getId_usuario();
+                }
             }
-        }
 
-        if(index == 0){
-            String tipo = "GERENTE";
-            user = new Gerente(numuser,nombre,apellido,correo,dni,username,pass,tipo);
-        }else if(index == 1){
-            String tipo = "OPERARIO";
-            user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
-        }else{
-            String tipo = "JEFE DE ALMACEN";
-            user = new JefeDeAlmacen(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            if(index == 0){
+                String tipo = "GERENTE";
+                user = new Gerente(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            }else if(index == 1){
+                String tipo = "OPERARIO";
+                user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            }else{
+                String tipo = "JEFE DE ALMACEN";
+                user = new JefeDeAlmacen(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            }
+
+            UsuarioBL usuarioBL = new UsuarioBL();
+            usuarioBL.eliminarUsuario(user);
+
+            JOptionPane.showMessageDialog(this,"Cuenta Eliminada.", "Confirmación",
+                JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
         }
-        
-        UsuarioBL usuarioBL = new UsuarioBL();
-        usuarioBL.eliminarUsuario(user);
-        
-        JOptionPane.showMessageDialog(this,"Cuenta Eliminada.", "Confirmación",
-            JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped

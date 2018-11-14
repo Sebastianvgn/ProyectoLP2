@@ -357,8 +357,14 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        boolean select = tblAlmacen.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un almacén.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
         int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "¿Desea realizar estos cambios?","Modificar",dialog);
+        int result = JOptionPane.showConfirmDialog(null, "¿Desea realizar estos cambios?","Aviso",dialog);
         if(result==0){
             String nom = txtName.getText();
             String desc = txtDescripcion.getText();
@@ -476,7 +482,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             return;
         }
         int dialog = JOptionPane.YES_NO_CANCEL_OPTION;
-        int result = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea realizar esta acción?","Eliminar",dialog);
+        int result = JOptionPane.showConfirmDialog(null, "¿Está seguro que desea realizar esta acción?","Aviso",dialog);
         if(result==0){
             String nom = txtName.getText();
             String desc = txtDescripcion.getText();

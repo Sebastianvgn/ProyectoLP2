@@ -122,6 +122,11 @@ public class NewAreaForm extends javax.swing.JDialog {
 
         btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,6 +205,18 @@ public class NewAreaForm extends javax.swing.JDialog {
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        boolean select = tblArea.getSelectionModel().isSelectionEmpty();
+        if(select){
+            JOptionPane.showMessageDialog(this,"Debe seleccionar un área.", "Aviso",
+                JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        int row = tblArea.getSelectedRow();
+        ((DefaultTableModel)tblArea.getModel()).removeRow(row);
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
