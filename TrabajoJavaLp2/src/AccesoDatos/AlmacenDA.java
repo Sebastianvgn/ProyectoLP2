@@ -97,4 +97,41 @@ public class AlmacenDA {
         }
         return almacenes;
     }
+    
+    public void modificarAlmacen(Almacen alm){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE ALMACEN SET ID_USUARIO = ?, NOMBRE = ?,"
+                    + "TIPO_ALMACEN = ?, DESCRIPCION = ?, FECHA_REGISTRO = NOW() WHERE ID_ALMACEN = ?");
+            
+            ps.setLong(1, alm.getOperarios().get(0).getId_usuario());
+            ps.setString(2, alm.getNomAlmacen());
+            ps.setInt(3, alm.getTipo_almacen());
+            ps.setString(4, alm.getDescripcion());
+            ps.setLong(5, alm.getIdAlmacen());
+            ps.executeUpdate();
+            
+            con.close();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    
+    public void eliminarAlmacen(long idAlm){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE ALMACEN SET REGISTRO_ACTIVO = ? WHERE ID_ALMACEN = ?");
+            ps.setInt(1, 0);
+            ps.setLong(2, idAlm);
+            ps.executeUpdate();
+            
+            con.close(); 
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
 }

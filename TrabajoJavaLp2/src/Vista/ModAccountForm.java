@@ -10,6 +10,7 @@ import LogicaNegocio.UsuarioBL;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import modelo.Gerente;
+import modelo.JefeDeAlmacen;
 import modelo.Operario;
 /**
  *
@@ -393,7 +394,7 @@ public class ModAccountForm extends javax.swing.JDialog {
             user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
         }else{
             String tipo = "JEFE DE ALMACEN";
-            user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            user = new JefeDeAlmacen(numuser,nombre,apellido,correo,dni,username,pass,tipo);
         }
         
         UsuarioBL usuarioBL = new UsuarioBL();
@@ -475,7 +476,7 @@ public class ModAccountForm extends javax.swing.JDialog {
             user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
         }else{
             String tipo = "JEFE DE ALMACEN";
-            user = new Operario(numuser,nombre,apellido,correo,dni,username,pass,tipo);
+            user = new JefeDeAlmacen(numuser,nombre,apellido,correo,dni,username,pass,tipo);
         }
         
         UsuarioBL usuarioBL = new UsuarioBL();

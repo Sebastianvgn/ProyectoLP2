@@ -1,5 +1,6 @@
 package Vista;
 import LogicaNegocio.AlmacenBL;
+import LogicaNegocio.UsuarioBL;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -26,13 +27,16 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Almacen> almacenes;
     private AlmacenBL almacenBL;
-    private JTable tablaArea;
+    private UsuarioBL usuarioBL;
     private String ger;
+    private int index;
 
     public ModWrhouseForm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         almacenBL = new AlmacenBL();
+        usuarioBL = new UsuarioBL();
+        usuarios = usuarioBL.listarUsuarios();
         almacenes = almacenBL.listarAlmacenes();
         modelo = (DefaultTableModel)tblAlmacen.getModel();
         Object[] fila = new Object[1];
@@ -42,7 +46,7 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             modelo.addRow(fila);
         }
         modeloArea = (DefaultTableModel)tblAreas.getModel();
-        this.tablaArea = tblAreas;
+        
         
         
     }
@@ -82,6 +86,12 @@ public class ModWrhouseForm extends javax.swing.JDialog {
         jScrollPane3 = new javax.swing.JScrollPane();
         tblAreas = new javax.swing.JTable();
         btnEditarArea = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        lblTipo = new javax.swing.JLabel();
+        cmbTipo = new javax.swing.JComboBox<>();
+        cbTipo = new java.awt.Checkbox();
+        lblTipoAlm = new javax.swing.JLabel();
+        txtTipoAlmacen = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -211,14 +221,43 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             }
         });
 
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+
+        lblTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTipo.setText("Tipos:");
+
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Almacén Virtual", "Almacén Principal" }));
+        cmbTipo.setEnabled(false);
+
+        cbTipo.setEnabled(false);
+        cbTipo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbTipoItemStateChanged(evt);
+            }
+        });
+
+        lblTipoAlm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTipoAlm.setText("Tipo Almacen:");
+
+        txtTipoAlmacen.setEditable(false);
+        txtTipoAlmacen.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtTipoAlmacen.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+        txtTipoAlmacen.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -227,38 +266,55 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblOperario)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(26, 26, 26)
                                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(48, 48, 48)
+                                    .addGap(28, 28, 28)
                                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lblName)
-                                        .addComponent(lblAccount)
-                                        .addComponent(lblOperario1))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                                        .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
-                                        .addComponent(txtOperario)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))))
-                    .addComponent(btnEditarArea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOperarios)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(lblAccount))
+                                    .addGap(30, 30, 30)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                                            .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                                            .addComponent(txtOperario, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblOperario)
+                                    .addComponent(lblTipo)
+                                    .addComponent(lblOperario1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(261, 261, 261)
+                                        .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnOperarios, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblTipoAlm)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtTipoAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btnEditarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblUsersSystem, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -268,21 +324,30 @@ public class ModWrhouseForm extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAccount)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOperario)
-                            .addComponent(txtOperario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnOperarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtOperario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOperarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblOperario))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTipoAlm)
+                            .addComponent(txtTipoAlmacen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTipo)
+                            .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblOperario1)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblOperario1))))
                 .addComponent(btnEditarArea, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
 
@@ -291,6 +356,40 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        String nom = txtName.getText();
+        String desc = txtDescripcion.getText();
+        Almacen alm = new Almacen();
+        ArrayList<Operario> operarios = new ArrayList<Operario>();
+        String nomOp = txtOperario.getText();
+        Operario operar = null;
+        int tam = usuarios.size();
+        for(int i = 0; i< tam; i++){
+            if(usuarios.get(i).getNombre().equals(nomOp)){
+                operar = (Operario)usuarios.get(i);
+                operarios.add(operar);
+                break;
+            }
+        }
+        alm.setAreas(areas);
+        alm.setDescripcion(desc);
+        alm.setNomAlmacen(nom);
+        alm.setOperarios(operarios);
+        alm.setIdAlmacen(almacenes.get(index).getIdAlmacen());
+        boolean flag = true;
+        if(areas.equals(almacenes.get(index).getAreas())){
+            flag = false;
+        }
+        int indnum = cmbTipo.getSelectedIndex();
+        if(indnum>=0){
+            alm.setTipo_almacen(indnum);
+        }else{
+            if(txtTipoAlmacen.getText().equals("Almacén Virtual")){
+                alm.setTipo_almacen(0);
+            }else{
+                alm.setTipo_almacen(1);
+            }
+        }
+        almacenBL.modificarAlmacen(alm, flag);
         JOptionPane.showMessageDialog(this,"Almacén Modificado.", "Confirmación",
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
@@ -311,22 +410,33 @@ public class ModWrhouseForm extends javax.swing.JDialog {
         txtName.setEnabled(true);
         txtDescripcion.setEnabled(true);
         txtOperario.setEnabled(true);
+        cbTipo.setEnabled(true);
+        txtTipoAlmacen.setEnabled(true);
         modeloArea.getDataVector().removeAllElements();
         
         int row = tblAlmacen.getSelectedRow();
         int col = tblAlmacen.getSelectedColumn();
         int cant = almacenes.size();
         String nombreAlm = tblAlmacen.getValueAt(row, col).toString();
-        int index = 0;
+        index = 0;
         for(int i = 0; i<cant;i++){
             if(almacenes.get(i).getNomAlmacen().equals(nombreAlm)){
                 index = i;
             }
         }
+        int indnum = almacenes.get(index).getTipo_almacen();
+        if(indnum == 0){
+            txtTipoAlmacen.setText("Almacén Virtual");
+        }else{
+            txtTipoAlmacen.setText("Almacén Principal");
+        }
         txtName.setText(almacenes.get(index).getNomAlmacen());
         txtDescripcion.setText(almacenes.get(index).getDescripcion());
         txtOperario.setText(almacenes.get(index).getOperarios().get(0).getNombre());
         ger = almacenes.get(index).getOperarios().get(0).getNombre();
+        if(cbTipo.getState()){
+            cmbTipo.setEnabled(true);
+        }
         
         Object[] fila = new Object[1];
         areas = new ArrayList<Area>();
@@ -336,16 +446,47 @@ public class ModWrhouseForm extends javax.swing.JDialog {
             fila[0] = areas.get(i).getNombreArea();
             modeloArea.addRow(fila);
         }
-        this.tablaArea = tblAreas;
+        
         
     }//GEN-LAST:event_tblAlmacenMouseClicked
 
     private void btnEditarAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAreaActionPerformed
-        ModAreaForm maf = new ModAreaForm(null,true, tablaArea);
-        maf.setTblArea(tablaArea);
+        ModAreaForm maf = new ModAreaForm(null,true, areas);
         maf.setVisible(true);
         areas = maf.areas;
+        modeloArea.getDataVector().removeAllElements();
+        Object[] fila = new Object[1];
+        int cant2 = areas.size();
+        for(int i = 0; i<cant2; i++){
+            fila[0] = areas.get(i).getNombreArea();
+            modeloArea.addRow(fila);
+        }
     }//GEN-LAST:event_btnEditarAreaActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String nom = txtName.getText();
+        String desc = txtDescripcion.getText();
+        Almacen alm = new Almacen();
+        ArrayList<Operario> operarios = new ArrayList<Operario>();
+        operarios = almacenes.get(index).getOperarios();
+        alm.setAreas(areas);
+        alm.setDescripcion(desc);
+        alm.setNomAlmacen(nom);
+        alm.setOperarios(operarios);
+        alm.setIdAlmacen(almacenes.get(index).getIdAlmacen());
+        almacenBL.eliminarAlmacen(alm);
+        JOptionPane.showMessageDialog(this,"Almacén Eliminado.", "Confirmación",
+            JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void cbTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbTipoItemStateChanged
+        if(evt.getStateChange() == java.awt.event.ItemEvent.SELECTED){
+            cmbTipo.setEnabled(true);
+        }else{
+            cmbTipo.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbTipoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -392,8 +533,11 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditarArea;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnOperarios;
+    private java.awt.Checkbox cbTipo;
+    private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -402,6 +546,8 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private javax.swing.JLabel lblOperario;
     private javax.swing.JLabel lblOperario1;
     private javax.swing.JLabel lblTextLogin;
+    private javax.swing.JLabel lblTipo;
+    private javax.swing.JLabel lblTipoAlm;
     private javax.swing.JLabel lblUsersSystem;
     private javax.swing.JPanel pnlTop;
     private javax.swing.JTable tblAlmacen;
@@ -409,5 +555,6 @@ public class ModWrhouseForm extends javax.swing.JDialog {
     private javax.swing.JTextArea txtDescripcion;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtOperario;
+    private javax.swing.JTextField txtTipoAlmacen;
     // End of variables declaration//GEN-END:variables
 }

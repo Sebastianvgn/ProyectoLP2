@@ -43,4 +43,33 @@ public class AlmacenBL {
         }
         return almacenes;
     }
+    
+    public void modificarAlmacen(Almacen alm, boolean flag){
+        ArrayList<Area> areas = new ArrayList<Area>();
+        areas = alm.getAreas();
+        int cant = areas.size();
+        int idAlm = (int)alm.getIdAlmacen();
+        
+        if(flag){
+            for(int i = 0; i<cant; i++){
+                areaDA.eliminarAreas(areas.get(i), alm.getIdAlmacen());
+            }
+            for(int j = 0; j<cant; j++){
+                areaDA.crearArea(areas.get(j), idAlm);
+            }
+        }
+        
+        almacenDA.modificarAlmacen(alm);
+    }
+    
+    public void eliminarAlmacen(Almacen alm){
+        ArrayList<Area> areas = new ArrayList<Area>();
+        areas = alm.getAreas();
+        int cant = areas.size();
+        int idAlm = (int)alm.getIdAlmacen();
+        for(int i = 0; i<cant; i++){
+            areaDA.eliminarAreas(areas.get(i), alm.getIdAlmacen());
+        }
+        almacenDA.eliminarAlmacen(alm.getIdAlmacen());
+    }
 }

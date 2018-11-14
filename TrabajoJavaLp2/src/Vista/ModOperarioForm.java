@@ -150,6 +150,7 @@ public class ModOperarioForm extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblOperariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOperariosMouseClicked

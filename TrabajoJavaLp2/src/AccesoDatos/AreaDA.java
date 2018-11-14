@@ -57,4 +57,22 @@ public class AreaDA {
         }
         return areas;
     }
+    
+    public void eliminarAreas(Area ar, long idAlm){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://quilla.lab.inf.pucp.edu.pe/inf282g2",
+                    "inf282g2", "UInag9");
+            PreparedStatement ps = con.prepareStatement("UPDATE AREA SET REGISTRO_ACTIVO = ? WHERE ID_ALMACEN = ? AND "
+                    + "NOMBRE = ?");
+            ps.setInt(1, 0);
+            ps.setLong(2, idAlm);
+            ps.setString(3, ar.getNombreArea());
+            ps.executeUpdate();
+            
+            con.close(); 
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
 }

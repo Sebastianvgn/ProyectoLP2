@@ -17,28 +17,20 @@ import modelo.Area;
  */
 public class ModAreaForm extends javax.swing.JDialog {
 
-    private JTable tabla;
-    private DefaultTableModel modelo;
     private DefaultTableModel modelo2;
     public ArrayList<Area> areas;
-    
-    public JTable getTblArea() {
-        return tabla;
-    }
 
-    public void setTblArea(JTable tlArea) {
-        this.tabla = tlArea;
-    }
-    
-    
-    public ModAreaForm(java.awt.Frame parent, boolean modal, JTable tabl) {
+    public ModAreaForm(java.awt.Frame parent, boolean modal, ArrayList<Area> ars) {
         super(parent, modal);
         initComponents();
-        modelo = (DefaultTableModel)tabl.getModel();
-        modelo2 = new DefaultTableModel();
-        modelo2 = modelo;
-        jTable1.setModel(modelo2);
-        
+        Object[] fila = new Object[1];
+        areas = ars;
+        modelo2 = (DefaultTableModel)tblArea.getModel();
+        int cant2 = areas.size();
+        for(int i = 0; i<cant2; i++){
+            fila[0] = areas.get(i).getNombreArea();
+            modelo2.addRow(fila);
+        }
         
     }
 
@@ -60,7 +52,7 @@ public class ModAreaForm extends javax.swing.JDialog {
         btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblArea = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -117,7 +109,7 @@ public class ModAreaForm extends javax.swing.JDialog {
         btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblArea.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -133,7 +125,7 @@ public class ModAreaForm extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tblArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -194,18 +186,21 @@ public class ModAreaForm extends javax.swing.JDialog {
         String ar = txtArea.getText();
         Object[] fila = new Object[1];
         fila[0] = ar;
-        modelo.addRow(fila);
+        modelo2.addRow(fila);
+        txtArea.setText("");
     }//GEN-LAST:event_btnagregarAreaActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        int cant = modelo.getRowCount();
+        int cant = modelo2.getRowCount();
         int i;
+        ArrayList<Area> ars = new ArrayList<Area>();
         for(i = 0; i<cant; i++){
             Area ar = new Area();
-            String nombre = modelo.getValueAt(i, 0).toString();
+            String nombre = modelo2.getValueAt(i, 0).toString();
             ar.setNombreArea(nombre);
-            areas.add(ar);
+            ars.add(ar);
         }
+        areas = ars;
         JOptionPane.showMessageDialog(this,"Áreas modificadas.", "Confirmación",
             JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
@@ -245,7 +240,7 @@ public class ModAreaForm extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ModAreaForm dialog = new ModAreaForm(new javax.swing.JFrame(), true, new JTable());
+                ModAreaForm dialog = new ModAreaForm(new javax.swing.JFrame(), true, new ArrayList<Area>());
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -263,10 +258,10 @@ public class ModAreaForm extends javax.swing.JDialog {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnagregarArea;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblArea;
     private javax.swing.JLabel lblTextLogin;
     private javax.swing.JPanel pnlTop;
+    private javax.swing.JTable tblArea;
     private javax.swing.JTextField txtArea;
     // End of variables declaration//GEN-END:variables
 }
